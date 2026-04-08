@@ -19,8 +19,11 @@ def register(payload: UserCreate, db: Session = Depends(get_db)) -> UserResponse
     try:
         user = create_user(db, payload)
     except ValueError as exc:
+        status_code = status.HTTP_409_CONFLICT
+        if "already exists" not in str(exc).lower():
+            status_code = status.HTTP_422_UNPROCESSABLE_ENTITY
         raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
+            status_code=status_code,
             detail=str(exc),
         ) from exc
     return UserResponse.model_validate(user)
@@ -28,7 +31,13 @@ def register(payload: UserCreate, db: Session = Depends(get_db)) -> UserResponse
 
 @router.post("/login", response_model=TokenResponse)
 def login(payload: LoginRequest, db: Session = Depends(get_db)) -> TokenResponse:
-    user = authenticate_user(db, payload.email, payload.password)
+    try:
+        user = authenticate_user(db, payload.email, payload.password)
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=str(exc),
+        ) from exc
     if user is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
