@@ -1,6 +1,6 @@
-# CodeAtlas Auth API
+# CodeAtlas API
 
-FastAPI, PostgreSQL, SQLAlchemy ve Alembic kullanan temel auth servisi.
+FastAPI, PostgreSQL, SQLAlchemy ve Alembic kullanan auth servisi. Ayrıca proje zip dosyalarını Tree-sitter ile analiz edip Gemini destekli Mermaid mimari çıktısı üreten analiz endpointi içerir.
 
 ## Kurulum
 
@@ -12,6 +12,7 @@ Copy-Item .env.example .env
 ```
 
 `.env` içindeki `DATABASE_URL` değerini yerel PostgreSQL kurulumuna göre güncelle.
+Gemini destekli mimari özet için `.env` içindeki `GEMINI_API_KEY` değerini doldur. Bu değer boşsa analiz endpointi yalnızca yerel Tree-sitter çıktısından fallback özet ve Mermaid diyagramı döner.
 
 ## Veritabanı
 
@@ -28,6 +29,8 @@ Sonra migration çalıştır:
 alembic upgrade head
 ```
 
+Migration varsayılan olarak uygulama başlangıcında otomatik çalışmaz. Otomatik çalışmasını istersen `.env` içine `RUN_MIGRATIONS_ON_STARTUP=true` ekleyebilirsin.
+
 ## Uygulamayı Çalıştırma
 
 ```powershell
@@ -40,4 +43,24 @@ uvicorn app.main:app --reload
 - `POST /auth/register`
 - `POST /auth/login`
 - `GET /auth/me`
+- `POST /analysis/upload`
 - `GET /health`
+
+## Proje Analizi
+
+`POST /analysis/upload` endpointi token gerektirmez ve `multipart/form-data` içinde `file` alanı ile `.zip` bekler.
+
+İlk etapta desteklenen dosya türleri:
+
+- Python: `.py`
+- JavaScript: `.js`, `.jsx`
+- TypeScript: `.ts`, `.tsx`
+
+Güvenlik limitleri `.env` üzerinden değiştirilebilir:
+
+- `ANALYSIS_MAX_ZIP_BYTES`
+- `ANALYSIS_MAX_UNCOMPRESSED_BYTES`
+- `ANALYSIS_MAX_SOURCE_FILE_BYTES`
+- `ANALYSIS_MAX_FILES`
+
+Varsayılan limitler: 100 MB zip, 300 MB açılmış toplam boyut, dosya başına 512 KB kaynak kod ve ignore sonrası 5000 analiz edilebilir dosya.

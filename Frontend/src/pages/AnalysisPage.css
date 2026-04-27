@@ -1,0 +1,224 @@
+.analysis-page {
+  min-height: 100vh;
+  padding: 48px;
+  color: var(--color-text-light);
+  background:
+    radial-gradient(circle at top left, rgba(233, 30, 99, 0.28), transparent 34%),
+    linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+}
+
+.analysis-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 32px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto 32px;
+}
+
+.analysis-eyebrow {
+  margin-bottom: 10px;
+  color: var(--color-primary-light);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.analysis-hero h1 {
+  max-width: 720px;
+  margin-bottom: 18px;
+  font-size: clamp(2.4rem, 6vw, 5.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.analysis-lead {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+}
+
+.analysis-upload-card,
+.analysis-panel,
+.analysis-summary-card {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.analysis-upload-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+}
+
+.analysis-file-drop {
+  display: flex;
+  min-height: 180px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.38);
+  border-radius: 22px;
+  background: rgba(13, 4, 22, 0.42);
+  cursor: pointer;
+  text-align: center;
+}
+
+.analysis-file-drop span {
+  font-weight: 800;
+}
+
+.analysis-file-drop small {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.analysis-file-drop input {
+  display: none;
+}
+
+.analysis-upload-card button {
+  padding: 16px 20px;
+  border-radius: var(--radius-full);
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent-coral));
+  font-weight: 800;
+  box-shadow: var(--shadow-button);
+}
+
+.analysis-upload-card button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.analysis-error,
+.analysis-warning {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 107, 107, 0.16);
+  color: #ffd5d5;
+}
+
+.analysis-results {
+  display: flex;
+  max-width: 1180px;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.analysis-summary-card,
+.analysis-panel {
+  padding: 24px;
+}
+
+.analysis-summary-card h2,
+.analysis-panel h3 {
+  margin-bottom: 12px;
+}
+
+.analysis-summary-card p,
+.analysis-component p {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 24px;
+}
+
+.analysis-diagram-panel {
+  overflow: hidden;
+}
+
+.analysis-diagram {
+  overflow-x: auto;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(13, 4, 22, 0.54);
+}
+
+.analysis-code-block {
+  overflow: auto;
+  max-height: 520px;
+  padding: 18px;
+  border-radius: 18px;
+  color: #f9d7e5;
+  background: rgba(13, 4, 22, 0.68);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.analysis-component-list,
+.analysis-symbol-list {
+  display: grid;
+  gap: 14px;
+}
+
+.analysis-component,
+.analysis-symbol-list details {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(13, 4, 22, 0.36);
+}
+
+.analysis-component strong,
+.analysis-symbol-list summary {
+  color: #fff;
+  font-weight: 800;
+}
+
+.analysis-symbol-list summary {
+  cursor: pointer;
+}
+
+.analysis-symbol-list ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  list-style: none;
+}
+
+.analysis-symbol-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.analysis-symbol-list span {
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(233, 30, 99, 0.22);
+  color: var(--color-primary-light);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+}
+
+.analysis-symbol-list em {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: normal;
+}
+
+@media (max-width: 860px) {
+  .analysis-page {
+    padding: 24px;
+  }
+
+  .analysis-hero,
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
