@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     gemini_api_key: str | None = None
     gemini_model: str = "gemini-2.0-flash"
     gemini_timeout_seconds: int = 60
+    gemini_max_retries: int = 2
+    gemini_retry_backoff_seconds: float = 1.0
     analysis_max_zip_bytes: int = 100 * 1024 * 1024
     analysis_max_uncompressed_bytes: int = 300 * 1024 * 1024
     analysis_max_source_file_bytes: int = 512 * 1024

@@ -1,9 +1,13 @@
 import json
+import time
 from urllib import error, request
 
 from app.core.config import settings
 from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary
 from app.services.analysis.models import ProjectAnalysis
+
+
+_RETRYABLE_HTTP_STATUSES = {429, 500, 502, 503, 504}
 
 
 def summarize_with_gemini(analysis: ProjectAnalysis) -> tuple[str, list[dict[str, str]], str, list[str], str | None]:
@@ -40,17 +44,33 @@ def summarize_with_gemini(analysis: ProjectAnalysis) -> tuple[str, list[dict[str
         method="POST",
     )
 
-    try:
-        with request.urlopen(req, timeout=settings.gemini_timeout_seconds) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except (error.HTTPError, error.URLError, TimeoutError, json.JSONDecodeError) as exc:
-        return (
-            fallback_summary,
-            fallback_components,
-            fallback_mermaid,
-            [f"Gemini request failed; returned local analysis. Reason: {exc}"],
-            None,
-        )
+    attempts = max(1, settings.gemini_max_retries + 1)
+    for attempt in range(1, attempts + 1):
+        try:
+            with request.urlopen(req, timeout=settings.gemini_timeout_seconds) as response:
+                data = json.loads(response.read().decode("utf-8"))
+            break
+        except (error.HTTPError, error.URLError, TimeoutError) as exc:
+            if attempt >= attempts or not _is_retryable_error(exc):
+                return (
+                    fallback_summary,
+                    fallback_components,
+                    fallback_mermaid,
+                    [
+                        "Gemini request failed after "
+                        f"{attempt} attempt(s); returned local analysis. Reason: {exc}"
+                    ],
+                    None,
+                )
+            _sleep_before_retry(attempt)
+        except json.JSONDecodeError as exc:
+            return (
+                fallback_summary,
+                fallback_components,
+                fallback_mermaid,
+                [f"Gemini returned invalid JSON; returned local analysis. Reason: {exc}"],
+                None,
+            )
 
     text = _extract_text(data)
     try:
@@ -121,6 +141,19 @@ def _extract_text(data: dict) -> str:
         return ""
     parts = candidates[0].get("content", {}).get("parts", [])
     return "".join(part.get("text", "") for part in parts)
+
+
+def _is_retryable_error(exc: Exception) -> bool:
+    if isinstance(exc, error.HTTPError):
+        return exc.code in _RETRYABLE_HTTP_STATUSES
+    return isinstance(exc, (error.URLError, TimeoutError))
+
+
+def _sleep_before_retry(attempt: int) -> None:
+    backoff_seconds = max(0.0, settings.gemini_retry_backoff_seconds)
+    delay = backoff_seconds * (2 ** (attempt - 1))
+    if delay > 0:
+        time.sleep(delay)
 
 
 def _extract_json_object(text: str) -> dict | None:
