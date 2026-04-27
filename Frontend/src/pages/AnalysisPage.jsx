@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 import mermaid from 'mermaid'
+import Navbar from '../components/Navbar'
 import './AnalysisPage.css'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
@@ -110,7 +111,9 @@ function AnalysisPage() {
   }
 
   return (
-    <main className="analysis-page">
+    <>
+      <Navbar />
+      <main className="analysis-page">
       <section className="analysis-hero">
         <div>
           <p className="analysis-eyebrow">CodeAtlas</p>
@@ -202,6 +205,7 @@ function AnalysisPage() {
         </section>
       )}
     </main>
+    </>
   )
 }
 

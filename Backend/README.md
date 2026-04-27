@@ -13,7 +13,8 @@ Copy-Item .env.example .env
 
 `.env` içindeki `DATABASE_URL` değerini yerel PostgreSQL kurulumuna göre güncelle.
 Gemini destekli mimari özet için `.env` içindeki `GEMINI_API_KEY` değerini doldur. Bu değer boşsa analiz endpointi yalnızca yerel Tree-sitter çıktısından fallback özet ve Mermaid diyagramı döner.
-Gemini tarafında `429`, `500`, `502`, `503` veya `504` gibi geçici hatalar olursa istek varsayılan olarak 2 kez tekrar denenir. `GEMINI_MAX_RETRIES` ve `GEMINI_RETRY_BACKOFF_SECONDS` ile bu davranışı değiştirebilirsin.
+Gemini tarafında `429`, `500`, `502`, `503` veya `504` gibi geçici hatalar olursa istek varsayılan olarak 2 kez tekrar denenir. `GEMINI_MAX_RETRIES` ve `GEMINI_RETRY_BACKOFF_SECONDS` ile bu davranışı değiştirebilirsin. `429` rate-limit hatası tüketilirse servis `GEMINI_RATE_LIMIT_COOLDOWN_SECONDS` süresince Gemini'yi tekrar çağırmadan yerel analize düşer.
+Analiz servisi büyük projelerde Gemini prompt'una girecek dosyaları lokal `BAAI/bge-m3` embedding modeliyle semantik olarak sıralar. `SEMANTIC_ANALYSIS_ENABLED`, `SEMANTIC_EMBEDDING_MODEL` ve `SEMANTIC_MAX_PROMPT_FILES` ile bu davranışı değiştirebilirsin. Dosya sayısı limitin altındaysa model yüklenmez.
 
 ## Veritabanı
 

@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     gemini_timeout_seconds: int = 60
     gemini_max_retries: int = 2
     gemini_retry_backoff_seconds: float = 1.0
+    gemini_rate_limit_cooldown_seconds: float = 60.0
+    semantic_analysis_enabled: bool = True
+    semantic_embedding_model: str = "BAAI/bge-m3"
+    semantic_max_prompt_files: int = 120
     analysis_max_zip_bytes: int = 100 * 1024 * 1024
     analysis_max_uncompressed_bytes: int = 300 * 1024 * 1024
     analysis_max_source_file_bytes: int = 512 * 1024

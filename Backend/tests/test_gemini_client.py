@@ -38,12 +38,12 @@ def make_analysis() -> ProjectAnalysis:
     )
 
 
-def make_http_error(status: int, message: str) -> error.HTTPError:
+def make_http_error(status: int, message: str, headers: dict[str, str] | None = None) -> error.HTTPError:
     return error.HTTPError(
         url="https://generativelanguage.googleapis.com/test",
         code=status,
         msg=message,
-        hdrs={},
+        hdrs=headers or {},
         fp=io.BytesIO(message.encode("utf-8")),
     )
 
@@ -56,6 +56,8 @@ class GeminiClientTests(unittest.TestCase):
             stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_timeout_seconds", 5))
             stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_max_retries", 2))
             stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_retry_backoff_seconds", 0))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_rate_limit_cooldown_seconds", 60))
+            stack.enter_context(mock.patch.object(gemini_client, "_rate_limited_until", 0.0))
             sleep_mock = stack.enter_context(mock.patch.object(gemini_client.time, "sleep"))
             urlopen_mock = stack.enter_context(
                 mock.patch.object(gemini_client.request, "urlopen", side_effect=urlopen_side_effect)
@@ -119,6 +121,67 @@ class GeminiClientTests(unittest.TestCase):
         self.assertEqual(len(warnings), 1)
         self.assertIn("Gemini request failed after 3 attempt(s)", warnings[0])
         self.assertIn("HTTP Error 503", warnings[0])
+
+    def test_uses_retry_after_header_before_retry(self):
+        gemini_payload = {
+            "candidates": [
+                {
+                    "content": {
+                        "parts": [
+                            {
+                                "text": json.dumps(
+                                    {
+                                        "summary": "Gemini summary",
+                                        "components": [],
+                                        "mermaid": "graph TD\n  A[\"App\"]",
+                                    }
+                                )
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+
+        result, urlopen_mock, sleep_mock = self.run_with_settings(
+            [make_http_error(429, "Too Many Requests", {"Retry-After": "7"}), FakeResponse(gemini_payload)]
+        )
+
+        _, _, _, warnings, provider = result
+        self.assertEqual(warnings, [])
+        self.assertEqual(provider, "gemini")
+        self.assertEqual(urlopen_mock.call_count, 2)
+        sleep_mock.assert_called_once_with(7.0)
+
+    def test_skips_gemini_during_rate_limit_cooldown(self):
+        with ExitStack() as stack:
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_api_key", "test-key"))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_model", "gemini-test"))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_timeout_seconds", 5))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_max_retries", 2))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_retry_backoff_seconds", 0))
+            stack.enter_context(mock.patch.object(gemini_client.settings, "gemini_rate_limit_cooldown_seconds", 60))
+            stack.enter_context(mock.patch.object(gemini_client, "_rate_limited_until", 0.0))
+            stack.enter_context(mock.patch.object(gemini_client.time, "sleep"))
+            urlopen_mock = stack.enter_context(
+                mock.patch.object(
+                    gemini_client.request,
+                    "urlopen",
+                    side_effect=[
+                        make_http_error(429, "Too Many Requests"),
+                        make_http_error(429, "Too Many Requests"),
+                        make_http_error(429, "Too Many Requests"),
+                    ],
+                )
+            )
+
+            first_result = gemini_client.summarize_with_gemini(make_analysis())
+            second_result = gemini_client.summarize_with_gemini(make_analysis())
+
+        self.assertEqual(urlopen_mock.call_count, 3)
+        self.assertIn("Gemini request failed after 3 attempt(s)", first_result[3][0])
+        self.assertIn("Gemini rate limit is cooling down", second_result[3][0])
+        self.assertEqual(second_result[4], None)
 
 
 if __name__ == "__main__":

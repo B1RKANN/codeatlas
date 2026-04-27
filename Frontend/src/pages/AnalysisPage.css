@@ -1,6 +1,6 @@
 .analysis-page {
   min-height: 100vh;
-  padding: 48px;
+  padding: 113px 48px 48px;
   color: var(--color-text-light);
   background:
     radial-gradient(circle at top left, rgba(233, 30, 99, 0.28), transparent 34%),
