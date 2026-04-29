@@ -5,6 +5,19 @@ import './AnalysisPage.css'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
+const ANALYSIS_PROVIDERS = [
+  {
+    value: 'gemini',
+    label: 'Gemini',
+    description: 'Google Gemini ile hızlı mimari özet ve diyagram üretimi.',
+  },
+  {
+    value: 'gpt',
+    label: 'GPT-4o mini',
+    description: 'OpenAI GPT-4o mini ile alternatif mimari analiz.',
+  },
+]
+
 function normalizeMermaid(source) {
   let subgraphIndex = 0
   const text = source
@@ -33,6 +46,7 @@ function normalizeMermaid(source) {
 function AnalysisPage() {
   const diagramId = useId().replaceAll(':', '')
   const [selectedFile, setSelectedFile] = useState(null)
+  const [selectedProvider, setSelectedProvider] = useState('gemini')
   const [result, setResult] = useState(null)
   const [diagramSvg, setDiagramSvg] = useState('')
   const [diagramError, setDiagramError] = useState('')
@@ -88,6 +102,7 @@ function AnalysisPage() {
 
     const formData = new FormData()
     formData.append('file', selectedFile)
+    formData.append('provider', selectedProvider)
 
     setIsLoading(true)
     setError('')
@@ -120,7 +135,7 @@ function AnalysisPage() {
           <h1>Zip yükle, mimariyi Mermaid diyagramına dönüştür.</h1>
           <p className="analysis-lead">
             Backend zip içindeki Python ve JS/TS dosyalarını Tree-sitter ile analiz eder,
-            Gemini varsa mimari özet ve diyagramı zenginleştirir.
+            seçtiğin LLM sağlayıcısı varsa mimari özet ve diyagramı zenginleştirir.
           </p>
         </div>
 
@@ -130,6 +145,28 @@ function AnalysisPage() {
             <small>Desteklenen diller: Python, JavaScript, TypeScript. Varsayılan zip limiti: 100 MB.</small>
             <input type="file" accept=".zip,application/zip" onChange={handleFileChange} />
           </label>
+
+          <fieldset className="analysis-provider-picker">
+            <legend>Analiz sağlayıcısı</legend>
+            <div className="analysis-provider-options">
+              {ANALYSIS_PROVIDERS.map((provider) => (
+                <label
+                  className={`analysis-provider-option ${selectedProvider === provider.value ? 'is-selected' : ''}`}
+                  key={provider.value}
+                >
+                  <input
+                    type="radio"
+                    name="provider"
+                    value={provider.value}
+                    checked={selectedProvider === provider.value}
+                    onChange={(event) => setSelectedProvider(event.target.value)}
+                  />
+                  <span>{provider.label}</span>
+                  <small>{provider.description}</small>
+                </label>
+              ))}
+            </div>
+          </fieldset>
 
           <button type="submit" disabled={isLoading}>
             {isLoading ? 'Analiz ediliyor...' : 'Analizi Başlat'}

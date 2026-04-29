@@ -84,6 +84,60 @@
   display: none;
 }
 
+.analysis-provider-picker {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+}
+
+.analysis-provider-picker legend {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.analysis-provider-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.analysis-provider-option {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(13, 4, 22, 0.36);
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.analysis-provider-option:hover,
+.analysis-provider-option.is-selected {
+  border-color: rgba(255, 122, 162, 0.7);
+  background: rgba(233, 30, 99, 0.2);
+  transform: translateY(-1px);
+}
+
+.analysis-provider-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.analysis-provider-option span {
+  color: #fff;
+  font-weight: 800;
+}
+
+.analysis-provider-option small {
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.45;
+}
+
 .analysis-upload-card button {
   padding: 16px 20px;
   border-radius: var(--radius-full);
@@ -218,7 +272,8 @@
   }
 
   .analysis-hero,
-  .analysis-grid {
+  .analysis-grid,
+  .analysis-provider-options {
     grid-template-columns: 1fr;
   }
 }

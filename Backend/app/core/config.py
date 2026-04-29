@@ -14,6 +14,11 @@ class Settings(BaseSettings):
     gemini_max_retries: int = 2
     gemini_retry_backoff_seconds: float = 1.0
     gemini_rate_limit_cooldown_seconds: float = 60.0
+    openai_api_key: str | None = None
+    openai_model: str = "gpt-4o-mini"
+    openai_timeout_seconds: int = 60
+    openai_max_retries: int = 2
+    openai_retry_backoff_seconds: float = 1.0
     semantic_analysis_enabled: bool = True
     semantic_embedding_model: str = "BAAI/bge-m3"
     semantic_max_prompt_files: int = 120

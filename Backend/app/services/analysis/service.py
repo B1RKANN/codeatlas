@@ -1,13 +1,19 @@
 from app.schemas.analysis import ComponentSummary, FileAnalysis, ProjectAnalysisResponse, SymbolInfo
 from app.services.analysis.extractor import read_project_zip
 from app.services.analysis.gemini_client import summarize_with_gemini
+from app.services.analysis.openai_client import summarize_with_gpt
 from app.services.analysis.tree_sitter_analyzer import analyze_project
 
 
-def analyze_zip_project(filename: str, content: bytes) -> ProjectAnalysisResponse:
+def analyze_zip_project(filename: str, content: bytes, provider: str = "gemini") -> ProjectAnalysisResponse:
     snapshot = read_project_zip(filename, content)
     analysis = analyze_project(snapshot)
-    summary, components, mermaid, warnings, provider = summarize_with_gemini(analysis)
+    if provider == "gpt":
+        summary, components, mermaid, warnings, llm_provider = summarize_with_gpt(analysis)
+    elif provider == "gemini":
+        summary, components, mermaid, warnings, llm_provider = summarize_with_gemini(analysis)
+    else:
+        raise ValueError("Unsupported analysis provider. Use 'gemini' or 'gpt'.")
 
     return ProjectAnalysisResponse(
         project_name=analysis.project_name,
@@ -27,6 +33,6 @@ def analyze_zip_project(filename: str, content: bytes) -> ProjectAnalysisRespons
             for file in analysis.files
         ],
         mermaid=mermaid,
-        llm_provider=provider,
+        llm_provider=llm_provider,
         warnings=warnings,
     )
