@@ -13,11 +13,12 @@ router = APIRouter(prefix="/analysis", tags=["analysis"])
 async def upload_project(
     file: UploadFile = File(...),
     provider: Literal["gemini", "gpt"] = Form("gemini"),
+    use_nlp: bool = Form(False),
 ) -> ProjectAnalysisResponse:
     filename = file.filename or "project.zip"
     try:
         content = await file.read()
-        return analyze_zip_project(filename, content, provider)
+        return analyze_zip_project(filename, content, provider, use_nlp=use_nlp)
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

@@ -5,13 +5,18 @@ from app.services.analysis.openai_client import summarize_with_gpt
 from app.services.analysis.tree_sitter_analyzer import analyze_project
 
 
-def analyze_zip_project(filename: str, content: bytes, provider: str = "gemini") -> ProjectAnalysisResponse:
+def analyze_zip_project(
+    filename: str,
+    content: bytes,
+    provider: str = "gemini",
+    use_nlp: bool = False,
+) -> ProjectAnalysisResponse:
     snapshot = read_project_zip(filename, content)
     analysis = analyze_project(snapshot)
     if provider == "gpt":
-        summary, components, mermaid, warnings, llm_provider = summarize_with_gpt(analysis)
+        summary, components, mermaid, warnings, llm_provider = summarize_with_gpt(analysis, use_nlp=use_nlp)
     elif provider == "gemini":
-        summary, components, mermaid, warnings, llm_provider = summarize_with_gemini(analysis)
+        summary, components, mermaid, warnings, llm_provider = summarize_with_gemini(analysis, use_nlp=use_nlp)
     else:
         raise ValueError("Unsupported analysis provider. Use 'gemini' or 'gpt'.")
 

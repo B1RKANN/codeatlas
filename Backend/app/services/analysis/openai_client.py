@@ -10,7 +10,7 @@ from app.services.analysis.gemini_client import (
     _fallback_components,
     _normalize_components,
 )
-from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary
+from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary, select_mermaid
 from app.services.analysis.models import ProjectAnalysis
 from app.services.analysis.semantic import select_prompt_files
 
@@ -18,7 +18,10 @@ from app.services.analysis.semantic import select_prompt_files
 _RETRYABLE_HTTP_STATUSES = {429, 500, 502, 503, 504}
 
 
-def summarize_with_gpt(analysis: ProjectAnalysis) -> tuple[str, list[dict[str, str]], str, list[str], str | None]:
+def summarize_with_gpt(
+    analysis: ProjectAnalysis,
+    use_nlp: bool = False,
+) -> tuple[str, list[dict[str, str]], str, list[str], str | None]:
     fallback_summary = build_fallback_summary(analysis)
     fallback_components = _fallback_components(analysis)
     fallback_mermaid = build_fallback_mermaid(analysis)
@@ -32,7 +35,7 @@ def summarize_with_gpt(analysis: ProjectAnalysis) -> tuple[str, list[dict[str, s
             None,
         )
 
-    prompt_files, semantic_warnings = select_prompt_files(analysis)
+    prompt_files, semantic_warnings = select_prompt_files(analysis) if use_nlp else (None, [])
     payload = {
         "model": settings.openai_model,
         "messages": [
@@ -97,11 +100,13 @@ def summarize_with_gpt(analysis: ProjectAnalysis) -> tuple[str, list[dict[str, s
             None,
         )
 
+    mermaid, mermaid_warning = select_mermaid(analysis, str(generated.get("mermaid") or ""))
+    warnings = semantic_warnings + ([mermaid_warning] if mermaid_warning else [])
     return (
         str(generated.get("summary") or fallback_summary),
         _normalize_components(generated.get("components"), fallback_components),
-        str(generated.get("mermaid") or fallback_mermaid),
-        semantic_warnings,
+        mermaid,
+        warnings,
         "gpt",
     )
 

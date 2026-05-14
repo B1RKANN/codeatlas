@@ -1,0 +1,68 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: codeatlas
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d codeatlas"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./Backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/codeatlas
+      SECRET_KEY: ${SECRET_KEY:-replace-with-a-long-random-string}
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.0-flash}
+      GEMINI_TIMEOUT_SECONDS: 60
+      GEMINI_MAX_RETRIES: 2
+      GEMINI_RETRY_BACKOFF_SECONDS: 1.0
+      GEMINI_RATE_LIMIT_COOLDOWN_SECONDS: 60.0
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      OPENAI_TIMEOUT_SECONDS: 60
+      OPENAI_MAX_RETRIES: 2
+      OPENAI_RETRY_BACKOFF_SECONDS: 1.0
+      SEMANTIC_ANALYSIS_ENABLED: "true"
+      SEMANTIC_EMBEDDING_MODEL: BAAI/bge-m3
+      SEMANTIC_MAX_PROMPT_FILES: 120
+      ANALYSIS_MAX_ZIP_BYTES: 104857600
+      ANALYSIS_MAX_UNCOMPRESSED_BYTES: 314572800
+      ANALYSIS_MAX_SOURCE_FILE_BYTES: 524288
+      ANALYSIS_MAX_FILES: 5000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    command: sh -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  frontend:
+    build:
+      context: ./Frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Frontend:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - backend
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  postgres_data:
+  frontend_node_modules:

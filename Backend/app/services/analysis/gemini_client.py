@@ -5,7 +5,7 @@ from email.utils import parsedate_to_datetime
 from urllib import error, request
 
 from app.core.config import settings
-from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary
+from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary, select_mermaid
 from app.services.analysis.models import ProjectAnalysis
 from app.services.analysis.semantic import select_prompt_files
 
@@ -14,7 +14,10 @@ _RETRYABLE_HTTP_STATUSES = {429, 500, 502, 503, 504}
 _rate_limited_until = 0.0
 
 
-def summarize_with_gemini(analysis: ProjectAnalysis) -> tuple[str, list[dict[str, str]], str, list[str], str | None]:
+def summarize_with_gemini(
+    analysis: ProjectAnalysis,
+    use_nlp: bool = False,
+) -> tuple[str, list[dict[str, str]], str, list[str], str | None]:
     global _rate_limited_until
 
     fallback_summary = build_fallback_summary(analysis)
@@ -44,7 +47,7 @@ def summarize_with_gemini(analysis: ProjectAnalysis) -> tuple[str, list[dict[str
             None,
         )
 
-    prompt_files, semantic_warnings = select_prompt_files(analysis)
+    prompt_files, semantic_warnings = select_prompt_files(analysis) if use_nlp else (None, [])
     prompt = _build_prompt(analysis, prompt_files)
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
@@ -110,11 +113,13 @@ def summarize_with_gemini(analysis: ProjectAnalysis) -> tuple[str, list[dict[str
             None,
         )
 
+    mermaid, mermaid_warning = select_mermaid(analysis, str(generated.get("mermaid") or ""))
+    warnings = semantic_warnings + ([mermaid_warning] if mermaid_warning else [])
     return (
         str(generated.get("summary") or fallback_summary),
         _normalize_components(generated.get("components"), fallback_components),
-        str(generated.get("mermaid") or fallback_mermaid),
-        semantic_warnings,
+        mermaid,
+        warnings,
         "gemini",
     )
 
@@ -138,16 +143,25 @@ You are CodeAtlas. Analyze this project structure and Tree-sitter symbol map.
 Return only valid JSON with these keys:
 - summary: Turkish architecture summary, concise but useful.
 - components: array of objects with file and description fields. Explain what important files/functions/classes do in Turkish.
-- mermaid: a valid Mermaid graph TD diagram that shows high-level architecture and relationships.
+- mermaid: a valid Mermaid flowchart LR diagram that shows architecture layers, important files, symbols, and relationships.
 
 Do not wrap the JSON in markdown. Do not invent files that are not present.
 Mermaid requirements:
-- Start with exactly: graph TD
+- Start with exactly: flowchart LR
 - Use only ASCII node ids like A, B, API, DB, SERVICE_1.
 - Put node labels in double quoted square brackets, for example API["API Layer"].
-- Use edge labels only with pipe syntax, for example API -->|uses| DB.
+- Prefer unlabeled containment edges, for example API --> AUTH_FILE.
+- Use dashed edges for import/dependency relationships, for example AUTH_FILE -.-> USER_MODEL.
+- Do not use vague edge labels such as tanımlar, dosya, file, defines, uses, imports, connects, or depends.
+- Avoid edge labels unless they clarify a real runtime or data-flow relationship.
 - Do not use quoted subgraph titles like subgraph "Backend"; use subgraph BACKEND["Backend"] instead.
 - Do not include markdown fences around the Mermaid text.
+- Do not return an oversimplified star diagram. Include at least 10 nodes and 8 edges when the project has enough files/symbols.
+- Prefer grouped layers such as API/routes, services, models/database, frontend/pages/components, config/infrastructure, tests, and external dependencies when those concepts exist in the file tree.
+- Group files from the same folder inside subgraphs. Keep function/class nodes small and include only the most important symbols.
+- First show the high-level architecture, then drill into files and selected functions/classes.
+- If a file has too many relationships, abstract it through a service/layer node instead of drawing every edge.
+- Connect files/modules using important imports and symbol responsibilities from the Tree-sitter analysis.
 
 Project name: {analysis.project_name}
 
@@ -249,11 +263,21 @@ def _normalize_components(value, fallback: list[dict[str, str]]) -> list[dict[st
     if not isinstance(value, list):
         return fallback
     components: list[dict[str, str]] = []
+    seen_files: set[str] = set()
     for item in value:
         if not isinstance(item, dict):
             continue
         file = item.get("file")
         description = item.get("description")
-        if file and description:
-            components.append({"file": str(file), "description": str(description)})
+        if file and description and str(file) not in seen_files:
+            file_path = str(file)
+            components.append({"file": file_path, "description": str(description)})
+            seen_files.add(file_path)
+
+    for item in fallback:
+        file = item.get("file")
+        if file and file not in seen_files:
+            components.append(item)
+            seen_files.add(file)
+
     return components or fallback

@@ -104,7 +104,8 @@
   gap: 10px;
 }
 
-.analysis-provider-option {
+.analysis-provider-option,
+.analysis-nlp-option {
   display: grid;
   gap: 6px;
   padding: 14px;
@@ -116,24 +117,29 @@
 }
 
 .analysis-provider-option:hover,
-.analysis-provider-option.is-selected {
+.analysis-provider-option.is-selected,
+.analysis-nlp-option:hover,
+.analysis-nlp-option.is-selected {
   border-color: rgba(255, 122, 162, 0.7);
   background: rgba(233, 30, 99, 0.2);
   transform: translateY(-1px);
 }
 
-.analysis-provider-option input {
+.analysis-provider-option input,
+.analysis-nlp-option input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-.analysis-provider-option span {
+.analysis-provider-option span,
+.analysis-nlp-option span {
   color: #fff;
   font-weight: 800;
 }
 
-.analysis-provider-option small {
+.analysis-provider-option small,
+.analysis-nlp-option small {
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.45;
 }
@@ -178,6 +184,24 @@
   margin-bottom: 12px;
 }
 
+.analysis-panel-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.analysis-panel-heading h3 {
+  margin-bottom: 6px;
+}
+
+.analysis-panel-heading p {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.6;
+}
+
 .analysis-summary-card p,
 .analysis-component p {
   color: rgba(255, 255, 255, 0.72);
@@ -191,14 +215,150 @@
 }
 
 .analysis-diagram-panel {
-  overflow: hidden;
+  overflow: visible;
+}
+
+.analysis-diagram-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.analysis-diagram-actions button {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  color: #fff;
+  background: rgba(13, 4, 22, 0.5);
+  cursor: pointer;
+  font-weight: 800;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.analysis-diagram-actions button:hover {
+  border-color: rgba(255, 122, 162, 0.7);
+  background: rgba(233, 30, 99, 0.22);
+  transform: translateY(-1px);
+}
+
+.analysis-diagram-guide {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(300px, 1.1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.analysis-diagram-guide > div {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(13, 4, 22, 0.34);
+}
+
+.analysis-diagram-guide strong {
+  color: #fff;
+}
+
+.analysis-legend-grid,
+.analysis-edge-list {
+  display: grid;
+  gap: 10px;
+}
+
+.analysis-legend-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.analysis-legend-item b,
+.analysis-edge-list b {
+  color: #fff;
+}
+
+.analysis-legend-item small,
+.analysis-edge-list span {
+  display: block;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+}
+
+.analysis-legend-dot {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  margin-top: 3px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+}
+
+.analysis-legend-dot.is-project {
+  background: #ff4d8d;
+}
+
+.analysis-legend-dot.is-directory {
+  background: #6d2f5f;
+}
+
+.analysis-legend-dot.is-file {
+  background: #2f1a3a;
+}
+
+.analysis-legend-dot.is-symbol {
+  background: #172033;
 }
 
 .analysis-diagram {
-  overflow-x: auto;
-  padding: 18px;
+  position: relative;
+  overscroll-behavior: contain;
+  overflow: hidden;
+  height: 80vh;
+  min-height: 520px;
   border-radius: 20px;
   background: rgba(13, 4, 22, 0.54);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.analysis-diagram:active {
+  cursor: grabbing;
+}
+
+.analysis-diagram-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.analysis-diagram-canvas svg {
+  display: block;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.analysis-diagram-zoom-indicator {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-full);
+  background: rgba(13, 4, 22, 0.72);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  pointer-events: none;
 }
 
 .analysis-code-block {
@@ -273,7 +433,13 @@
 
   .analysis-hero,
   .analysis-grid,
+  .analysis-diagram-guide,
   .analysis-provider-options {
     grid-template-columns: 1fr;
+  }
+
+  .analysis-diagram {
+    height: 72vh;
+    min-height: 420px;
   }
 }

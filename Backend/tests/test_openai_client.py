@@ -74,7 +74,7 @@ class OpenAIClientTests(unittest.TestCase):
                             {
                                 "summary": "GPT summary",
                                 "components": [{"file": "app.py", "description": "Entry point"}],
-                                "mermaid": "graph TD\n  A[\"App\"]",
+                                "mermaid": "flowchart LR\n  APP[\"app.py\"]",
                             }
                         )
                     }
@@ -87,7 +87,7 @@ class OpenAIClientTests(unittest.TestCase):
         summary, components, mermaid, warnings, provider = result
         self.assertEqual(summary, "GPT summary")
         self.assertEqual(components, [{"file": "app.py", "description": "Entry point"}])
-        self.assertEqual(mermaid, "graph TD\n  A[\"App\"]")
+        self.assertEqual(mermaid, "flowchart LR\n  APP[\"app.py\"]")
         self.assertEqual(warnings, [])
         self.assertEqual(provider, "gpt")
         self.assertEqual(urlopen_mock.call_count, 1)
@@ -111,7 +111,7 @@ class OpenAIClientTests(unittest.TestCase):
         summary, components, mermaid, warnings, provider = result
         self.assertIn("sample projesinde 1 desteklenen kaynak dosya", summary)
         self.assertEqual(components[0]["file"], "app.py")
-        self.assertTrue(mermaid.startswith("graph TD"))
+        self.assertTrue(mermaid.startswith("flowchart LR"))
         self.assertEqual(provider, None)
         self.assertEqual(urlopen_mock.call_count, 3)
         self.assertEqual(len(warnings), 1)

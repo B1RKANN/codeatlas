@@ -80,7 +80,7 @@ class GeminiClientTests(unittest.TestCase):
                                         "components": [
                                             {"file": "app.py", "description": "Entry point"}
                                         ],
-                                        "mermaid": "graph TD\n  A[\"App\"]",
+                                        "mermaid": "flowchart LR\n  APP[\"app.py\"]",
                                     }
                                 )
                             }
@@ -97,7 +97,7 @@ class GeminiClientTests(unittest.TestCase):
         summary, components, mermaid, warnings, provider = result
         self.assertEqual(summary, "Gemini summary")
         self.assertEqual(components, [{"file": "app.py", "description": "Entry point"}])
-        self.assertEqual(mermaid, "graph TD\n  A[\"App\"]")
+        self.assertEqual(mermaid, "flowchart LR\n  APP[\"app.py\"]")
         self.assertEqual(warnings, [])
         self.assertEqual(provider, "gemini")
         self.assertEqual(urlopen_mock.call_count, 2)
@@ -115,7 +115,7 @@ class GeminiClientTests(unittest.TestCase):
         summary, components, mermaid, warnings, provider = result
         self.assertIn("sample projesinde 1 desteklenen kaynak dosya", summary)
         self.assertEqual(components[0]["file"], "app.py")
-        self.assertTrue(mermaid.startswith("graph TD"))
+        self.assertTrue(mermaid.startswith("flowchart LR"))
         self.assertEqual(provider, None)
         self.assertEqual(urlopen_mock.call_count, 3)
         self.assertEqual(len(warnings), 1)
@@ -133,7 +133,7 @@ class GeminiClientTests(unittest.TestCase):
                                     {
                                         "summary": "Gemini summary",
                                         "components": [],
-                                        "mermaid": "graph TD\n  A[\"App\"]",
+                                        "mermaid": "flowchart LR\n  APP[\"app.py\"]",
                                     }
                                 )
                             }
@@ -182,6 +182,27 @@ class GeminiClientTests(unittest.TestCase):
         self.assertIn("Gemini request failed after 3 attempt(s)", first_result[3][0])
         self.assertIn("Gemini rate limit is cooling down", second_result[3][0])
         self.assertEqual(second_result[4], None)
+
+    def test_normalize_components_fills_missing_files_from_fallback(self):
+        fallback = [
+            {"file": "src/App.tsx", "description": "tsx dosyasi."},
+            {"file": "src/api.ts", "description": "typescript dosyasi."},
+            {"file": "src/components/Login.tsx", "description": "tsx dosyasi."},
+        ]
+        generated = [
+            {"file": "src/api.ts", "description": "API isteklerini yonetir."},
+        ]
+
+        components = gemini_client._normalize_components(generated, fallback)
+
+        self.assertEqual(
+            components,
+            [
+                {"file": "src/api.ts", "description": "API isteklerini yonetir."},
+                {"file": "src/App.tsx", "description": "tsx dosyasi."},
+                {"file": "src/components/Login.tsx", "description": "tsx dosyasi."},
+            ],
+        )
 
 
 if __name__ == "__main__":
