@@ -3,7 +3,7 @@ import mermaid from 'mermaid'
 import Navbar from '../components/Navbar'
 import './AnalysisPage.css'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || `${window.location.protocol}//${window.location.hostname}:8000`
+const API_BASE_URL = import.meta.env.VITE_API_URL || ''
 
 const ANALYSIS_PROVIDERS = [
   {
@@ -60,13 +60,26 @@ function normalizeMermaid(source) {
   return text
     .split('\n')
     .map((line) => {
-      const subgraphMatch = line.match(/^(\s*)subgraph\s+"([^"]+)"\s*$/)
+      const subgraphMatch = line.match(/^(\s*)subgraph\s+(.+?)\s*$/)
       if (subgraphMatch) {
-        const [, indent, title] = subgraphMatch
-        const safeTitle = title.replaceAll('"', "'")
-        const id = `subgraph_${subgraphIndex}`
+        const [, indent, value] = subgraphMatch
+        const id = `ca_subgraph_${subgraphIndex}`
         subgraphIndex += 1
-        return `${indent}subgraph ${id}["${safeTitle}"]`
+
+        const quotedTitleMatch = value.match(/^"([^"]+)"$/)
+        if (quotedTitleMatch) {
+          const safeTitle = quotedTitleMatch[1].replaceAll('"', "'")
+          return `${indent}subgraph ${id}["${safeTitle}"]`
+        }
+
+        const idMatch = value.match(/^([^\s[({]+)(.*)$/)
+        if (idMatch) {
+          const [, title, label] = idMatch
+          const safeTitle = title.replaceAll('"', "'")
+          return label.trim() ? `${indent}subgraph ${id}${label}` : `${indent}subgraph ${id}["${safeTitle}"]`
+        }
+
+        return `${indent}subgraph ${id}`
       }
 
       return line.replace(/--\s+(.+?)\s+-->/g, (_, label) => `-->|${label.trim().replaceAll('|', '/')}|`)
