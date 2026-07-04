@@ -1,0 +1,248 @@
+flowchart LR
+  project["flask"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["flask-main/docs"]
+    group_0_hub["flask-main/docs"]
+    group_0_hub --> file_0["conf.py"]
+    file_0 --> file_0_symbol_0(["github_link()"])
+    file_0 --> file_0_symbol_1(["setup()"])
+  end
+  source --> group_1_hub
+  subgraph group_1["examples/celery"]
+    group_1_hub["examples/celery"]
+    group_1_hub --> file_1["make_celery.py"]
+  end
+  source --> group_2_hub
+  subgraph group_2["src/task_app"]
+    group_2_hub["src/task_app"]
+    group_2_hub --> file_2["__init__.py"]
+    file_2 --> file_2_symbol_0(["create_app()"])
+    file_2 --> file_2_symbol_1(["index()"])
+    file_2 --> file_2_symbol_2(["celery_init_app()"])
+    group_2_hub --> file_3["tasks.py"]
+    file_3 --> file_3_symbol_0(["add()"])
+    file_3 --> file_3_symbol_1(["block()"])
+    file_3 --> file_3_symbol_2(["process()"])
+    group_2_hub --> file_4["views.py"]
+    file_4 --> file_4_symbol_0(["result()"])
+    file_4 --> file_4_symbol_1(["add()"])
+    file_4 --> file_4_symbol_2(["block()"])
+  end
+  source --> group_3_hub
+  subgraph group_3["javascript/js_example"]
+    group_3_hub["javascript/js_example"]
+    group_3_hub --> file_5["__init__.py"]
+    group_3_hub --> file_6["views.py"]
+    file_6 --> file_6_symbol_0(["index()"])
+    file_6 --> file_6_symbol_1(["add()"])
+  end
+  source --> group_4_hub
+  subgraph group_4["javascript/tests"]
+    group_4_hub["javascript/tests"]
+    group_4_hub --> file_7["conftest.py"]
+    file_7 --> file_7_symbol_0(["fixture_app()"])
+    file_7 --> file_7_symbol_1(["client()"])
+    group_4_hub --> file_8["test_js_example.py"]
+    file_8 --> file_8_symbol_0(["test_index()"])
+    file_8 --> file_8_symbol_1(["check()"])
+    file_8 --> file_8_symbol_2(["test_add()"])
+  end
+  source --> group_5_hub
+  subgraph group_5["tutorial/flaskr"]
+    group_5_hub["tutorial/flaskr"]
+    group_5_hub --> file_9["__init__.py"]
+    file_9 --> file_9_symbol_0(["create_app()"])
+    file_9 --> file_9_symbol_1(["hello()"])
+    group_5_hub --> file_10["auth.py"]
+    file_10 --> file_10_symbol_0(["login_required()"])
+    file_10 --> file_10_symbol_1(["wrapped_view()"])
+    file_10 --> file_10_symbol_2(["load_logged_in_user()"])
+    group_5_hub --> file_11["blog.py"]
+    file_11 --> file_11_symbol_0(["index()"])
+    file_11 --> file_11_symbol_1(["get_post()"])
+    file_11 --> file_11_symbol_2(["create()"])
+    group_5_hub --> file_12["db.py"]
+    file_12 --> file_12_symbol_0(["get_db()"])
+    file_12 --> file_12_symbol_1(["close_db()"])
+    file_12 --> file_12_symbol_2(["init_db()"])
+  end
+  source --> group_6_hub
+  subgraph group_6["tutorial/tests"]
+    group_6_hub["tutorial/tests"]
+    group_6_hub --> file_13["conftest.py"]
+    file_13 --> file_13_symbol_0(["app()"])
+    file_13 --> file_13_symbol_1(["client()"])
+    file_13 --> file_13_symbol_2(["runner()"])
+    group_6_hub --> file_14["test_auth.py"]
+    file_14 --> file_14_symbol_0(["test_register()"])
+    file_14 --> file_14_symbol_1(["test_register_validate_input()"])
+    file_14 --> file_14_symbol_2(["test_login()"])
+    group_6_hub --> file_15["test_blog.py"]
+    file_15 --> file_15_symbol_0(["test_index()"])
+    file_15 --> file_15_symbol_1(["test_login_required()"])
+    file_15 --> file_15_symbol_2(["test_author_required()"])
+    group_6_hub --> file_16["test_db.py"]
+    file_16 --> file_16_symbol_0(["test_get_close_db()"])
+    file_16 --> file_16_symbol_1(["test_init_db_command()"])
+    file_16 --> file_16_symbol_2(["Recorder"])
+    group_6_hub --> file_17["test_factory.py"]
+    file_17 --> file_17_symbol_0(["test_config()"])
+    file_17 --> file_17_symbol_1(["test_hello()"])
+  end
+  source --> group_7_hub
+  subgraph group_7["src/flask"]
+    group_7_hub["src/flask"]
+    group_7_hub --> file_18["__init__.py"]
+    group_7_hub --> file_19["__main__.py"]
+    group_7_hub --> file_20["app.py"]
+    file_20 --> file_20_symbol_0(["_make_timedelta()"])
+    file_20 --> file_20_symbol_1(["remove_ctx()"])
+    file_20 --> file_20_symbol_2(["wrapper()"])
+    group_7_hub --> file_21["blueprints.py"]
+    file_21 --> file_21_symbol_0(["Blueprint"])
+    file_21 --> file_21_symbol_1(["__init__()"])
+    file_21 --> file_21_symbol_2(["get_send_file_max_age()"])
+    group_7_hub --> file_22["cli.py"]
+    file_22 --> file_22_symbol_0(["NoAppException"])
+    file_22 --> file_22_symbol_1(["find_best_app()"])
+    file_22 --> file_22_symbol_2(["_called_with_wrong_args()"])
+    group_7_hub --> file_23["config.py"]
+    file_23 --> file_23_symbol_0(["ConfigAttribute"])
+    file_23 --> file_23_symbol_1(["__init__()"])
+    file_23 --> file_23_symbol_2(["__get__()"])
+    group_7_hub --> file_24["ctx.py"]
+    file_24 --> file_24_symbol_0(["_AppCtxGlobals"])
+    file_24 --> file_24_symbol_1(["__getattr__()"])
+    file_24 --> file_24_symbol_2(["__setattr__()"])
+    group_7_hub --> file_25["debughelpers.py"]
+    file_25 --> file_25_symbol_0(["UnexpectedUnicodeError"])
+    file_25 --> file_25_symbol_1(["DebugFilesKeyError"])
+    file_25 --> file_25_symbol_2(["__init__()"])
+    group_7_hub --> group_7_more["+2 more files"]
+  end
+  file_2 -.-> file_4
+  file_4 -.-> file_3
+  file_5 -.-> file_4
+  file_6 -.-> file_20
+  file_7 -.-> file_20
+  file_9 -.-> file_12
+  file_9 -.-> file_10
+  file_9 -.-> file_11
+  file_10 -.-> file_12
+  file_11 -.-> file_10
+  file_11 -.-> file_12
+  file_18 -.-> file_20
+  file_18 -.-> file_21
+  file_18 -.-> file_23
+  file_18 -.-> file_24
+  file_19 -.-> file_22
+  file_20 -.-> file_22
+  file_20 -.-> file_24
+  file_20 -.-> file_25
+  file_21 -.-> file_22
+  file_22 -.-> file_20
+  file_24 -.-> file_20
+  file_25 -.-> file_21
+  source --> more_files["+55 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_25 file;
+  class file_0_symbol_0 symbol;
+  class file_0_symbol_1 symbol;
+  class file_2_symbol_0 symbol;
+  class file_2_symbol_1 symbol;
+  class file_2_symbol_2 symbol;
+  class file_3_symbol_0 symbol;
+  class file_3_symbol_1 symbol;
+  class file_3_symbol_2 symbol;
+  class file_4_symbol_0 symbol;
+  class file_4_symbol_1 symbol;
+  class file_4_symbol_2 symbol;
+  class file_6_symbol_0 symbol;
+  class file_6_symbol_1 symbol;
+  class file_7_symbol_0 symbol;
+  class file_7_symbol_1 symbol;
+  class file_8_symbol_0 symbol;
+  class file_8_symbol_1 symbol;
+  class file_8_symbol_2 symbol;
+  class file_9_symbol_0 symbol;
+  class file_9_symbol_1 symbol;
+  class file_10_symbol_0 symbol;
+  class file_10_symbol_1 symbol;
+  class file_10_symbol_2 symbol;
+  class file_11_symbol_0 symbol;
+  class file_11_symbol_1 symbol;
+  class file_11_symbol_2 symbol;
+  class file_12_symbol_0 symbol;
+  class file_12_symbol_1 symbol;
+  class file_12_symbol_2 symbol;
+  class file_13_symbol_0 symbol;
+  class file_13_symbol_1 symbol;
+  class file_13_symbol_2 symbol;
+  class file_14_symbol_0 symbol;
+  class file_14_symbol_1 symbol;
+  class file_14_symbol_2 symbol;
+  class file_15_symbol_0 symbol;
+  class file_15_symbol_1 symbol;
+  class file_15_symbol_2 symbol;
+  class file_16_symbol_0 symbol;
+  class file_16_symbol_1 symbol;
+  class file_16_symbol_2 symbol;
+  class file_17_symbol_0 symbol;
+  class file_17_symbol_1 symbol;
+  class file_20_symbol_0 symbol;
+  class file_20_symbol_1 symbol;
+  class file_20_symbol_2 symbol;
+  class file_21_symbol_0 symbol;
+  class file_21_symbol_1 symbol;
+  class file_21_symbol_2 symbol;
+  class file_22_symbol_0 symbol;
+  class file_22_symbol_1 symbol;
+  class file_22_symbol_2 symbol;
+  class file_23_symbol_0 symbol;
+  class file_23_symbol_1 symbol;
+  class file_23_symbol_2 symbol;
+  class file_24_symbol_0 symbol;
+  class file_24_symbol_1 symbol;
+  class file_24_symbol_2 symbol;
+  class file_25_symbol_0 symbol;
+  class file_25_symbol_1 symbol;
+  class file_25_symbol_2 symbol;

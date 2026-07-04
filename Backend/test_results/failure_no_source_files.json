@@ -1,0 +1,8 @@
+{
+  "scenario": "no_source_files",
+  "actual": "HTTP 400 — {\"detail\":\"No supported source files were found in the zip.\"}",
+  "raw": {
+    "error": "{\"detail\":\"No supported source files were found in the zip.\"}",
+    "status_code": 400
+  }
+}

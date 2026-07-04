@@ -1,0 +1,72 @@
+{
+  "scenario": "circular_dependencies",
+  "actual": "200 OK | 3 dosya | 3 sembol | Mermaid GEÇERLİ (10 node)",
+  "raw": {
+    "project_name": "circular_deps",
+    "file_tree": "module_a.py\nmodule_b.py\nmodule_c.py",
+    "summary": "circular_deps projesinde 3 desteklenen kaynak dosya, 3 fonksiyon/class sembolü bulundu. Analiz edilen diller: python.",
+    "components": [
+      {
+        "file": "module_a.py",
+        "description": "python dosyası. Öne çıkan semboller: func_a."
+      },
+      {
+        "file": "module_b.py",
+        "description": "python dosyası. Öne çıkan semboller: func_b."
+      },
+      {
+        "file": "module_c.py",
+        "description": "python dosyası. Öne çıkan semboller: func_c."
+      }
+    ],
+    "files": [
+      {
+        "path": "module_a.py",
+        "language": "python",
+        "imports": [
+          "from module_c import func_c"
+        ],
+        "symbols": [
+          {
+            "name": "func_a",
+            "kind": "function",
+            "line": 2
+          }
+        ]
+      },
+      {
+        "path": "module_b.py",
+        "language": "python",
+        "imports": [
+          "from module_a import func_a"
+        ],
+        "symbols": [
+          {
+            "name": "func_b",
+            "kind": "function",
+            "line": 2
+          }
+        ]
+      },
+      {
+        "path": "module_c.py",
+        "language": "python",
+        "imports": [
+          "from module_b import func_b"
+        ],
+        "symbols": [
+          {
+            "name": "func_c",
+            "kind": "function",
+            "line": 2
+          }
+        ]
+      }
+    ],
+    "mermaid": "flowchart LR\n  project[\"circular_deps\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"Root\"]\n    group_0_hub[\"Root\"]\n    group_0_hub --> file_0[\"module_a.py\"]\n    file_0 --> file_0_symbol_0([\"func_a()\"])\n    group_0_hub --> file_1[\"module_b.py\"]\n    file_1 --> file_1_symbol_0([\"func_b()\"])\n    group_0_hub --> file_2[\"module_c.py\"]\n    file_2 --> file_2_symbol_0([\"func_c()\"])\n  end\n  file_0 -.-> file_2\n  file_1 -.-> file_0\n  file_2 -.-> file_1\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_2 file;\n  class file_0_symbol_0 symbol;\n  class file_1_symbol_0 symbol;\n  class file_2_symbol_0 symbol;",
+    "llm_provider": null,
+    "warnings": [
+      "Gemini rate limit is cooling down; returned local analysis. Try again in about 25 second(s)."
+    ]
+  }
+}

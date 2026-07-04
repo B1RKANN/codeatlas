@@ -1,0 +1,73 @@
+% ==========================================================
+% TABLE 1: TREE-SITTER METRICS
+% ==========================================================
+\begin{table}[htbp]
+\caption{Tree-sitter AST Parsing and Precision/Recall Metrics}
+\label{tab:treesitter}
+\centering
+\begin{tabular}{llcccccc}
+\hline
+Project & Language & Files & Symbols & Precision & Recall & F1-Score & Time (s) \\
+\hline
+Flask & Python & 83 & 1620 & 0.99 & 1.00 & 0.99 & 8.40 \\
+FastAPI & Python & 1133 & 5616 & 0.41 & 1.00 & 0.58 & 4.86 \\
+HTTPX & Python & 60 & 1241 & 1.00 & 1.00 & 1.00 & 2.48 \\
+SQLModel & Python & 319 & 1109 & 0.98 & 1.00 & 0.99 & 2.71 \\
+Express.js & Javascript & 141 & 127 & N/A & N/A & N/A & 2.54 \\
+Vite & Typescript & 1458 & 2669 & N/A & N/A & N/A & 4.60 \\
+Vue.js & Typescript & 425 & 1989 & N/A & N/A & N/A & 3.77 \\
+NestJS & Typescript & 1683 & 5166 & N/A & N/A & N/A & 12.79 \\
+Starlette & Python & 67 & 1686 & 1.00 & 1.00 & 1.00 & 2.67 \\
+CodeAtlas & Mixed & 48 & 150 & N/A & N/A & N/A & 2.17 \\
+\hline
+\end{tabular}
+\end{table}
+
+% ==========================================================
+% TABLE 2: MERMAID DIAGRAM METRICS
+% ==========================================================
+\begin{table}[htbp]
+\caption{Mermaid Diagram Structure and Quality Metrics}
+\label{tab:mermaid}
+\centering
+\begin{tabular}{lccccc}
+\hline
+Project & Valid & Nodes & Edges & Subgraphs & File Ref. Rate \\
+\hline
+Flask & Yes & 107 & 121 & 8 & \%51 \\
+FastAPI & Yes & 90 & 84 & 8 & \%36 \\
+HTTPX & Yes & 74 & 88 & 4 & \%35 \\
+SQLModel & Yes & 94 & 87 & 13 & \%48 \\
+Express.js & Yes & 87 & 62 & 24 & \%26 \\
+Vite & Yes & 101 & 82 & 20 & \%26 \\
+Vue.js & Yes & 89 & 88 & 12 & \%14 \\
+NestJS & Yes & 101 & 102 & 18 & \%10 \\
+Starlette & Yes & 70 & 67 & 2 & \%28 \\
+CodeAtlas & Yes & 95 & 83 & 11 & \%60 \\
+\hline
+\end{tabular}
+\end{table}
+
+% ==========================================================
+% TABLE 3: NLP VS BASELINE COMPARISON
+% ==========================================================
+\begin{table}[htbp]
+\caption{Semantic Filtering (NLP) vs Full AST Analysis (Baseline)}
+\label{tab:nlp}
+\centering
+\begin{tabular}{lccccc}
+\hline
+Project & Baseline Time (s) & NLP Time (s) & Delay/Diff (s) & Token Reduction & NLP Nodes \\
+\hline
+Flask & 8.40 & 2.47 & -5.93 & \%0 & 107 \\
+FastAPI & 4.86 & 4.77 & -0.09 & \%0 & 90 \\
+HTTPX & 2.48 & 2.64 & +0.16 & \%0 & 74 \\
+SQLModel & 2.71 & 2.74 & +0.03 & \%0 & 94 \\
+Express.js & 2.54 & 2.57 & +0.03 & \%0 & 87 \\
+Vite & 4.60 & 4.35 & -0.25 & \%0 & 101 \\
+Vue.js & 3.77 & 3.70 & -0.07 & \%0 & 89 \\
+NestJS & 12.79 & 4.57 & -8.22 & \%0 & 101 \\
+Starlette & 2.67 & 2.62 & -0.05 & \%0 & 70 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,2097 @@
+{
+  "project_name": "express",
+  "file_tree": "express-master\n  .editorconfig\n  .eslintignore\n  .eslintrc.yml\n  .github\n    dependabot.yml\n    workflows\n      ci.yml\n      codeql.yml\n      legacy.yml\n      scorecard.yml\n  .gitignore\n  .npmrc\n  History.md\n  LICENSE\n  Readme.md\n  examples\n    README.md\n    auth\n      index.js\n      views\n        foot.ejs\n        head.ejs\n        login.ejs\n    content-negotiation\n      db.js\n      index.js\n      users.js\n    cookie-sessions\n      index.js\n    cookies\n      index.js\n    downloads\n      files\n        CCTV大赛上海分赛区.txt\n        amazing.txt\n        notes\n          groceries.txt\n      index.js\n    ejs\n      index.js\n      public\n        stylesheets\n          style.css\n      views\n        footer.html\n        header.html\n        users.html\n    error\n      index.js\n    error-pages\n      index.js\n      views\n        404.ejs\n        500.ejs\n        error_header.ejs\n        footer.ejs\n        index.ejs\n    hello-world\n      index.js\n    markdown\n      index.js\n      views\n        index.md\n    multi-router\n      controllers\n        api_v1.js\n        api_v2.js\n      index.js\n    mvc\n      controllers\n        main\n          index.js\n        pet\n          index.js\n          views\n            edit.ejs\n            show.ejs\n        user\n          index.js\n          views\n            edit.hbs\n            list.hbs\n            show.hbs\n        user-pet\n          index.js\n      db.js\n      index.js\n      lib\n        boot.js\n      public\n        style.css\n      views\n        404.ejs\n        5xx.ejs\n    online\n      index.js\n    params\n      index.js\n    resource\n      index.js\n    route-map\n      index.js\n    route-middleware\n      index.js\n    route-separation\n      index.js\n      post.js\n      public\n        style.css\n      site.js\n      user.js\n      views\n        footer.ejs\n        header.ejs\n        index.ejs\n        posts\n          index.ejs\n        users\n          edit.ejs\n          index.ejs\n          view.ejs\n    search\n      index.js\n      public\n        client.js\n        index.html\n    session\n      index.js\n      redis.js\n    static-files\n      index.js\n      public\n        css\n          style.css\n        hello.txt\n        js\n          app.js\n    vhost\n      index.js\n    view-constructor\n      github-view.js\n      index.js\n    view-locals\n      index.js\n      user.js\n      views\n        index.ejs\n    web-service\n      index.js\n  index.js\n  lib\n    application.js\n    express.js\n    request.js\n    response.js\n    utils.js\n    view.js\n  package.json\n  test\n    Route.js\n    Router.js\n    acceptance\n      auth.js\n      content-negotiation.js\n      cookie-sessions.js\n      cookies.js\n      downloads.js\n      ejs.js\n      error-pages.js\n      error.js\n      hello-world.js\n      markdown.js\n      multi-router.js\n      mvc.js\n      params.js\n      resource.js\n      route-map.js\n      route-separation.js\n      vhost.js\n      web-service.js\n    app.all.js\n    app.engine.js\n    app.head.js\n    app.js\n    app.listen.js\n    app.locals.js\n    app.options.js\n    app.param.js\n    app.render.js\n    app.request.js\n    app.response.js\n    app.route.js\n    app.router.js\n    app.routes.error.js\n    app.use.js\n    config.js\n    exports.js\n    express.json.js\n    express.raw.js\n    express.static.js\n    express.text.js\n    express.urlencoded.js\n    fixtures\n      % of dogs.txt\n      .name\n      blog\n        index.html\n        post\n          index.tmpl\n      broken.send\n      default_layout\n        name.tmpl\n        user.tmpl\n      email.tmpl\n      empty.txt\n      local_layout\n        user.tmpl\n      name.tmpl\n      name.txt\n      nums.txt\n      pets\n        names.txt\n      snow ☃\n        .gitkeep\n      todo.html\n      todo.txt\n      user.html\n      user.tmpl\n      users\n        index.html\n        tobi.txt\n    middleware.basic.js\n    regression.js\n    req.accepts.js\n    req.acceptsCharsets.js\n    req.acceptsEncodings.js\n    req.acceptsLanguages.js\n    req.baseUrl.js\n    req.fresh.js\n    req.get.js\n    req.host.js\n    req.hostname.js\n    req.ip.js\n    req.ips.js\n    req.is.js\n    req.path.js\n    req.protocol.js\n    req.query.js\n    req.range.js\n    req.route.js\n    req.secure.js\n    req.signedCookies.js\n    req.stale.js\n    req.subdomains.js\n    req.xhr.js\n    res.append.js\n    res.attachment.js\n    res.clearCookie.js\n    res.cookie.js\n    res.download.js\n    res.format.js\n    res.get.js\n    res.json.js\n    res.jsonp.js\n    res.links.js\n    res.locals.js\n    res.location.js\n    res.redirect.js\n    res.render.js\n    res.send.js\n    res.sendFile.js\n    res.sendStatus.js\n    res.set.js\n    res.status.js\n    res.type.js\n    res.vary.js\n    support\n      env.js\n      tmpl.js\n      utils.js\n    utils.js",
+  "summary": "express projesinde 141 desteklenen kaynak dosya, 127 fonksiyon/class sembolü bulundu. Analiz edilen diller: javascript.",
+  "components": [
+    {
+      "file": "express-master/examples/auth/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: authenticate, restrict."
+    },
+    {
+      "file": "express-master/examples/content-negotiation/db.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/content-negotiation/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: format."
+    },
+    {
+      "file": "express-master/examples/content-negotiation/users.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/cookie-sessions/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/cookies/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/downloads/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/ejs/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/error-pages/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/error/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: error."
+    },
+    {
+      "file": "express-master/examples/hello-world/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/markdown/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/multi-router/controllers/api_v1.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/multi-router/controllers/api_v2.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/multi-router/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/controllers/main/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/controllers/pet/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/controllers/user-pet/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/controllers/user/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/db.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/mvc/lib/boot.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/online/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: list."
+    },
+    {
+      "file": "express-master/examples/params/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/resource/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/route-map/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/route-middleware/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: loadUser, andRestrictToSelf, andRestrictTo."
+    },
+    {
+      "file": "express-master/examples/route-separation/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/route-separation/post.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/route-separation/site.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/route-separation/user.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/search/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: initializeRedis."
+    },
+    {
+      "file": "express-master/examples/search/public/client.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/session/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/session/redis.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/static-files/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/static-files/public/js/app.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/vhost/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/view-constructor/github-view.js",
+      "description": "javascript dosyası. Öne çıkan semboller: GithubView."
+    },
+    {
+      "file": "express-master/examples/view-constructor/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/examples/view-locals/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: ferrets, count, users, count2, users2."
+    },
+    {
+      "file": "express-master/examples/view-locals/user.js",
+      "description": "javascript dosyası. Öne çıkan semboller: User."
+    },
+    {
+      "file": "express-master/examples/web-service/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: error."
+    },
+    {
+      "file": "express-master/index.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/lib/application.js",
+      "description": "javascript dosyası. Öne çıkan semboller: logerror, tryRender."
+    },
+    {
+      "file": "express-master/lib/express.js",
+      "description": "javascript dosyası. Öne çıkan semboller: createApplication, app."
+    },
+    {
+      "file": "express-master/lib/request.js",
+      "description": "javascript dosyası. Öne çıkan semboller: defineGetter."
+    },
+    {
+      "file": "express-master/lib/response.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sendfile, onaborted, ondirectory, onerror, onend, onfile, onfinish, onstream."
+    },
+    {
+      "file": "express-master/lib/utils.js",
+      "description": "javascript dosyası. Öne çıkan semboller: acceptParams, createETagGenerator, parseExtendedQueryString."
+    },
+    {
+      "file": "express-master/lib/view.js",
+      "description": "javascript dosyası. Öne çıkan semboller: View, tryStat."
+    },
+    {
+      "file": "express-master/test/Route.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/Router.js",
+      "description": "javascript dosyası. Öne çıkan semboller: handler, no, fn1, fn2."
+    },
+    {
+      "file": "express-master/test/acceptance/auth.js",
+      "description": "javascript dosyası. Öne çıkan semboller: getCookie."
+    },
+    {
+      "file": "express-master/test/acceptance/content-negotiation.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/cookie-sessions.js",
+      "description": "javascript dosyası. Öne çıkan semboller: getCookies."
+    },
+    {
+      "file": "express-master/test/acceptance/cookies.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/downloads.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/ejs.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/error-pages.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/error.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/hello-world.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/markdown.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/multi-router.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/mvc.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/params.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/resource.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/route-map.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/route-separation.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/vhost.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/acceptance/web-service.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.all.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.engine.js",
+      "description": "javascript dosyası. Öne çıkan semboller: render."
+    },
+    {
+      "file": "express-master/test/app.head.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.listen.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.locals.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.options.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.param.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.render.js",
+      "description": "javascript dosyası. Öne çıkan semboller: View, View, View, View, View, createApp."
+    },
+    {
+      "file": "express-master/test/app.request.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.response.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.route.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.router.js",
+      "description": "javascript dosyası. Öne çıkan semboller: handler1, handler2, fn, fn, fn1, fn2, fn3, supportsRegexp."
+    },
+    {
+      "file": "express-master/test/app.routes.error.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/app.use.js",
+      "description": "javascript dosyası. Öne çıkan semboller: fn1, fn2, fn1, fn2, fn1, fn2, fn3, fn1."
+    },
+    {
+      "file": "express-master/test/config.js",
+      "description": "javascript dosyası. Öne çıkan semboller: fn, fn, fn, fn1, fn2."
+    },
+    {
+      "file": "express-master/test/exports.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/express.json.js",
+      "description": "javascript dosyası. Öne çıkan semboller: accept, accept, accept, createApp, parseError, shouldContainInBody."
+    },
+    {
+      "file": "express-master/test/express.raw.js",
+      "description": "javascript dosyası. Öne çıkan semboller: accept, accept, accept, createApp."
+    },
+    {
+      "file": "express-master/test/express.static.js",
+      "description": "javascript dosyası. Öne çıkan semboller: createApp."
+    },
+    {
+      "file": "express-master/test/express.text.js",
+      "description": "javascript dosyası. Öne çıkan semboller: accept, accept, accept, createApp."
+    },
+    {
+      "file": "express-master/test/express.urlencoded.js",
+      "description": "javascript dosyası. Öne çıkan semboller: accept, accept, accept, createManyParams, createApp, expectKeyCount."
+    },
+    {
+      "file": "express-master/test/middleware.basic.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/regression.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.accepts.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.acceptsCharsets.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.acceptsEncodings.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.acceptsLanguages.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.baseUrl.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.fresh.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.get.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.host.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.hostname.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.ip.js",
+      "description": "javascript dosyası. Öne çıkan semboller: getExpectedClientAddress."
+    },
+    {
+      "file": "express-master/test/req.ips.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.is.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.path.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.protocol.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.query.js",
+      "description": "javascript dosyası. Öne çıkan semboller: createApp."
+    },
+    {
+      "file": "express-master/test/req.range.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.route.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.secure.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.signedCookies.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.stale.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.subdomains.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/req.xhr.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.append.js",
+      "description": "javascript dosyası. Öne çıkan semboller: shouldHaveHeaderValues."
+    },
+    {
+      "file": "express-master/test/res.attachment.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.clearCookie.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.cookie.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.download.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.format.js",
+      "description": "javascript dosyası. Öne çıkan semboller: test."
+    },
+    {
+      "file": "express-master/test/res.get.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.json.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.jsonp.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.links.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.locals.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.location.js",
+      "description": "javascript dosyası. Öne çıkan semboller: createRedirectServerForDomain, testRequestedRedirect."
+    },
+    {
+      "file": "express-master/test/res.redirect.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.render.js",
+      "description": "javascript dosyası. Öne çıkan semboller: createApp."
+    },
+    {
+      "file": "express-master/test/res.send.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.sendFile.js",
+      "description": "javascript dosyası. Öne çıkan semboller: handleHeaders, createApp."
+    },
+    {
+      "file": "express-master/test/res.sendStatus.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.set.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.status.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.type.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/res.vary.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/support/env.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "express-master/test/support/tmpl.js",
+      "description": "javascript dosyası. Öne çıkan semboller: onReadFile, generateVariableLookup."
+    },
+    {
+      "file": "express-master/test/support/utils.js",
+      "description": "javascript dosyası. Öne çıkan semboller: shouldHaveBody, shouldHaveHeader, shouldNotHaveBody, shouldNotHaveHeader, getMajorVersion, shouldSkipQuery."
+    },
+    {
+      "file": "express-master/test/utils.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    }
+  ],
+  "files": [
+    {
+      "path": "express-master/examples/auth/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "authenticate",
+          "kind": "function",
+          "line": 60
+        },
+        {
+          "name": "restrict",
+          "kind": "function",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/content-negotiation/db.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/content-negotiation/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "format",
+          "kind": "function",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/content-negotiation/users.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/cookie-sessions/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/cookies/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/downloads/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/ejs/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/error-pages/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/error/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "error",
+          "kind": "function",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/hello-world/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/markdown/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/multi-router/controllers/api_v1.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/multi-router/controllers/api_v2.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/multi-router/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/controllers/main/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/controllers/pet/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/controllers/user-pet/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/controllers/user/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/db.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/mvc/lib/boot.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/online/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "list",
+          "kind": "function",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/params/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/resource/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/route-map/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/route-middleware/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "loadUser",
+          "kind": "function",
+          "line": 25
+        },
+        {
+          "name": "andRestrictToSelf",
+          "kind": "function",
+          "line": 36
+        },
+        {
+          "name": "andRestrictTo",
+          "kind": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/route-separation/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/route-separation/post.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/route-separation/site.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/route-separation/user.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/search/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "initializeRedis",
+          "kind": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/search/public/client.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/session/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/session/redis.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/static-files/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/static-files/public/js/app.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/vhost/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/view-constructor/github-view.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "GithubView",
+          "kind": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/view-constructor/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/examples/view-locals/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "ferrets",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "count",
+          "kind": "function",
+          "line": 48
+        },
+        {
+          "name": "users",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "count2",
+          "kind": "function",
+          "line": 86
+        },
+        {
+          "name": "users2",
+          "kind": "function",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/view-locals/user.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "User",
+          "kind": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "express-master/examples/web-service/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "error",
+          "kind": "function",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "path": "express-master/index.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/lib/application.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "logerror",
+          "kind": "function",
+          "line": 615
+        },
+        {
+          "name": "tryRender",
+          "kind": "function",
+          "line": 625
+        }
+      ]
+    },
+    {
+      "path": "express-master/lib/express.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "createApplication",
+          "kind": "function",
+          "line": 36
+        },
+        {
+          "name": "app",
+          "kind": "function",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "path": "express-master/lib/request.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "defineGetter",
+          "kind": "function",
+          "line": 521
+        }
+      ]
+    },
+    {
+      "path": "express-master/lib/response.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "sendfile",
+          "kind": "function",
+          "line": 924
+        },
+        {
+          "name": "onaborted",
+          "kind": "function",
+          "line": 929
+        },
+        {
+          "name": "ondirectory",
+          "kind": "function",
+          "line": 939
+        },
+        {
+          "name": "onerror",
+          "kind": "function",
+          "line": 949
+        },
+        {
+          "name": "onend",
+          "kind": "function",
+          "line": 956
+        },
+        {
+          "name": "onfile",
+          "kind": "function",
+          "line": 963
+        },
+        {
+          "name": "onfinish",
+          "kind": "function",
+          "line": 968
+        },
+        {
+          "name": "onstream",
+          "kind": "function",
+          "line": 986
+        },
+        {
+          "name": "stringify",
+          "kind": "function",
+          "line": 1026
+        }
+      ]
+    },
+    {
+      "path": "express-master/lib/utils.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "acceptParams",
+          "kind": "function",
+          "line": 89
+        },
+        {
+          "name": "createETagGenerator",
+          "kind": "function",
+          "line": 249
+        },
+        {
+          "name": "parseExtendedQueryString",
+          "kind": "function",
+          "line": 267
+        }
+      ]
+    },
+    {
+      "path": "express-master/lib/view.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "tryStat",
+          "kind": "function",
+          "line": 197
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/Route.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/Router.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "handler",
+          "kind": "function",
+          "line": 94
+        },
+        {
+          "name": "no",
+          "kind": "function",
+          "line": 463
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 481
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 486
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/acceptance/auth.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "getCookie",
+          "kind": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/acceptance/content-negotiation.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/cookie-sessions.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "getCookies",
+          "kind": "function",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/acceptance/cookies.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/downloads.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/ejs.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/error-pages.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/error.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/hello-world.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/markdown.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/multi-router.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/mvc.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/params.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/resource.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/route-map.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/route-separation.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/vhost.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/acceptance/web-service.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.all.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.engine.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "render",
+          "kind": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/app.head.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.listen.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.locals.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.options.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.param.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.render.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 64
+        },
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 210
+        },
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 234
+        },
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 264
+        },
+        {
+          "name": "View",
+          "kind": "function",
+          "line": 357
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 386
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/app.request.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.response.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.route.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.router.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "handler1",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "handler2",
+          "kind": "function",
+          "line": 21
+        },
+        {
+          "name": "fn",
+          "kind": "function",
+          "line": 852
+        },
+        {
+          "name": "fn",
+          "kind": "function",
+          "line": 877
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 941
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 945
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 949
+        },
+        {
+          "name": "supportsRegexp",
+          "kind": "function",
+          "line": 1210
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/app.routes.error.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/app.use.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 92
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 97
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 129
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 134
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 176
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 181
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 204
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 209
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 214
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 232
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 237
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 242
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 299
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 304
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 367
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 372
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 377
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 395
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 400
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 405
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 423
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 428
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 433
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 473
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 478
+        },
+        {
+          "name": "fn3",
+          "kind": "function",
+          "line": 483
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/config.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "fn",
+          "kind": "function",
+          "line": 49
+        },
+        {
+          "name": "fn",
+          "kind": "function",
+          "line": 58
+        },
+        {
+          "name": "fn",
+          "kind": "function",
+          "line": 107
+        },
+        {
+          "name": "fn1",
+          "kind": "function",
+          "line": 123
+        },
+        {
+          "name": "fn2",
+          "kind": "function",
+          "line": 124
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/exports.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/express.json.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 356
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 370
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 382
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 722
+        },
+        {
+          "name": "parseError",
+          "kind": "function",
+          "line": 742
+        },
+        {
+          "name": "shouldContainInBody",
+          "kind": "function",
+          "line": 750
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/express.raw.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 243
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 256
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 268
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 492
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/express.static.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 804
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/express.text.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 258
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 272
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 284
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 549
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/express.urlencoded.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 487
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 501
+        },
+        {
+          "name": "accept",
+          "kind": "function",
+          "line": 513
+        },
+        {
+          "name": "createManyParams",
+          "kind": "function",
+          "line": 788
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 805
+        },
+        {
+          "name": "expectKeyCount",
+          "kind": "function",
+          "line": 824
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/middleware.basic.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/regression.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.accepts.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.acceptsCharsets.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.acceptsEncodings.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.acceptsLanguages.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.baseUrl.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.fresh.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.get.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.host.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.hostname.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.ip.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "getExpectedClientAddress",
+          "kind": "function",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/req.ips.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.is.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.path.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.protocol.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.query.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/req.range.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.route.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.secure.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.signedCookies.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.stale.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.subdomains.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/req.xhr.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.append.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "shouldHaveHeaderValues",
+          "kind": "function",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/res.attachment.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.clearCookie.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.cookie.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.download.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.format.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "test",
+          "kind": "function",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/res.get.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.json.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.jsonp.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.links.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.locals.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.location.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "createRedirectServerForDomain",
+          "kind": "function",
+          "line": 127
+        },
+        {
+          "name": "testRequestedRedirect",
+          "kind": "function",
+          "line": 141
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/res.redirect.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.render.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 361
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/res.send.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.sendFile.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "handleHeaders",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "createApp",
+          "kind": "function",
+          "line": 905
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/res.sendStatus.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.set.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.status.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.type.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/res.vary.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/support/env.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "express-master/test/support/tmpl.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "onReadFile",
+          "kind": "function",
+          "line": 6
+        },
+        {
+          "name": "generateVariableLookup",
+          "kind": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/support/utils.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "shouldHaveBody",
+          "kind": "function",
+          "line": 28
+        },
+        {
+          "name": "shouldHaveHeader",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "shouldNotHaveBody",
+          "kind": "function",
+          "line": 57
+        },
+        {
+          "name": "shouldNotHaveHeader",
+          "kind": "function",
+          "line": 69
+        },
+        {
+          "name": "getMajorVersion",
+          "kind": "function",
+          "line": 75
+        },
+        {
+          "name": "shouldSkipQuery",
+          "kind": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "express-master/test/utils.js",
+      "language": "javascript",
+      "imports": [],
+      "symbols": []
+    }
+  ],
+  "mermaid": "flowchart LR\n  project[\"express\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"examples/auth\"]\n    group_0_hub[\"examples/auth\"]\n    group_0_hub --> file_0[\"index.js\"]\n    file_0 --> file_0_symbol_0([\"authenticate()\"])\n    file_0 --> file_0_symbol_1([\"restrict()\"])\n  end\n  source --> group_1_hub\n  subgraph group_1[\"examples/content-negotiation\"]\n    group_1_hub[\"examples/content-negotiation\"]\n    group_1_hub --> file_1[\"db.js\"]\n    group_1_hub --> file_2[\"index.js\"]\n    file_2 --> file_2_symbol_0([\"format()\"])\n    group_1_hub --> file_3[\"users.js\"]\n  end\n  source --> group_2_hub\n  subgraph group_2[\"examples/cookie-sessions\"]\n    group_2_hub[\"examples/cookie-sessions\"]\n    group_2_hub --> file_4[\"index.js\"]\n  end\n  source --> group_3_hub\n  subgraph group_3[\"examples/cookies\"]\n    group_3_hub[\"examples/cookies\"]\n    group_3_hub --> file_5[\"index.js\"]\n  end\n  source --> group_4_hub\n  subgraph group_4[\"examples/downloads\"]\n    group_4_hub[\"examples/downloads\"]\n    group_4_hub --> file_6[\"index.js\"]\n  end\n  source --> group_5_hub\n  subgraph group_5[\"examples/ejs\"]\n    group_5_hub[\"examples/ejs\"]\n    group_5_hub --> file_7[\"index.js\"]\n  end\n  source --> group_6_hub\n  subgraph group_6[\"examples/error-pages\"]\n    group_6_hub[\"examples/error-pages\"]\n    group_6_hub --> file_8[\"index.js\"]\n  end\n  source --> group_7_hub\n  subgraph group_7[\"examples/error\"]\n    group_7_hub[\"examples/error\"]\n    group_7_hub --> file_9[\"index.js\"]\n    file_9 --> file_9_symbol_0([\"error()\"])\n  end\n  source --> group_8_hub\n  subgraph group_8[\"examples/hello-world\"]\n    group_8_hub[\"examples/hello-world\"]\n    group_8_hub --> file_10[\"index.js\"]\n  end\n  source --> group_9_hub\n  subgraph group_9[\"examples/markdown\"]\n    group_9_hub[\"examples/markdown\"]\n    group_9_hub --> file_11[\"index.js\"]\n  end\n  source --> group_10_hub\n  subgraph group_10[\"multi-router/controllers\"]\n    group_10_hub[\"multi-router/controllers\"]\n    group_10_hub --> file_12[\"api_v1.js\"]\n    group_10_hub --> file_13[\"api_v2.js\"]\n  end\n  source --> group_11_hub\n  subgraph group_11[\"examples/multi-router\"]\n    group_11_hub[\"examples/multi-router\"]\n    group_11_hub --> file_14[\"index.js\"]\n  end\n  source --> group_12_hub\n  subgraph group_12[\"controllers/main\"]\n    group_12_hub[\"controllers/main\"]\n    group_12_hub --> file_15[\"index.js\"]\n  end\n  source --> group_13_hub\n  subgraph group_13[\"controllers/pet\"]\n    group_13_hub[\"controllers/pet\"]\n    group_13_hub --> file_16[\"index.js\"]\n  end\n  source --> group_14_hub\n  subgraph group_14[\"controllers/user-pet\"]\n    group_14_hub[\"controllers/user-pet\"]\n    group_14_hub --> file_17[\"index.js\"]\n  end\n  source --> group_15_hub\n  subgraph group_15[\"controllers/user\"]\n    group_15_hub[\"controllers/user\"]\n    group_15_hub --> file_18[\"index.js\"]\n  end\n  source --> group_16_hub\n  subgraph group_16[\"examples/mvc\"]\n    group_16_hub[\"examples/mvc\"]\n    group_16_hub --> file_19[\"db.js\"]\n    group_16_hub --> file_20[\"index.js\"]\n  end\n  source --> group_17_hub\n  subgraph group_17[\"mvc/lib\"]\n    group_17_hub[\"mvc/lib\"]\n    group_17_hub --> file_21[\"boot.js\"]\n  end\n  source --> group_18_hub\n  subgraph group_18[\"examples/online\"]\n    group_18_hub[\"examples/online\"]\n    group_18_hub --> file_22[\"index.js\"]\n    file_22 --> file_22_symbol_0([\"list()\"])\n  end\n  source --> group_19_hub\n  subgraph group_19[\"examples/params\"]\n    group_19_hub[\"examples/params\"]\n    group_19_hub --> file_23[\"index.js\"]\n  end\n  source --> group_20_hub\n  subgraph group_20[\"examples/resource\"]\n    group_20_hub[\"examples/resource\"]\n    group_20_hub --> file_24[\"index.js\"]\n  end\n  source --> group_21_hub\n  subgraph group_21[\"examples/route-map\"]\n    group_21_hub[\"examples/route-map\"]\n    group_21_hub --> file_25[\"index.js\"]\n  end\n  source --> group_22_hub\n  subgraph group_22[\"examples/route-middleware\"]\n    group_22_hub[\"examples/route-middleware\"]\n    group_22_hub --> file_26[\"index.js\"]\n    file_26 --> file_26_symbol_0([\"loadUser()\"])\n    file_26 --> file_26_symbol_1([\"andRestrictToSelf()\"])\n    file_26 --> file_26_symbol_2([\"andRestrictTo()\"])\n  end\n  source --> group_23_hub\n  subgraph group_23[\"examples/route-separation\"]\n    group_23_hub[\"examples/route-separation\"]\n    group_23_hub --> file_27[\"index.js\"]\n  end\n  source --> more_files[\"+113 more files\"]\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class group_1_hub layer;\n  class group_2_hub layer;\n  class group_3_hub layer;\n  class group_4_hub layer;\n  class group_5_hub layer;\n  class group_6_hub layer;\n  class group_7_hub layer;\n  class group_8_hub layer;\n  class group_9_hub layer;\n  class group_10_hub layer;\n  class group_11_hub layer;\n  class group_12_hub layer;\n  class group_13_hub layer;\n  class group_14_hub layer;\n  class group_15_hub layer;\n  class group_16_hub layer;\n  class group_17_hub layer;\n  class group_18_hub layer;\n  class group_19_hub layer;\n  class group_20_hub layer;\n  class group_21_hub layer;\n  class group_22_hub layer;\n  class group_23_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_2 file;\n  class file_3 file;\n  class file_4 file;\n  class file_5 file;\n  class file_6 file;\n  class file_7 file;\n  class file_8 file;\n  class file_9 file;\n  class file_10 file;\n  class file_11 file;\n  class file_12 file;\n  class file_13 file;\n  class file_14 file;\n  class file_15 file;\n  class file_16 file;\n  class file_17 file;\n  class file_18 file;\n  class file_19 file;\n  class file_20 file;\n  class file_21 file;\n  class file_22 file;\n  class file_23 file;\n  class file_24 file;\n  class file_25 file;\n  class file_26 file;\n  class file_27 file;\n  class file_0_symbol_0 symbol;\n  class file_0_symbol_1 symbol;\n  class file_2_symbol_0 symbol;\n  class file_9_symbol_0 symbol;\n  class file_22_symbol_0 symbol;\n  class file_26_symbol_0 symbol;\n  class file_26_symbol_1 symbol;\n  class file_26_symbol_2 symbol;",
+  "llm_provider": null,
+  "warnings": [
+    "Gemini rate limit is cooling down; returned local analysis. Try again in about 20 second(s)."
+  ]
+}

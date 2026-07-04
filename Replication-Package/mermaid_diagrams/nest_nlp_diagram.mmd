@@ -1,0 +1,244 @@
+flowchart LR
+  project["nest"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["nest-master"]
+    group_0_hub["nest-master"]
+    group_0_hub --> file_0["gulpfile.js"]
+  end
+  source --> group_1_hub
+  subgraph group_1["nest-master/hooks"]
+    group_1_hub["nest-master/hooks"]
+    group_1_hub --> file_1["mocha-init-hook.ts"]
+    file_1 --> file_1_symbol_0(["mochaHooks()"])
+    file_1 --> file_1_symbol_1(["beforeAll()"])
+  end
+  source --> group_2_hub
+  subgraph group_2["integration/_support"]
+    group_2_hub["integration/_support"]
+    group_2_hub --> file_2["register-local-packages.ts"]
+  end
+  source --> group_3_hub
+  subgraph group_3["auto-mock/src"]
+    group_3_hub["auto-mock/src"]
+    group_3_hub --> file_3["bar.service.ts"]
+    file_3 --> file_3_symbol_0(["BarService"])
+    file_3 --> file_3_symbol_1(["constructor()"])
+    file_3 --> file_3_symbol_2(["bar()"])
+    group_3_hub --> file_4["foo.service.ts"]
+    file_4 --> file_4_symbol_0(["FooService"])
+    file_4 --> file_4_symbol_1(["foo()"])
+  end
+  source --> group_4_hub
+  subgraph group_4["auto-mock/test"]
+    group_4_hub["auto-mock/test"]
+    group_4_hub --> file_5["bar.service.spec.ts"]
+  end
+  source --> group_5_hub
+  subgraph group_5["cors/e2e"]
+    group_5_hub["cors/e2e"]
+    group_5_hub --> file_6["express.spec.ts"]
+    file_6 --> file_6_symbol_0(["configDelegation()"])
+    file_6 --> file_6_symbol_1(["configDelegation()"])
+    group_5_hub --> file_7["fastify.spec.ts"]
+    file_7 --> file_7_symbol_0(["configDelegation()"])
+  end
+  source --> group_6_hub
+  subgraph group_6["cors/src"]
+    group_6_hub["cors/src"]
+    group_6_hub --> file_8["app.controller.ts"]
+    file_8 --> file_8_symbol_0(["AppController"])
+    file_8 --> file_8_symbol_1(["getGlobals()"])
+    group_6_hub --> file_9["app.module.ts"]
+    file_9 --> file_9_symbol_0(["AppModule"])
+  end
+  source --> group_7_hub
+  subgraph group_7["discovery/e2e"]
+    group_7_hub["discovery/e2e"]
+    group_7_hub --> file_10["discover-by-meta.spec.ts"]
+  end
+  source --> group_8_hub
+  subgraph group_8["discovery/src"]
+    group_8_hub["discovery/src"]
+    group_8_hub --> file_11["app.module.ts"]
+    file_11 --> file_11_symbol_0(["AppModule"])
+    group_8_hub --> file_12["webhooks.explorer.ts"]
+    file_12 --> file_12_symbol_0(["WebhooksExplorer"])
+    file_12 --> file_12_symbol_1(["constructor()"])
+    file_12 --> file_12_symbol_2(["getWebhooks()"])
+  end
+  source --> group_9_hub
+  subgraph group_9["src/decorators"]
+    group_9_hub["src/decorators"]
+    group_9_hub --> file_13["non-applied.decorator.ts"]
+    group_9_hub --> file_14["webhook.decorators.ts"]
+  end
+  source --> group_10_hub
+  subgraph group_10["src/my-webhook"]
+    group_10_hub["src/my-webhook"]
+    group_10_hub --> file_15["cleanup.webhook.ts"]
+    file_15 --> file_15_symbol_0(["CleanupWebhook"])
+    file_15 --> file_15_symbol_1(["onStart()"])
+    group_10_hub --> file_16["flush.webhook.ts"]
+    file_16 --> file_16_symbol_0(["FlushWebhook"])
+    file_16 --> file_16_symbol_1(["onStart()"])
+    group_10_hub --> file_17["my-webhook.module.ts"]
+    file_17 --> file_17_symbol_0(["MyWebhookModule"])
+  end
+  source --> group_11_hub
+  subgraph group_11["graphql-code-first/e2e"]
+    group_11_hub["graphql-code-first/e2e"]
+    group_11_hub --> file_18["code-first.spec.ts"]
+    group_11_hub --> file_19["guards-filters.spec.ts"]
+    group_11_hub --> file_20["pipes.spec.ts"]
+  end
+  source --> group_12_hub
+  subgraph group_12["graphql-code-first/src"]
+    group_12_hub["graphql-code-first/src"]
+    group_12_hub --> file_21["app.module.ts"]
+    file_21 --> file_21_symbol_0(["AppModule"])
+    group_12_hub --> file_22["main.ts"]
+    file_22 --> file_22_symbol_0(["bootstrap()"])
+  end
+  source --> group_13_hub
+  subgraph group_13["common/filters"]
+    group_13_hub["common/filters"]
+    group_13_hub --> file_23["unauthorized.filter.ts"]
+    file_23 --> file_23_symbol_0(["UnauthorizedFilter"])
+    file_23 --> file_23_symbol_1(["catch()"])
+  end
+  source --> group_14_hub
+  subgraph group_14["common/guards"]
+    group_14_hub["common/guards"]
+    group_14_hub --> file_24["auth.guard.ts"]
+    file_24 --> file_24_symbol_0(["AuthGuard"])
+    file_24 --> file_24_symbol_1(["canActivate()"])
+  end
+  source --> group_15_hub
+  subgraph group_15["common/interceptors"]
+    group_15_hub["common/interceptors"]
+    group_15_hub --> file_25["data.interceptor.ts"]
+    file_25 --> file_25_symbol_0(["DataInterceptor"])
+    file_25 --> file_25_symbol_1(["intercept()"])
+  end
+  source --> group_16_hub
+  subgraph group_16["common/scalars"]
+    group_16_hub["common/scalars"]
+    group_16_hub --> file_26["date.scalar.ts"]
+    file_26 --> file_26_symbol_0(["DateScalar"])
+    file_26 --> file_26_symbol_1(["parseValue()"])
+    file_26 --> file_26_symbol_2(["serialize()"])
+  end
+  source --> group_17_hub
+  subgraph group_17["recipes/dto"]
+    group_17_hub["recipes/dto"]
+    group_17_hub --> file_27["new-recipe.input.ts"]
+    file_27 --> file_27_symbol_0(["NewRecipeInput"])
+  end
+  file_3 -.-> file_4
+  file_5 -.-> file_3
+  file_5 -.-> file_4
+  file_6 -.-> file_9
+  file_7 -.-> file_9
+  file_9 -.-> file_8
+  file_10 -.-> file_9
+  file_10 -.-> file_12
+  file_10 -.-> file_13
+  file_11 -.-> file_17
+  file_11 -.-> file_12
+  file_15 -.-> file_14
+  file_16 -.-> file_14
+  file_17 -.-> file_15
+  file_17 -.-> file_16
+  file_12 -.-> file_14
+  file_18 -.-> file_9
+  file_19 -.-> file_9
+  file_20 -.-> file_9
+  file_22 -.-> file_9
+  source --> more_files["+1655 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class group_8_hub layer;
+  class group_9_hub layer;
+  class group_10_hub layer;
+  class group_11_hub layer;
+  class group_12_hub layer;
+  class group_13_hub layer;
+  class group_14_hub layer;
+  class group_15_hub layer;
+  class group_16_hub layer;
+  class group_17_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_25 file;
+  class file_26 file;
+  class file_27 file;
+  class file_1_symbol_0 symbol;
+  class file_1_symbol_1 symbol;
+  class file_3_symbol_0 symbol;
+  class file_3_symbol_1 symbol;
+  class file_3_symbol_2 symbol;
+  class file_4_symbol_0 symbol;
+  class file_4_symbol_1 symbol;
+  class file_6_symbol_0 symbol;
+  class file_6_symbol_1 symbol;
+  class file_7_symbol_0 symbol;
+  class file_8_symbol_0 symbol;
+  class file_8_symbol_1 symbol;
+  class file_9_symbol_0 symbol;
+  class file_11_symbol_0 symbol;
+  class file_12_symbol_0 symbol;
+  class file_12_symbol_1 symbol;
+  class file_12_symbol_2 symbol;
+  class file_15_symbol_0 symbol;
+  class file_15_symbol_1 symbol;
+  class file_16_symbol_0 symbol;
+  class file_16_symbol_1 symbol;
+  class file_17_symbol_0 symbol;
+  class file_21_symbol_0 symbol;
+  class file_22_symbol_0 symbol;
+  class file_23_symbol_0 symbol;
+  class file_23_symbol_1 symbol;
+  class file_24_symbol_0 symbol;
+  class file_24_symbol_1 symbol;
+  class file_25_symbol_0 symbol;
+  class file_25_symbol_1 symbol;
+  class file_26_symbol_0 symbol;
+  class file_26_symbol_1 symbol;
+  class file_26_symbol_2 symbol;
+  class file_27_symbol_0 symbol;

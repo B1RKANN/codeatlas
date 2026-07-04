@@ -1,0 +1,58 @@
+{
+  "scenario": "dynamic_imports",
+  "actual": "200 OK | 2 dosya | 3 sembol | Mermaid GEÇERLİ (9 node)",
+  "raw": {
+    "project_name": "dynamic_imports",
+    "file_tree": "dynamic_app.py\nutils.py",
+    "summary": "dynamic_imports projesinde 2 desteklenen kaynak dosya, 3 fonksiyon/class sembolü bulundu. Analiz edilen diller: python.",
+    "components": [
+      {
+        "file": "dynamic_app.py",
+        "description": "python dosyası. Öne çıkan semboller: load_module, dynamic_load."
+      },
+      {
+        "file": "utils.py",
+        "description": "python dosyası. Öne çıkan semboller: helper."
+      }
+    ],
+    "files": [
+      {
+        "path": "dynamic_app.py",
+        "language": "python",
+        "imports": [
+          "import importlib",
+          "import sys"
+        ],
+        "symbols": [
+          {
+            "name": "load_module",
+            "kind": "function",
+            "line": 5
+          },
+          {
+            "name": "dynamic_load",
+            "kind": "function",
+            "line": 8
+          }
+        ]
+      },
+      {
+        "path": "utils.py",
+        "language": "python",
+        "imports": [],
+        "symbols": [
+          {
+            "name": "helper",
+            "kind": "function",
+            "line": 1
+          }
+        ]
+      }
+    ],
+    "mermaid": "flowchart LR\n  project[\"dynamic_imports\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"Root\"]\n    group_0_hub[\"Root\"]\n    group_0_hub --> file_0[\"dynamic_app.py\"]\n    file_0 --> file_0_symbol_0([\"load_module()\"])\n    file_0 --> file_0_symbol_1([\"dynamic_load()\"])\n    group_0_hub --> file_1[\"utils.py\"]\n    file_1 --> file_1_symbol_0([\"helper()\"])\n  end\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_0_symbol_0 symbol;\n  class file_0_symbol_1 symbol;\n  class file_1_symbol_0 symbol;",
+    "llm_provider": null,
+    "warnings": [
+      "Gemini rate limit is cooling down; returned local analysis. Try again in about 27 second(s)."
+    ]
+  }
+}

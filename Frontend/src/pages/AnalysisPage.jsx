@@ -1,33 +1,14 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react'
 import mermaid from 'mermaid'
 import Navbar from '../components/Navbar'
+import { useLang } from '../context/LanguageContext'
 import './AnalysisPage.css'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || ''
 
-const ANALYSIS_PROVIDERS = [
-  {
-    value: 'gemini',
-    label: 'Gemini',
-    description: 'Google Gemini ile hızlı mimari özet ve diyagram üretimi.',
-  },
-  {
-    value: 'gpt',
-    label: 'GPT-4o mini',
-    description: 'OpenAI GPT-4o mini ile alternatif mimari analiz.',
-  },
-]
-
-const DIAGRAM_NODE_LEGEND = [
-  { color: 'project', title: 'Proje', description: 'Analiz edilen zip/proje kökü.' },
-  { color: 'directory', title: 'Mimari katman', description: 'Aynı klasördeki dosyaları gruplayan bileşen alanı.' },
-  { color: 'file', title: 'Dosya / bileşen', description: 'Diyagramda görünen önemli kaynak dosyalar.' },
-  { color: 'symbol', title: 'Fonksiyon / class', description: 'Dosyanın içindeki seçilmiş önemli semboller.' },
-]
-
-const DIAGRAM_EDGE_LEGEND = [
-  { label: 'düz çizgi', description: 'Proje, katman, dosya ve sembol hiyerarşisini gösterir.' },
-  { label: 'kesik çizgi', description: 'Dosyalar arasındaki import veya bağımlılık ilişkisini gösterir.' },
+const ANALYSIS_PROVIDER_VALUES = [
+  { value: 'gemini', label: 'Gemini', descKey: 'provider_gemini_desc' },
+  { value: 'gpt', label: 'GPT-4o mini', descKey: 'provider_gpt_desc' },
 ]
 
 const MIN_DIAGRAM_SCALE = 0.12
@@ -88,6 +69,7 @@ function normalizeMermaid(source) {
 }
 
 function AnalysisPage() {
+  const { t } = useLang()
   const diagramId = useId().replaceAll(':', '')
   const diagramViewportRef = useRef(null)
   const diagramContentRef = useRef(null)
@@ -169,7 +151,7 @@ function AnalysisPage() {
       .catch((err) => {
         if (isMounted) {
           setDiagramSvg('')
-          setDiagramError(err?.message || 'Mermaid diyagramı render edilemedi.')
+          setDiagramError(err?.message || t('mermaid_error'))
         }
       })
 
@@ -321,7 +303,7 @@ function AnalysisPage() {
   const handleSubmit = async (event) => {
     event.preventDefault()
     if (!selectedFile) {
-      setError('Lütfen analiz edilecek .zip dosyasını seçin.')
+      setError(t('analysis_error_no_file'))
       return
     }
 
@@ -341,15 +323,32 @@ function AnalysisPage() {
       })
       const data = await response.json()
       if (!response.ok) {
-        throw new Error(data.detail || 'Analiz isteği başarısız oldu.')
+        throw new Error(data.detail || t('analysis_error_fail'))
       }
       setResult(data)
     } catch (err) {
-      setError(err.message || 'Beklenmeyen bir hata oluştu.')
+      setError(err.message || t('analysis_error_generic'))
     } finally {
       setIsLoading(false)
     }
   }
+
+  const ANALYSIS_PROVIDERS = ANALYSIS_PROVIDER_VALUES.map((p) => ({
+    ...p,
+    description: t(p.descKey),
+  }))
+
+  const DIAGRAM_NODE_LEGEND = [
+    { color: 'project', title: t('legend_project_title'), description: t('legend_project_desc') },
+    { color: 'directory', title: t('legend_directory_title'), description: t('legend_directory_desc') },
+    { color: 'file', title: t('legend_file_title'), description: t('legend_file_desc') },
+    { color: 'symbol', title: t('legend_symbol_title'), description: t('legend_symbol_desc') },
+  ]
+
+  const DIAGRAM_EDGE_LEGEND = [
+    { label: t('edge_solid'), description: t('edge_solid_desc') },
+    { label: t('edge_dashed'), description: t('edge_dashed_desc') },
+  ]
 
   return (
     <>
@@ -357,23 +356,20 @@ function AnalysisPage() {
       <main className="analysis-page">
       <section className="analysis-hero">
         <div>
-          <p className="analysis-eyebrow">CodeAtlas</p>
-          <h1>Zip yükle, mimariyi Mermaid diyagramına dönüştür.</h1>
-          <p className="analysis-lead">
-            Backend zip içindeki Python ve JS/TS dosyalarını Tree-sitter ile analiz eder,
-            seçtiğin LLM sağlayıcısı varsa mimari özet ve diyagramı zenginleştirir.
-          </p>
+          <p className="analysis-eyebrow">{t('analysis_eyebrow')}</p>
+          <h1>{t('analysis_hero_title')}</h1>
+          <p className="analysis-lead">{t('analysis_lead')}</p>
         </div>
 
         <form className="analysis-upload-card" onSubmit={handleSubmit}>
           <label className="analysis-file-drop">
-            <span>{selectedFile ? selectedFile.name : 'Proje zip dosyası seç'}</span>
-            <small>Desteklenen diller: Python, JavaScript, TypeScript. Varsayılan zip limiti: 100 MB.</small>
+            <span>{selectedFile ? selectedFile.name : t('analysis_file_select')}</span>
+            <small>{t('analysis_file_hint')}</small>
             <input type="file" accept=".zip,application/zip" onChange={handleFileChange} />
           </label>
 
           <fieldset className="analysis-provider-picker">
-            <legend>Analiz sağlayıcısı</legend>
+            <legend>{t('analysis_provider_label')}</legend>
             <div className="analysis-provider-options">
               {ANALYSIS_PROVIDERS.map((provider) => (
                 <label
@@ -400,12 +396,12 @@ function AnalysisPage() {
               checked={useNlp}
               onChange={(event) => setUseNlp(event.target.checked)}
             />
-            <span>NLP ile dosya seçimini kullan</span>
-            <small>Kapalıyken LLM prompt'una tüm Tree-sitter analizi gönderilir; daha detaylı ama daha uzun sürebilir.</small>
+            <span>{t('analysis_nlp_label')}</span>
+            <small>{t('analysis_nlp_hint')}</small>
           </label>
 
           <button type="submit" disabled={isLoading}>
-            {isLoading ? 'Analiz ediliyor...' : 'Analizi Başlat'}
+            {isLoading ? t('analysis_loading') : t('analysis_submit')}
           </button>
 
           {error && <p className="analysis-error">{error}</p>}
@@ -429,19 +425,19 @@ function AnalysisPage() {
             <article className="analysis-panel analysis-diagram-panel">
               <div className="analysis-panel-heading">
                 <div>
-                  <h3>Mermaid Diyagramı</h3>
-                  <p>Gruplar klasör/bileşen sınırlarını, kesik çizgiler dosyalar arası bağımlılıkları gösterir.</p>
+                  <h3>{t('diagram_title')}</h3>
+                  <p>{t('diagram_desc')}</p>
                 </div>
                 {diagramSvg && (
                   <div className="analysis-diagram-actions">
-                    <button type="button" onClick={resetDiagramZoom}>Reset Zoom</button>
-                    <button type="button" onClick={fitDiagramToView}>Fit View</button>
+                    <button type="button" onClick={resetDiagramZoom}>{t('diagram_reset')}</button>
+                    <button type="button" onClick={fitDiagramToView}>{t('diagram_fit')}</button>
                   </div>
                 )}
               </div>
-              <div className="analysis-diagram-guide" aria-label="Mermaid diyagram açıklaması">
+              <div className="analysis-diagram-guide" aria-label={t('diagram_title')}>
                 <div>
-                  <strong>Düğüm renkleri</strong>
+                  <strong>{t('diagram_node_colors')}</strong>
                   <div className="analysis-legend-grid">
                     {DIAGRAM_NODE_LEGEND.map((item) => (
                       <div className="analysis-legend-item" key={item.title}>
@@ -455,7 +451,7 @@ function AnalysisPage() {
                   </div>
                 </div>
                 <div>
-                  <strong>Çizgi anlamı</strong>
+                  <strong>{t('diagram_edge_title')}</strong>
                   <div className="analysis-edge-list">
                     {DIAGRAM_EDGE_LEGEND.map((item) => (
                       <span key={item.label} title={item.description}>
@@ -495,13 +491,13 @@ function AnalysisPage() {
             </article>
 
             <article className="analysis-panel">
-              <h3>Dosya Ağacı</h3>
+              <h3>{t('filetree_title')}</h3>
               <pre className="analysis-code-block">{result.file_tree}</pre>
             </article>
           </div>
 
           <article className="analysis-panel">
-            <h3>Bileşen Açıklamaları</h3>
+            <h3>{t('components_title')}</h3>
             <div className="analysis-component-list">
               {result.components.map((component) => (
                 <div className="analysis-component" key={`${component.file}-${component.description}`}>
@@ -513,7 +509,7 @@ function AnalysisPage() {
           </article>
 
           <article className="analysis-panel">
-            <h3>Tree-sitter Sembolleri</h3>
+            <h3>{t('symbols_title')}</h3>
             <div className="analysis-symbol-list">
               {result.files.map((file) => (
                 <details key={file.path}>
@@ -523,7 +519,7 @@ function AnalysisPage() {
                       <li key={`${file.path}-${symbol.kind}-${symbol.name}-${symbol.line}`}>
                         <span>{symbol.kind}</span>
                         <strong>{symbol.name}</strong>
-                        <em>satır {symbol.line}</em>
+                        <em>{t('symbol_line')} {symbol.line}</em>
                       </li>
                     ))}
                   </ul>

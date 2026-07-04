@@ -1,0 +1,212 @@
+flowchart LR
+  project["sqlmodel"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["docs/js"]
+    group_0_hub["docs/js"]
+    group_0_hub --> file_0["custom.js"]
+    file_0 --> file_0_symbol_0(["setupTermynal()"])
+    file_0 --> file_0_symbol_1(["createTermynals()"])
+    file_0 --> file_0_symbol_2(["saveBuffer()"])
+    group_0_hub --> file_1["termynal.js"]
+    file_1 --> file_1_symbol_0(["Termynal"])
+    file_1 --> file_1_symbol_1(["constructor()"])
+    file_1 --> file_1_symbol_2(["loadLines()"])
+  end
+  source --> group_1_hub
+  subgraph group_1["sqlmodel-main/docs_src"]
+    group_1_hub["sqlmodel-main/docs_src"]
+    group_1_hub --> file_2["__init__.py"]
+  end
+  source --> group_2_hub
+  subgraph group_2["docs_src/advanced"]
+    group_2_hub["docs_src/advanced"]
+    group_2_hub --> file_3["__init__.py"]
+  end
+  source --> group_3_hub
+  subgraph group_3["advanced/decimal"]
+    group_3_hub["advanced/decimal"]
+    group_3_hub --> file_4["__init__.py"]
+    group_3_hub --> file_5["tutorial001_py310.py"]
+    file_5 --> file_5_symbol_0(["Hero"])
+    file_5 --> file_5_symbol_1(["create_db_and_tables()"])
+    file_5 --> file_5_symbol_2(["create_heroes()"])
+  end
+  source --> group_4_hub
+  subgraph group_4["advanced/uuid"]
+    group_4_hub["advanced/uuid"]
+    group_4_hub --> file_6["__init__.py"]
+    group_4_hub --> file_7["tutorial001_py310.py"]
+    file_7 --> file_7_symbol_0(["Hero"])
+    file_7 --> file_7_symbol_1(["create_db_and_tables()"])
+    file_7 --> file_7_symbol_2(["create_hero()"])
+    group_4_hub --> file_8["tutorial002_py310.py"]
+    file_8 --> file_8_symbol_0(["Hero"])
+    file_8 --> file_8_symbol_1(["create_db_and_tables()"])
+    file_8 --> file_8_symbol_2(["create_hero()"])
+  end
+  source --> group_5_hub
+  subgraph group_5["docs_src/tutorial"]
+    group_5_hub["docs_src/tutorial"]
+    group_5_hub --> file_9["__init__.py"]
+  end
+  source --> group_6_hub
+  subgraph group_6["tutorial/automatic_id_none_refresh"]
+    group_6_hub["tutorial/automatic_id_none_refresh"]
+    group_6_hub --> file_10["__init__.py"]
+    group_6_hub --> file_11["tutorial001_py310.py"]
+    file_11 --> file_11_symbol_0(["Hero"])
+    file_11 --> file_11_symbol_1(["create_db_and_tables()"])
+    file_11 --> file_11_symbol_2(["create_heroes()"])
+    group_6_hub --> file_12["tutorial002_py310.py"]
+    file_12 --> file_12_symbol_0(["Hero"])
+    file_12 --> file_12_symbol_1(["create_db_and_tables()"])
+    file_12 --> file_12_symbol_2(["create_heroes()"])
+  end
+  source --> group_7_hub
+  subgraph group_7["tutorial/code_structure"]
+    group_7_hub["tutorial/code_structure"]
+    group_7_hub --> file_13["__init__.py"]
+  end
+  source --> group_8_hub
+  subgraph group_8["code_structure/tutorial001_py310"]
+    group_8_hub["code_structure/tutorial001_py310"]
+    group_8_hub --> file_14["__init__.py"]
+    group_8_hub --> file_15["app.py"]
+    file_15 --> file_15_symbol_0(["create_heroes()"])
+    file_15 --> file_15_symbol_1(["main()"])
+    group_8_hub --> file_16["database.py"]
+    file_16 --> file_16_symbol_0(["create_db_and_tables()"])
+    group_8_hub --> file_17["models.py"]
+    file_17 --> file_17_symbol_0(["Team"])
+    file_17 --> file_17_symbol_1(["Hero"])
+  end
+  source --> group_9_hub
+  subgraph group_9["code_structure/tutorial002_py310"]
+    group_9_hub["code_structure/tutorial002_py310"]
+    group_9_hub --> file_18["__init__.py"]
+    group_9_hub --> file_19["app.py"]
+    file_19 --> file_19_symbol_0(["create_heroes()"])
+    file_19 --> file_19_symbol_1(["main()"])
+    group_9_hub --> file_20["database.py"]
+    file_20 --> file_20_symbol_0(["create_db_and_tables()"])
+    group_9_hub --> file_21["hero_model.py"]
+    file_21 --> file_21_symbol_0(["Hero"])
+    group_9_hub --> file_22["team_model.py"]
+    file_22 --> file_22_symbol_0(["Team"])
+  end
+  source --> group_10_hub
+  subgraph group_10["tutorial/connect"]
+    group_10_hub["tutorial/connect"]
+    group_10_hub --> file_23["__init__.py"]
+  end
+  source --> group_11_hub
+  subgraph group_11["connect/create_tables"]
+    group_11_hub["connect/create_tables"]
+    group_11_hub --> file_24["__init__.py"]
+    group_11_hub --> file_25["tutorial001_py310.py"]
+    file_25 --> file_25_symbol_0(["Team"])
+    file_25 --> file_25_symbol_1(["Hero"])
+    file_25 --> file_25_symbol_2(["create_db_and_tables()"])
+  end
+  source --> group_12_hub
+  subgraph group_12["connect/delete"]
+    group_12_hub["connect/delete"]
+    group_12_hub --> file_26["__init__.py"]
+    group_12_hub --> file_27["tutorial001_py310.py"]
+    file_27 --> file_27_symbol_0(["Team"])
+    file_27 --> file_27_symbol_1(["Hero"])
+    file_27 --> file_27_symbol_2(["create_db_and_tables()"])
+  end
+  file_15 -.-> file_16
+  file_15 -.-> file_17
+  file_19 -.-> file_16
+  file_19 -.-> file_21
+  file_19 -.-> file_22
+  file_21 -.-> file_22
+  file_22 -.-> file_21
+  source --> more_files["+291 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class group_8_hub layer;
+  class group_9_hub layer;
+  class group_10_hub layer;
+  class group_11_hub layer;
+  class group_12_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_25 file;
+  class file_26 file;
+  class file_27 file;
+  class file_0_symbol_0 symbol;
+  class file_0_symbol_1 symbol;
+  class file_0_symbol_2 symbol;
+  class file_1_symbol_0 symbol;
+  class file_1_symbol_1 symbol;
+  class file_1_symbol_2 symbol;
+  class file_5_symbol_0 symbol;
+  class file_5_symbol_1 symbol;
+  class file_5_symbol_2 symbol;
+  class file_7_symbol_0 symbol;
+  class file_7_symbol_1 symbol;
+  class file_7_symbol_2 symbol;
+  class file_8_symbol_0 symbol;
+  class file_8_symbol_1 symbol;
+  class file_8_symbol_2 symbol;
+  class file_11_symbol_0 symbol;
+  class file_11_symbol_1 symbol;
+  class file_11_symbol_2 symbol;
+  class file_12_symbol_0 symbol;
+  class file_12_symbol_1 symbol;
+  class file_12_symbol_2 symbol;
+  class file_15_symbol_0 symbol;
+  class file_15_symbol_1 symbol;
+  class file_16_symbol_0 symbol;
+  class file_17_symbol_0 symbol;
+  class file_17_symbol_1 symbol;
+  class file_19_symbol_0 symbol;
+  class file_19_symbol_1 symbol;
+  class file_20_symbol_0 symbol;
+  class file_21_symbol_0 symbol;
+  class file_22_symbol_0 symbol;
+  class file_25_symbol_0 symbol;
+  class file_25_symbol_1 symbol;
+  class file_25_symbol_2 symbol;
+  class file_27_symbol_0 symbol;
+  class file_27_symbol_1 symbol;
+  class file_27_symbol_2 symbol;

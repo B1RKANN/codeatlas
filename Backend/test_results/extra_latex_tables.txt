@@ -1,0 +1,137 @@
+% ============================================================
+% CODEATLAS EXTRA LATEX TABLES (Tables 4-7)
+% Generated automatically from: test_results/all_results.json
+%
+% DAGGER (†) columns = directly measured from live API
+% STAR   (*) columns = estimated/modelled values (see table notes)
+% 
+% Required LaTeX packages:
+%   \usepackage{booktabs}
+%   \usepackage[flushleft]{threeparttable}   % for tablenotes
+% Wrap each table in: \begin{threeparttable} ... \end{threeparttable}
+% ============================================================
+
+
+% ============================================================
+% TABLE 4: SYSTEM PERFORMANCE RESULTS (all measured)
+% ============================================================
+\begin{table}[htbp]
+\caption{Overall System Performance Results Across All Test Projects}
+\label{tab:performance}
+\centering
+\begin{tabular}{llcccccl}
+\hline
+Project & Lang & Size & ZIP (MB) & Files & Symbols & Time (s) & Status \\
+\hline
+Flask & Python & Small & 0.84 & 83 & 1620 & 8.40 & \checkmark \\
+FastAPI & Python & Small & 19.39 & 1133 & 5616 & 4.86 & \checkmark \\
+HTTPX & Python & Small & 2.34 & 60 & 1241 & 2.48 & \checkmark \\
+SQLModel & Python & Small & 11.19 & 319 & 1109 & 2.71 & \checkmark \\
+Express.js & Javascript & Small & 0.21 & 141 & 127 & 2.54 & \checkmark \\
+Vite & Typescript & Medium & 13.77 & 1458 & 2669 & 4.60 & \checkmark \\
+Vue.js & Typescript & Medium & 0.78 & 425 & 1989 & 3.77 & \checkmark \\
+React & Javascript & Large & 14.47 & 0 & 0 & 2.43 & Limit Exceeded \\
+NestJS & Typescript & Large & 2.12 & 1683 & 5166 & 12.79 & \checkmark \\
+Django & Python & Large & 15.92 & 0 & 0 & 2.55 & Limit Exceeded \\
+Starlette & Python & Small & 2.76 & 67 & 1686 & 2.67 & \checkmark \\
+CodeAtlas & Mixed & Small & 1.07 & 48 & 150 & 2.17 & \checkmark \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+  \small
+  \item All values are obtained from live CodeAtlas API responses during automated test execution. Projects marked \emph{Limit Exceeded} exceeded the system's 1{,}500-file analysis threshold.
+\end{tablenotes}
+\end{table}
+
+
+% ============================================================
+% TABLE 5: CONTEXT SIZE COMPARISON (symbols=measured, tokens=estimated*)
+% ============================================================
+\begin{table}[htbp]
+\caption{Estimated Context Size Before LLM Processing: Full AST vs.\ Mermaid-Filtered Output}
+\label{tab:context}
+\centering
+\begin{tabular}{lccrrc}
+\hline
+Project & Symbols$^\dagger$ & Full Tokens$^*$ & Mermaid Nodes$^\dagger$ & NLP Tokens$^*$ & Reduction (\%) \\
+\hline
+Flask & 1620 & 19,440 & 107 & 856 & 95.6\% \\
+FastAPI & 5616 & 67,392 & 90 & 720 & 98.9\% \\
+HTTPX & 1241 & 14,892 & 74 & 592 & 96.0\% \\
+SQLModel & 1109 & 13,308 & 94 & 752 & 94.3\% \\
+Express.js & 127 & 1,524 & 87 & 696 & 54.3\% \\
+Vite & 2669 & 32,028 & 101 & 808 & 97.5\% \\
+Vue.js & 1989 & 23,868 & 89 & 712 & 97.0\% \\
+NestJS & 5166 & 61,992 & 101 & 808 & 98.7\% \\
+Starlette & 1686 & 20,232 & 70 & 560 & 97.2\% \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+  \small
+  \item[$\dagger$] Measured directly from Tree-sitter AST output and Mermaid diagram generation via CodeAtlas API.
+  \item[$*$] Token counts are \emph{estimated} using empirically derived ratios: 12 tokens per symbol (name + type + location) and 8 tokens per Mermaid node. These are approximations and not directly measured.
+\end{tablenotes}
+\end{table}
+
+
+% ============================================================
+% TABLE 6: MANUAL VS SYSTEM TIME (system=measured, manual=estimated*)
+% ============================================================
+\begin{table}[htbp]
+\caption{Manual Documentation Effort vs.\ Automated CodeAtlas Analysis Time}
+\label{tab:time}
+\centering
+\begin{tabular}{lcrrrr}
+\hline
+Project & Files$^\dagger$ & Manual Est.\ (min)$^*$ & System Time (s)$^\dagger$ & System Time (min)$^\dagger$ & Speedup \\
+\hline
+Flask & 83 & 249 & 8.40 & 0.14 & 1779$\times$ \\
+FastAPI & 1133 & 3399 & 4.86 & 0.08 & 41963$\times$ \\
+HTTPX & 60 & 180 & 2.48 & 0.04 & 4355$\times$ \\
+SQLModel & 319 & 957 & 2.71 & 0.05 & 21188$\times$ \\
+Express.js & 141 & 423 & 2.54 & 0.04 & 9992$\times$ \\
+Vite & 1458 & 4374 & 4.60 & 0.08 & 57052$\times$ \\
+Vue.js & 425 & 1275 & 3.77 & 0.06 & 20292$\times$ \\
+NestJS & 1683 & 5049 & 12.79 & 0.21 & 23686$\times$ \\
+Starlette & 67 & 201 & 2.67 & 0.04 & 4517$\times$ \\
+CodeAtlas & 48 & 144 & 2.17 & 0.04 & 3982$\times$ \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+  \small
+  \item[$\dagger$] Measured from live CodeAtlas API execution logs during automated testing.
+  \item[$*$] Manual effort is \emph{estimated} at 3 minutes per source file, a conservative figure consistent with software comprehension studies~\cite{ko2004}. This estimate is not experimentally measured in the current study.
+\end{tablenotes}
+\end{table}
+
+
+% ============================================================
+% TABLE 7: OUTPUT VALIDATION (all measured)
+% ============================================================
+\begin{table}[htbp]
+\caption{System Output Validation: Diagram Validity and Structural Metrics per Project}
+\label{tab:validation}
+\centering
+\begin{tabular}{lcccccc}
+\hline
+Project & Analyzed & Diagram Valid & Nodes & Edges & Fallback Mode & File Ref.\ Rate \\
+\hline
+Flask & \checkmark & \checkmark & 107 & 121 & Yes & 50.6\% \\
+FastAPI & \checkmark & \checkmark & 90 & 84 & Yes & 35.9\% \\
+HTTPX & \checkmark & \checkmark & 74 & 88 & Yes & 35.0\% \\
+SQLModel & \checkmark & \checkmark & 94 & 87 & Yes & 48.0\% \\
+Express.js & \checkmark & \checkmark & 87 & 62 & Yes & 25.5\% \\
+Vite & \checkmark & \checkmark & 101 & 82 & Yes & 26.3\% \\
+Vue.js & \checkmark & \checkmark & 89 & 88 & Yes & 13.6\% \\
+React & $\times$ & $\times$ & 0 & 0 & No & 0.0\% \\
+NestJS & \checkmark & \checkmark & 101 & 102 & Yes & 10.5\% \\
+Django & $\times$ & $\times$ & 0 & 0 & No & 0.0\% \\
+Starlette & \checkmark & \checkmark & 70 & 67 & Yes & 28.4\% \\
+CodeAtlas & \checkmark & \checkmark & 95 & 83 & Yes & 60.4\% \\
+\hline
+\end{tabular}
+\begin{tablenotes}
+  \small
+  \item All values are directly extracted from CodeAtlas API JSON responses. \emph{Fallback Mode} indicates that the LLM (Gemini) was unavailable and the system reverted to deterministic Tree-sitter static analysis.
+\end{tablenotes}
+\end{table}

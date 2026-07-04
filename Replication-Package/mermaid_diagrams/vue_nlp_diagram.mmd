@@ -1,0 +1,205 @@
+flowchart LR
+  project["vue"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["benchmarks/dbmon"]
+    group_0_hub["benchmarks/dbmon"]
+    group_0_hub --> file_0["ENV.js"]
+    file_0 --> file_0_symbol_0(["formatElapsed()"])
+    file_0 --> file_0_symbol_1(["getElapsedClassName()"])
+    file_0 --> file_0_symbol_2(["countClassName()"])
+    group_0_hub --> file_1["app.js"]
+    file_1 --> file_1_symbol_0(["loadSamples()"])
+  end
+  source --> group_1_hub
+  subgraph group_1["dbmon/lib"]
+    group_1_hub["dbmon/lib"]
+    group_1_hub --> file_2["memory-stats.js"]
+    file_2 --> file_2_symbol_0(["MemoryStats()"])
+    file_2 --> file_2_symbol_1(["updateGraph()"])
+    file_2 --> file_2_symbol_2(["bytesToSize()"])
+    group_1_hub --> file_3["monitor.js"]
+    file_3 --> file_3_symbol_0(["RenderRate()"])
+  end
+  source --> group_2_hub
+  subgraph group_2["benchmarks/ssr"]
+    group_2_hub["benchmarks/ssr"]
+    group_2_hub --> file_4["common.js"]
+    file_4 --> file_4_symbol_0(["generateGrid()"])
+    group_2_hub --> file_5["renderToStream.js"]
+    group_2_hub --> file_6["renderToString.js"]
+  end
+  source --> group_3_hub
+  subgraph group_3["vue-main/compiler-sfc"]
+    group_3_hub["vue-main/compiler-sfc"]
+    group_3_hub --> file_7["index.d.ts"]
+    group_3_hub --> file_8["index.js"]
+  end
+  source --> group_4_hub
+  subgraph group_4["classic/commits"]
+    group_4_hub["classic/commits"]
+    group_4_hub --> file_9["app.js"]
+  end
+  source --> group_5_hub
+  subgraph group_5["classic/firebase"]
+    group_5_hub["classic/firebase"]
+    group_5_hub --> file_10["app.js"]
+  end
+  source --> group_6_hub
+  subgraph group_6["classic/grid"]
+    group_6_hub["classic/grid"]
+    group_6_hub --> file_11["grid.js"]
+  end
+  source --> group_7_hub
+  subgraph group_7["classic/svg"]
+    group_7_hub["classic/svg"]
+    group_7_hub --> file_12["svg.js"]
+    file_12 --> file_12_symbol_0(["valueToPoint()"])
+  end
+  source --> group_8_hub
+  subgraph group_8["classic/todomvc"]
+    group_8_hub["classic/todomvc"]
+    group_8_hub --> file_13["app.js"]
+    file_13 --> file_13_symbol_0(["onHashChange()"])
+  end
+  source --> group_9_hub
+  subgraph group_9["classic/tree"]
+    group_9_hub["classic/tree"]
+    group_9_hub --> file_14["tree.js"]
+  end
+  source --> group_10_hub
+  subgraph group_10["compiler-sfc/src"]
+    group_10_hub["compiler-sfc/src"]
+    group_10_hub --> file_15["babelUtils.ts"]
+    file_15 --> file_15_symbol_0(["walkIdentifiers()"])
+    file_15 --> file_15_symbol_1(["enter()"])
+    file_15 --> file_15_symbol_2(["leave()"])
+    group_10_hub --> file_16["compileScript.ts"]
+    file_16 --> file_16_symbol_0(["compileScript()"])
+    file_16 --> file_16_symbol_1(["helper()"])
+    file_16 --> file_16_symbol_2(["parse()"])
+    group_10_hub --> file_17["compileStyle.ts"]
+    file_17 --> file_17_symbol_0(["compileStyle()"])
+    file_17 --> file_17_symbol_1(["compileStyleAsync()"])
+    file_17 --> file_17_symbol_2(["doCompileStyle()"])
+    group_10_hub --> file_18["compileTemplate.ts"]
+    file_18 --> file_18_symbol_0(["compileTemplate()"])
+    file_18 --> file_18_symbol_1(["preprocess()"])
+    file_18 --> file_18_symbol_2(["actuallyCompile()"])
+    group_10_hub --> file_19["cssVars.ts"]
+    file_19 --> file_19_symbol_0(["genCssVarsFromList()"])
+    file_19 --> file_19_symbol_1(["genVarName()"])
+    file_19 --> file_19_symbol_2(["normalizeExpression()"])
+    group_10_hub --> file_20["index.ts"]
+    group_10_hub --> file_21["parse.ts"]
+    file_21 --> file_21_symbol_0(["parse()"])
+    file_21 --> file_21_symbol_1(["generateSourceMap()"])
+    group_10_hub --> file_22["parseComponent.ts"]
+    file_22 --> file_22_symbol_0(["parseComponent()"])
+    file_22 --> file_22_symbol_1(["warn()"])
+    file_22 --> file_22_symbol_2(["start()"])
+    group_10_hub --> group_10_more["+3 more files"]
+  end
+  source --> group_11_hub
+  subgraph group_11["src/stylePlugins"]
+    group_11_hub["src/stylePlugins"]
+    group_11_hub --> file_23["scoped.ts"]
+    file_23 --> file_23_symbol_0(["scopedPlugin()"])
+    file_23 --> file_23_symbol_1(["Rule()"])
+    file_23 --> file_23_symbol_2(["AtRule()"])
+    group_11_hub --> file_24["trim.ts"]
+    file_24 --> file_24_symbol_0(["trimPlugin()"])
+    file_24 --> file_24_symbol_1(["Once()"])
+  end
+  file_16 -.-> file_15
+  file_16 -.-> file_22
+  file_16 -.-> file_21
+  file_16 -.-> file_19
+  file_17 -.-> file_24
+  file_17 -.-> file_23
+  file_17 -.-> file_19
+  file_19 -.-> file_22
+  file_21 -.-> file_22
+  file_21 -.-> file_16
+  file_21 -.-> file_19
+  file_22 -.-> file_16
+  source --> more_files["+397 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class group_8_hub layer;
+  class group_9_hub layer;
+  class group_10_hub layer;
+  class group_11_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_0_symbol_0 symbol;
+  class file_0_symbol_1 symbol;
+  class file_0_symbol_2 symbol;
+  class file_1_symbol_0 symbol;
+  class file_2_symbol_0 symbol;
+  class file_2_symbol_1 symbol;
+  class file_2_symbol_2 symbol;
+  class file_3_symbol_0 symbol;
+  class file_4_symbol_0 symbol;
+  class file_12_symbol_0 symbol;
+  class file_13_symbol_0 symbol;
+  class file_15_symbol_0 symbol;
+  class file_15_symbol_1 symbol;
+  class file_15_symbol_2 symbol;
+  class file_16_symbol_0 symbol;
+  class file_16_symbol_1 symbol;
+  class file_16_symbol_2 symbol;
+  class file_17_symbol_0 symbol;
+  class file_17_symbol_1 symbol;
+  class file_17_symbol_2 symbol;
+  class file_18_symbol_0 symbol;
+  class file_18_symbol_1 symbol;
+  class file_18_symbol_2 symbol;
+  class file_19_symbol_0 symbol;
+  class file_19_symbol_1 symbol;
+  class file_19_symbol_2 symbol;
+  class file_21_symbol_0 symbol;
+  class file_21_symbol_1 symbol;
+  class file_22_symbol_0 symbol;
+  class file_22_symbol_1 symbol;
+  class file_22_symbol_2 symbol;
+  class file_23_symbol_0 symbol;
+  class file_23_symbol_1 symbol;
+  class file_23_symbol_2 symbol;
+  class file_24_symbol_0 symbol;
+  class file_24_symbol_1 symbol;

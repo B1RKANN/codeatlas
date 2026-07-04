@@ -1,0 +1,7283 @@
+{
+  "project_name": "httpx",
+  "file_tree": "httpx-master\n  .github\n    CONTRIBUTING.md\n    FUNDING.yml\n    ISSUE_TEMPLATE\n      1-issue.md\n      config.yml\n    PULL_REQUEST_TEMPLATE.md\n    dependabot.yml\n    workflows\n      publish.yml\n      test-suite.yml\n  .gitignore\n  CHANGELOG.md\n  LICENSE.md\n  README.md\n  docs\n    CNAME\n    advanced\n      authentication.md\n      clients.md\n      event-hooks.md\n      extensions.md\n      proxies.md\n      resource-limits.md\n      ssl.md\n      text-encodings.md\n      timeouts.md\n      transports.md\n    api.md\n    async.md\n    code_of_conduct.md\n    compatibility.md\n    contributing.md\n    css\n      custom.css\n    environment_variables.md\n    exceptions.md\n    http2.md\n    img\n      butterfly.png\n      gh-actions-fail-check.png\n      gh-actions-fail-test.png\n      gh-actions-fail.png\n      httpx-help.png\n      httpx-request.png\n      logo.jpg\n      rich-progress.gif\n      speakeasy.png\n      tqdm-progress.gif\n    index.md\n    logging.md\n    overrides\n      partials\n        nav.html\n    quickstart.md\n    third_party_packages.md\n    troubleshooting.md\n  httpx\n    __init__.py\n    __version__.py\n    _api.py\n    _auth.py\n    _client.py\n    _config.py\n    _content.py\n    _decoders.py\n    _exceptions.py\n    _main.py\n    _models.py\n    _multipart.py\n    _status_codes.py\n    _transports\n      __init__.py\n      asgi.py\n      base.py\n      default.py\n      mock.py\n      wsgi.py\n    _types.py\n    _urlparse.py\n    _urls.py\n    _utils.py\n    py.typed\n  mkdocs.yml\n  pyproject.toml\n  requirements.txt\n  scripts\n    check\n    clean\n    coverage\n    docs\n    install\n    lint\n    publish\n    sync-version\n    test\n  tests\n    __init__.py\n    client\n      __init__.py\n      test_async_client.py\n      test_auth.py\n      test_client.py\n      test_cookies.py\n      test_event_hooks.py\n      test_headers.py\n      test_properties.py\n      test_proxies.py\n      test_queryparams.py\n      test_redirects.py\n    common.py\n    concurrency.py\n    conftest.py\n    fixtures\n      .netrc\n      .netrc-nopassword\n    models\n      __init__.py\n      test_cookies.py\n      test_headers.py\n      test_queryparams.py\n      test_requests.py\n      test_responses.py\n      test_url.py\n      test_whatwg.py\n      whatwg.json\n    test_api.py\n    test_asgi.py\n    test_auth.py\n    test_config.py\n    test_content.py\n    test_decoders.py\n    test_exceptions.py\n    test_exported_members.py\n    test_main.py\n    test_multipart.py\n    test_status_codes.py\n    test_timeouts.py\n    test_utils.py\n    test_wsgi.py",
+  "summary": "httpx projesinde 60 desteklenen kaynak dosya, 1241 fonksiyon/class sembolü bulundu. Analiz edilen diller: python.",
+  "components": [
+    {
+      "file": "httpx-master/httpx/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: main."
+    },
+    {
+      "file": "httpx-master/httpx/__version__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/httpx/_api.py",
+      "description": "python dosyası. Öne çıkan semboller: request, stream, get, options, head, post, put, patch."
+    },
+    {
+      "file": "httpx-master/httpx/_auth.py",
+      "description": "python dosyası. Öne çıkan semboller: Auth, auth_flow, sync_auth_flow, async_auth_flow, FunctionAuth, __init__, auth_flow, BasicAuth."
+    },
+    {
+      "file": "httpx-master/httpx/_client.py",
+      "description": "python dosyası. Öne çıkan semboller: _is_https_redirect, _port_or_default, _same_origin, UseClientDefault, ClientState, BoundSyncStream, __init__, __iter__."
+    },
+    {
+      "file": "httpx-master/httpx/_config.py",
+      "description": "python dosyası. Öne çıkan semboller: UnsetType, create_ssl_context, Timeout, __init__, as_dict, __eq__, __repr__, Limits."
+    },
+    {
+      "file": "httpx-master/httpx/_content.py",
+      "description": "python dosyası. Öne çıkan semboller: ByteStream, __init__, __iter__, __aiter__, IteratorByteStream, __init__, __iter__, AsyncIteratorByteStream."
+    },
+    {
+      "file": "httpx-master/httpx/_decoders.py",
+      "description": "python dosyası. Öne çıkan semboller: ContentDecoder, decode, flush, IdentityDecoder, decode, flush, DeflateDecoder, __init__."
+    },
+    {
+      "file": "httpx-master/httpx/_exceptions.py",
+      "description": "python dosyası. Öne çıkan semboller: HTTPError, __init__, request, request, RequestError, __init__, TransportError, TimeoutException."
+    },
+    {
+      "file": "httpx-master/httpx/_main.py",
+      "description": "python dosyası. Öne çıkan semboller: print_help, get_lexer_for_response, format_request_headers, format_response_headers, print_request_headers, print_response_headers, print_response, format_certificate."
+    },
+    {
+      "file": "httpx-master/httpx/_models.py",
+      "description": "python dosyası. Öne çıkan semboller: _is_known_encoding, _normalize_header_key, _normalize_header_value, _parse_content_type_charset, _parse_header_links, _obfuscate_sensitive_headers, Headers, __init__."
+    },
+    {
+      "file": "httpx-master/httpx/_multipart.py",
+      "description": "python dosyası. Öne çıkan semboller: _format_form_param, replacer, _guess_content_type, get_multipart_boundary_from_content_type, DataField, __init__, render_headers, render_data."
+    },
+    {
+      "file": "httpx-master/httpx/_status_codes.py",
+      "description": "python dosyası. Öne çıkan semboller: codes, __new__, __str__, get_reason_phrase, is_informational, is_success, is_redirect, is_client_error."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/asgi.py",
+      "description": "python dosyası. Öne çıkan semboller: is_running_trio, create_event, ASGIResponseStream, __init__, __aiter__, ASGITransport, __init__, handle_async_request."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/base.py",
+      "description": "python dosyası. Öne çıkan semboller: BaseTransport, __enter__, __exit__, handle_request, close, AsyncBaseTransport, __aenter__, __aexit__."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/default.py",
+      "description": "python dosyası. Öne çıkan semboller: _load_httpcore_exceptions, map_httpcore_exceptions, ResponseStream, __init__, __iter__, close, HTTPTransport, __init__."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/mock.py",
+      "description": "python dosyası. Öne çıkan semboller: MockTransport, __init__, handle_request, handle_async_request."
+    },
+    {
+      "file": "httpx-master/httpx/_transports/wsgi.py",
+      "description": "python dosyası. Öne çıkan semboller: _skip_leading_empty_chunks, WSGIByteStream, __init__, __iter__, close, WSGITransport, __init__, handle_request."
+    },
+    {
+      "file": "httpx-master/httpx/_types.py",
+      "description": "python dosyası. Öne çıkan semboller: SyncByteStream, __iter__, close, AsyncByteStream, __aiter__, aclose."
+    },
+    {
+      "file": "httpx-master/httpx/_urlparse.py",
+      "description": "python dosyası. Öne çıkan semboller: ParseResult, authority, netloc, copy_with, __str__, urlparse, encode_host, normalize_port."
+    },
+    {
+      "file": "httpx-master/httpx/_urls.py",
+      "description": "python dosyası. Öne çıkan semboller: URL, __init__, scheme, raw_scheme, userinfo, username, password, host."
+    },
+    {
+      "file": "httpx-master/httpx/_utils.py",
+      "description": "python dosyası. Öne çıkan semboller: primitive_value_to_str, get_environment_proxies, to_bytes, to_str, to_bytes_or_str, unquote, peek_filelike_length, URLPattern."
+    },
+    {
+      "file": "httpx-master/tests/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/tests/client/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/tests/client/test_async_client.py",
+      "description": "python dosyası. Öne çıkan semboller: test_get, test_get_invalid_url, test_build_request, test_post, test_post_json, test_stream_response, test_access_content_stream_response, test_stream_request."
+    },
+    {
+      "file": "httpx-master/tests/client/test_auth.py",
+      "description": "python dosyası. Öne çıkan semboller: App, __init__, __call__, DigestApp, __init__, __call__, challenge_send, RepeatAuth."
+    },
+    {
+      "file": "httpx-master/tests/client/test_client.py",
+      "description": "python dosyası. Öne çıkan semboller: autodetect, test_get, test_get_invalid_url, test_build_request, test_build_post_request, test_post, test_post_json, test_stream_response."
+    },
+    {
+      "file": "httpx-master/tests/client/test_cookies.py",
+      "description": "python dosyası. Öne çıkan semboller: get_and_set_cookies, test_set_cookie, test_set_per_request_cookie_is_deprecated, test_set_cookie_with_cookiejar, test_setting_client_cookies_to_cookiejar, test_set_cookie_with_cookies_model, test_get_cookie, test_cookie_persistence."
+    },
+    {
+      "file": "httpx-master/tests/client/test_event_hooks.py",
+      "description": "python dosyası. Öne çıkan semboller: app, test_event_hooks, on_request, on_response, test_event_hooks_raising_exception, raise_on_4xx_5xx, test_async_event_hooks, on_request."
+    },
+    {
+      "file": "httpx-master/tests/client/test_headers.py",
+      "description": "python dosyası. Öne çıkan semboller: echo_headers, echo_repeated_headers_multi_items, echo_repeated_headers_items, test_client_header, test_header_merge, test_header_merge_conflicting_headers, test_header_update, test_header_repeated_items."
+    },
+    {
+      "file": "httpx-master/tests/client/test_properties.py",
+      "description": "python dosyası. Öne çıkan semboller: test_client_base_url, test_client_base_url_without_trailing_slash, test_client_base_url_with_trailing_slash, test_client_headers, test_client_cookies, test_client_timeout, test_client_event_hooks, on_request."
+    },
+    {
+      "file": "httpx-master/tests/client/test_proxies.py",
+      "description": "python dosyası. Öne çıkan semboller: url_to_origin, test_socks_proxy, test_transport_for_request, test_async_proxy_close, test_sync_proxy_close, test_unsupported_proxy_scheme, test_proxies_environ, test_for_deprecated_proxy_params."
+    },
+    {
+      "file": "httpx-master/tests/client/test_queryparams.py",
+      "description": "python dosyası. Öne çıkan semboller: hello_world, test_client_queryparams, test_client_queryparams_string, test_client_queryparams_echo."
+    },
+    {
+      "file": "httpx-master/tests/client/test_redirects.py",
+      "description": "python dosyası. Öne çıkan semboller: redirects, test_redirect_301, test_redirect_302, test_redirect_303, test_next_request, test_async_next_request, test_head_redirect, test_relative_redirect."
+    },
+    {
+      "file": "httpx-master/tests/common.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/tests/concurrency.py",
+      "description": "python dosyası. Öne çıkan semboller: sleep."
+    },
+    {
+      "file": "httpx-master/tests/conftest.py",
+      "description": "python dosyası. Öne çıkan semboller: clean_environ, app, hello_world, hello_world_json, slow_response, status_code, echo_body, echo_binary."
+    },
+    {
+      "file": "httpx-master/tests/models/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "httpx-master/tests/models/test_cookies.py",
+      "description": "python dosyası. Öne çıkan semboller: test_cookies, test_cookies_update, test_cookies_with_domain, test_cookies_with_domain_and_path, test_multiple_set_cookie, test_cookies_can_be_a_list_of_tuples, test_cookies_repr."
+    },
+    {
+      "file": "httpx-master/tests/models/test_headers.py",
+      "description": "python dosyası. Öne çıkan semboller: test_headers, test_header_mutations, test_copy_headers_method, test_copy_headers_init, test_headers_insert_retains_ordering, test_headers_insert_appends_if_new, test_headers_insert_removes_all_existing, test_headers_delete_removes_all_existing."
+    },
+    {
+      "file": "httpx-master/tests/models/test_queryparams.py",
+      "description": "python dosyası. Öne çıkan semboller: test_queryparams, test_queryparam_types, test_empty_query_params, test_queryparam_update_is_hard_deprecated, test_queryparam_setter_is_hard_deprecated, test_queryparam_set, test_queryparam_add, test_queryparam_remove."
+    },
+    {
+      "file": "httpx-master/tests/models/test_requests.py",
+      "description": "python dosyası. Öne çıkan semboller: test_request_repr, test_no_content, test_content_length_header, test_iterable_content, Content, __iter__, test_generator_with_transfer_encoding_header, content."
+    },
+    {
+      "file": "httpx-master/tests/models/test_responses.py",
+      "description": "python dosyası. Öne çıkan semboller: StreamingBody, __iter__, streaming_body, async_streaming_body, autodetect, test_response, test_response_content, test_response_text."
+    },
+    {
+      "file": "httpx-master/tests/models/test_url.py",
+      "description": "python dosyası. Öne çıkan semboller: test_basic_url, test_complete_url, test_url_with_empty_query, test_url_no_scheme, test_url_no_authority, test_path_query_fragment, test_url_query_encoding, test_url_params."
+    },
+    {
+      "file": "httpx-master/tests/models/test_whatwg.py",
+      "description": "python dosyası. Öne çıkan semboller: test_urlparse."
+    },
+    {
+      "file": "httpx-master/tests/test_api.py",
+      "description": "python dosyası. Öne çıkan semboller: test_get, test_post, test_post_byte_iterator, data, test_post_byte_stream, Data, __iter__, test_options."
+    },
+    {
+      "file": "httpx-master/tests/test_asgi.py",
+      "description": "python dosyası. Öne çıkan semboller: hello_world, echo_path, echo_raw_path, echo_body, echo_headers, raise_exc, raise_exc_after_response, test_asgi_transport."
+    },
+    {
+      "file": "httpx-master/tests/test_auth.py",
+      "description": "python dosyası. Öne çıkan semboller: test_basic_auth, test_digest_auth_with_200, test_digest_auth_with_401, test_digest_auth_with_401_nonce_counting, set_cookies, test_digest_auth_setting_cookie_in_request, test_digest_auth_rfc_2069, test_digest_auth_rfc_7616_md5."
+    },
+    {
+      "file": "httpx-master/tests/test_config.py",
+      "description": "python dosyası. Öne çıkan semboller: test_load_ssl_config, test_load_ssl_config_verify_non_existing_file, test_load_ssl_with_keylog, test_load_ssl_config_verify_existing_file, test_load_ssl_config_verify_directory, test_load_ssl_config_cert_and_key, test_load_ssl_config_cert_and_encrypted_key, test_load_ssl_config_cert_and_key_invalid_password."
+    },
+    {
+      "file": "httpx-master/tests/test_content.py",
+      "description": "python dosyası. Öne çıkan semboller: test_empty_content, test_bytes_content, test_bytesio_content, test_async_bytesio_content, AsyncBytesIO, __init__, aread, __aiter__."
+    },
+    {
+      "file": "httpx-master/tests/test_decoders.py",
+      "description": "python dosyası. Öne çıkan semboller: test_deflate, test_zlib, test_gzip, test_brotli, test_zstd, test_zstd_decoding_error, test_zstd_empty, test_zstd_truncated."
+    },
+    {
+      "file": "httpx-master/tests/test_exceptions.py",
+      "description": "python dosyası. Öne çıkan semboller: test_httpcore_all_exceptions_mapped, test_httpcore_exception_mapping, test_request_attribute."
+    },
+    {
+      "file": "httpx-master/tests/test_exported_members.py",
+      "description": "python dosyası. Öne çıkan semboller: test_all_imports_are_exported."
+    },
+    {
+      "file": "httpx-master/tests/test_main.py",
+      "description": "python dosyası. Öne çıkan semboller: splitlines, remove_date_header, test_help, test_get, test_json, test_binary, test_redirects, test_follow_redirects."
+    },
+    {
+      "file": "httpx-master/tests/test_multipart.py",
+      "description": "python dosyası. Öne çıkan semboller: echo_request_content, test_multipart, test_multipart_explicit_boundary, test_multipart_header_without_boundary, test_multipart_invalid_key, test_multipart_invalid_value, test_multipart_file_tuple, test_multipart_file_tuple_headers."
+    },
+    {
+      "file": "httpx-master/tests/test_status_codes.py",
+      "description": "python dosyası. Öne çıkan semboller: test_status_code_as_int, test_status_code_value_lookup, test_status_code_phrase_lookup, test_lowercase_status_code, test_reason_phrase_for_status_code, test_reason_phrase_for_unknown_status_code."
+    },
+    {
+      "file": "httpx-master/tests/test_timeouts.py",
+      "description": "python dosyası. Öne çıkan semboller: test_read_timeout, test_write_timeout, test_connect_timeout, test_pool_timeout, test_async_client_new_request_send_timeout."
+    },
+    {
+      "file": "httpx-master/tests/test_utils.py",
+      "description": "python dosyası. Öne çıkan semboller: test_encoded, test_bad_utf_like_encoding, test_guess_by_bom, test_logging_request, test_logging_redirect_chain, test_get_environment_proxies, test_url_matches, test_pattern_priority."
+    },
+    {
+      "file": "httpx-master/tests/test_wsgi.py",
+      "description": "python dosyası. Öne çıkan semboller: application_factory, application, echo_body, echo_body_with_response_stream, output_generator, raise_exc, log_to_wsgi_log_buffer, test_wsgi."
+    }
+  ],
+  "files": [
+    {
+      "path": "httpx-master/httpx/__init__.py",
+      "language": "python",
+      "imports": [
+        "from .__version__ import __description__, __title__, __version__",
+        "from ._api import *",
+        "from ._auth import *",
+        "from ._client import *",
+        "from ._config import *",
+        "from ._content import *",
+        "from ._exceptions import *",
+        "from ._models import *",
+        "from ._status_codes import *",
+        "from ._transports import *",
+        "from ._types import *",
+        "from ._urls import *",
+        "from ._main import main",
+        "import sys"
+      ],
+      "symbols": [
+        {
+          "name": "main",
+          "kind": "function",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/__version__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/httpx/_api.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from contextlib import contextmanager",
+        "from ._client import Client",
+        "from ._config import DEFAULT_TIMEOUT_CONFIG",
+        "from ._models import Response",
+        "from ._types import (\n    AuthTypes,\n    CookieTypes,\n    HeaderTypes,\n    ProxyTypes,\n    QueryParamTypes,\n    RequestContent,\n    RequestData,\n    RequestFiles,\n    TimeoutTypes,\n)",
+        "from ._urls import URL",
+        "import ssl"
+      ],
+      "symbols": [
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "stream",
+          "kind": "function",
+          "line": 124
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 174
+        },
+        {
+          "name": "options",
+          "kind": "function",
+          "line": 210
+        },
+        {
+          "name": "head",
+          "kind": "function",
+          "line": 246
+        },
+        {
+          "name": "post",
+          "kind": "function",
+          "line": 282
+        },
+        {
+          "name": "put",
+          "kind": "function",
+          "line": 323
+        },
+        {
+          "name": "patch",
+          "kind": "function",
+          "line": 364
+        },
+        {
+          "name": "delete",
+          "kind": "function",
+          "line": 405
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_auth.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import hashlib",
+        "import os",
+        "import re",
+        "import time",
+        "import typing",
+        "from base64 import b64encode",
+        "from urllib.request import parse_http_list",
+        "from ._exceptions import ProtocolError",
+        "from ._models import Cookies, Request, Response",
+        "from ._utils import to_bytes, to_str, unquote",
+        "from hashlib import _Hash",
+        "import netrc"
+      ],
+      "symbols": [
+        {
+          "name": "Auth",
+          "kind": "class",
+          "line": 22
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 38
+        },
+        {
+          "name": "sync_auth_flow",
+          "kind": "function",
+          "line": 62
+        },
+        {
+          "name": "async_auth_flow",
+          "kind": "function",
+          "line": 87
+        },
+        {
+          "name": "FunctionAuth",
+          "kind": "class",
+          "line": 113
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 119
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "BasicAuth",
+          "kind": "class",
+          "line": 126
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 135
+        },
+        {
+          "name": "_build_auth_header",
+          "kind": "function",
+          "line": 139
+        },
+        {
+          "name": "NetRCAuth",
+          "kind": "class",
+          "line": 145
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 150
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 157
+        },
+        {
+          "name": "_build_auth_header",
+          "kind": "function",
+          "line": 169
+        },
+        {
+          "name": "DigestAuth",
+          "kind": "class",
+          "line": 175
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 187
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 193
+        },
+        {
+          "name": "_parse_challenge",
+          "kind": "function",
+          "line": 224
+        },
+        {
+          "name": "_build_auth_header",
+          "kind": "function",
+          "line": 255
+        },
+        {
+          "name": "digest",
+          "kind": "function",
+          "line": 260
+        },
+        {
+          "name": "_get_client_nonce",
+          "kind": "function",
+          "line": 303
+        },
+        {
+          "name": "_get_header_value",
+          "kind": "function",
+          "line": 311
+        },
+        {
+          "name": "_resolve_qop",
+          "kind": "function",
+          "line": 329
+        },
+        {
+          "name": "_DigestAuthChallenge",
+          "kind": "class",
+          "line": 343
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_client.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import datetime",
+        "import enum",
+        "import logging",
+        "import time",
+        "import typing",
+        "import warnings",
+        "from contextlib import asynccontextmanager, contextmanager",
+        "from types import TracebackType",
+        "from .__version__ import __version__",
+        "from ._auth import Auth, BasicAuth, FunctionAuth",
+        "from ._config import (\n    DEFAULT_LIMITS,\n    DEFAULT_MAX_REDIRECTS,\n    DEFAULT_TIMEOUT_CONFIG,\n    Limits,\n    Proxy,\n    Timeout,\n)",
+        "from ._decoders import SUPPORTED_DECODERS",
+        "from ._exceptions import (\n    InvalidURL,\n    RemoteProtocolError,\n    TooManyRedirects,\n    request_context,\n)",
+        "from ._models import Cookies, Headers, Request, Response",
+        "from ._status_codes import codes",
+        "from ._transports.base import AsyncBaseTransport, BaseTransport",
+        "from ._transports.default import AsyncHTTPTransport, HTTPTransport",
+        "from ._types import (\n    AsyncByteStream,\n    AuthTypes,\n    CertTypes,\n    CookieTypes,\n    HeaderTypes,\n    ProxyTypes,\n    QueryParamTypes,\n    RequestContent,\n    RequestData,\n    RequestExtensions,\n    RequestFiles,\n    SyncByteStream,\n    TimeoutTypes,\n)",
+        "from ._urls import URL, QueryParams",
+        "from ._utils import URLPattern, get_environment_proxies",
+        "import ssl",
+        "import h2"
+      ],
+      "symbols": [
+        {
+          "name": "_is_https_redirect",
+          "kind": "function",
+          "line": 62
+        },
+        {
+          "name": "_port_or_default",
+          "kind": "function",
+          "line": 77
+        },
+        {
+          "name": "_same_origin",
+          "kind": "function",
+          "line": 83
+        },
+        {
+          "name": "UseClientDefault",
+          "kind": "class",
+          "line": 94
+        },
+        {
+          "name": "ClientState",
+          "kind": "class",
+          "line": 125
+        },
+        {
+          "name": "BoundSyncStream",
+          "kind": "class",
+          "line": 139
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 145
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 152
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 156
+        },
+        {
+          "name": "BoundAsyncStream",
+          "kind": "class",
+          "line": 162
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 168
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 175
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 179
+        },
+        {
+          "name": "BaseClient",
+          "kind": "class",
+          "line": 188
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 189
+        },
+        {
+          "name": "is_closed",
+          "kind": "function",
+          "line": 224
+        },
+        {
+          "name": "trust_env",
+          "kind": "function",
+          "line": 231
+        },
+        {
+          "name": "_enforce_trailing_slash",
+          "kind": "function",
+          "line": 234
+        },
+        {
+          "name": "_get_proxy_map",
+          "kind": "function",
+          "line": 239
+        },
+        {
+          "name": "timeout",
+          "kind": "function",
+          "line": 254
+        },
+        {
+          "name": "timeout",
+          "kind": "function",
+          "line": 258
+        },
+        {
+          "name": "event_hooks",
+          "kind": "function",
+          "line": 262
+        },
+        {
+          "name": "event_hooks",
+          "kind": "function",
+          "line": 266
+        },
+        {
+          "name": "auth",
+          "kind": "function",
+          "line": 273
+        },
+        {
+          "name": "auth",
+          "kind": "function",
+          "line": 284
+        },
+        {
+          "name": "base_url",
+          "kind": "function",
+          "line": 288
+        },
+        {
+          "name": "base_url",
+          "kind": "function",
+          "line": 295
+        },
+        {
+          "name": "headers",
+          "kind": "function",
+          "line": 299
+        },
+        {
+          "name": "headers",
+          "kind": "function",
+          "line": 306
+        },
+        {
+          "name": "cookies",
+          "kind": "function",
+          "line": 319
+        },
+        {
+          "name": "cookies",
+          "kind": "function",
+          "line": 326
+        },
+        {
+          "name": "params",
+          "kind": "function",
+          "line": 330
+        },
+        {
+          "name": "params",
+          "kind": "function",
+          "line": 337
+        },
+        {
+          "name": "build_request",
+          "kind": "function",
+          "line": 340
+        },
+        {
+          "name": "_merge_url",
+          "kind": "function",
+          "line": 391
+        },
+        {
+          "name": "_merge_cookies",
+          "kind": "function",
+          "line": 413
+        },
+        {
+          "name": "_merge_headers",
+          "kind": "function",
+          "line": 424
+        },
+        {
+          "name": "_merge_queryparams",
+          "kind": "function",
+          "line": 433
+        },
+        {
+          "name": "_build_auth",
+          "kind": "function",
+          "line": 445
+        },
+        {
+          "name": "_build_request_auth",
+          "kind": "function",
+          "line": 457
+        },
+        {
+          "name": "_build_redirect_request",
+          "kind": "function",
+          "line": 475
+        },
+        {
+          "name": "_redirect_method",
+          "kind": "function",
+          "line": 494
+        },
+        {
+          "name": "_redirect_url",
+          "kind": "function",
+          "line": 517
+        },
+        {
+          "name": "_redirect_headers",
+          "kind": "function",
+          "line": 546
+        },
+        {
+          "name": "_redirect_stream",
+          "kind": "function",
+          "line": 573
+        },
+        {
+          "name": "_set_timeout",
+          "kind": "function",
+          "line": 584
+        },
+        {
+          "name": "Client",
+          "kind": "class",
+          "line": 594
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 639
+        },
+        {
+          "name": "_init_transport",
+          "kind": "function",
+          "line": 718
+        },
+        {
+          "name": "_init_proxy_transport",
+          "kind": "function",
+          "line": 740
+        },
+        {
+          "name": "_transport_for_url",
+          "kind": "function",
+          "line": 760
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 771
+        },
+        {
+          "name": "stream",
+          "kind": "function",
+          "line": 828
+        },
+        {
+          "name": "send",
+          "kind": "function",
+          "line": 879
+        },
+        {
+          "name": "_send_handling_auth",
+          "kind": "function",
+          "line": 930
+        },
+        {
+          "name": "_send_handling_redirects",
+          "kind": "function",
+          "line": 964
+        },
+        {
+          "name": "_send_single_request",
+          "kind": "function",
+          "line": 1001
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 1036
+        },
+        {
+          "name": "options",
+          "kind": "function",
+          "line": 1065
+        },
+        {
+          "name": "head",
+          "kind": "function",
+          "line": 1094
+        },
+        {
+          "name": "post",
+          "kind": "function",
+          "line": 1123
+        },
+        {
+          "name": "put",
+          "kind": "function",
+          "line": 1160
+        },
+        {
+          "name": "patch",
+          "kind": "function",
+          "line": 1197
+        },
+        {
+          "name": "delete",
+          "kind": "function",
+          "line": 1234
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 1263
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 1275
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 1293
+        },
+        {
+          "name": "AsyncClient",
+          "kind": "class",
+          "line": 1307
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 1353
+        },
+        {
+          "name": "_init_transport",
+          "kind": "function",
+          "line": 1432
+        },
+        {
+          "name": "_init_proxy_transport",
+          "kind": "function",
+          "line": 1454
+        },
+        {
+          "name": "_transport_for_url",
+          "kind": "function",
+          "line": 1474
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 1485
+        },
+        {
+          "name": "stream",
+          "kind": "function",
+          "line": 1543
+        },
+        {
+          "name": "send",
+          "kind": "function",
+          "line": 1594
+        },
+        {
+          "name": "_send_handling_auth",
+          "kind": "function",
+          "line": 1645
+        },
+        {
+          "name": "_send_handling_redirects",
+          "kind": "function",
+          "line": 1679
+        },
+        {
+          "name": "_send_single_request",
+          "kind": "function",
+          "line": 1717
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 1751
+        },
+        {
+          "name": "options",
+          "kind": "function",
+          "line": 1780
+        },
+        {
+          "name": "head",
+          "kind": "function",
+          "line": 1809
+        },
+        {
+          "name": "post",
+          "kind": "function",
+          "line": 1838
+        },
+        {
+          "name": "put",
+          "kind": "function",
+          "line": 1875
+        },
+        {
+          "name": "patch",
+          "kind": "function",
+          "line": 1912
+        },
+        {
+          "name": "delete",
+          "kind": "function",
+          "line": 1949
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 1978
+        },
+        {
+          "name": "__aenter__",
+          "kind": "function",
+          "line": 1990
+        },
+        {
+          "name": "__aexit__",
+          "kind": "function",
+          "line": 2008
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_config.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import os",
+        "import typing",
+        "from ._models import Headers",
+        "from ._types import CertTypes, HeaderTypes, TimeoutTypes",
+        "from ._urls import URL",
+        "import ssl",
+        "import warnings",
+        "import certifi"
+      ],
+      "symbols": [
+        {
+          "name": "UnsetType",
+          "kind": "class",
+          "line": 16
+        },
+        {
+          "name": "create_ssl_context",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "Timeout",
+          "kind": "class",
+          "line": 72
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 86
+        },
+        {
+          "name": "as_dict",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 140
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 149
+        },
+        {
+          "name": "Limits",
+          "kind": "class",
+          "line": 159
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 173
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 184
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 192
+        },
+        {
+          "name": "Proxy",
+          "kind": "class",
+          "line": 201
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 202
+        },
+        {
+          "name": "raw_auth",
+          "kind": "function",
+          "line": 227
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 235
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_content.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import inspect",
+        "import warnings",
+        "from json import dumps as json_dumps",
+        "from typing import (\n    Any,\n    AsyncIterable,\n    AsyncIterator,\n    Iterable,\n    Iterator,\n    Mapping,\n)",
+        "from urllib.parse import urlencode",
+        "from ._exceptions import StreamClosed, StreamConsumed",
+        "from ._multipart import MultipartStream",
+        "from ._types import (\n    AsyncByteStream,\n    RequestContent,\n    RequestData,\n    RequestFiles,\n    ResponseContent,\n    SyncByteStream,\n)",
+        "from ._utils import peek_filelike_length, primitive_value_to_str"
+      ],
+      "symbols": [
+        {
+          "name": "ByteStream",
+          "kind": "class",
+          "line": 31
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 32
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 38
+        },
+        {
+          "name": "IteratorByteStream",
+          "kind": "class",
+          "line": 42
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 50
+        },
+        {
+          "name": "AsyncIteratorByteStream",
+          "kind": "class",
+          "line": 67
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 70
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 75
+        },
+        {
+          "name": "UnattachedStream",
+          "kind": "class",
+          "line": 92
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 99
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 102
+        },
+        {
+          "name": "encode_content",
+          "kind": "function",
+          "line": 107
+        },
+        {
+          "name": "encode_urlencoded_data",
+          "kind": "function",
+          "line": 136
+        },
+        {
+          "name": "encode_multipart_data",
+          "kind": "function",
+          "line": 152
+        },
+        {
+          "name": "encode_text",
+          "kind": "function",
+          "line": 160
+        },
+        {
+          "name": "encode_html",
+          "kind": "function",
+          "line": 168
+        },
+        {
+          "name": "encode_json",
+          "kind": "function",
+          "line": 176
+        },
+        {
+          "name": "encode_request",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "encode_response",
+          "kind": "function",
+          "line": 221
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_decoders.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import codecs",
+        "import io",
+        "import typing",
+        "import zlib",
+        "from ._exceptions import DecodingError",
+        "import brotli",
+        "import brotlicffi as brotli",
+        "import zstandard"
+      ],
+      "symbols": [
+        {
+          "name": "ContentDecoder",
+          "kind": "class",
+          "line": 36
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 37
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 40
+        },
+        {
+          "name": "IdentityDecoder",
+          "kind": "class",
+          "line": 44
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 49
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "DeflateDecoder",
+          "kind": "class",
+          "line": 56
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 63
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 78
+        },
+        {
+          "name": "GZipDecoder",
+          "kind": "class",
+          "line": 85
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 92
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 95
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 101
+        },
+        {
+          "name": "BrotliDecoder",
+          "kind": "class",
+          "line": 108
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 118
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 136
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 145
+        },
+        {
+          "name": "ZStandardDecoder",
+          "kind": "class",
+          "line": 161
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 170
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 180
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 194
+        },
+        {
+          "name": "MultiDecoder",
+          "kind": "class",
+          "line": 203
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 208
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 216
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 221
+        },
+        {
+          "name": "ByteChunker",
+          "kind": "class",
+          "line": 228
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 233
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 237
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 260
+        },
+        {
+          "name": "TextChunker",
+          "kind": "class",
+          "line": 267
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 272
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 276
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 299
+        },
+        {
+          "name": "TextDecoder",
+          "kind": "class",
+          "line": 306
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 311
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 314
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 317
+        },
+        {
+          "name": "LineDecoder",
+          "kind": "class",
+          "line": 321
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 329
+        },
+        {
+          "name": "decode",
+          "kind": "function",
+          "line": 333
+        },
+        {
+          "name": "flush",
+          "kind": "function",
+          "line": 371
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_exceptions.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import contextlib",
+        "import typing",
+        "from ._models import Request, Response"
+      ],
+      "symbols": [
+        {
+          "name": "HTTPError",
+          "kind": "class",
+          "line": 74
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 92
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 97
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "RequestError",
+          "kind": "class",
+          "line": 107
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 112
+        },
+        {
+          "name": "TransportError",
+          "kind": "class",
+          "line": 123
+        },
+        {
+          "name": "TimeoutException",
+          "kind": "class",
+          "line": 132
+        },
+        {
+          "name": "ConnectTimeout",
+          "kind": "class",
+          "line": 140
+        },
+        {
+          "name": "ReadTimeout",
+          "kind": "class",
+          "line": 146
+        },
+        {
+          "name": "WriteTimeout",
+          "kind": "class",
+          "line": 152
+        },
+        {
+          "name": "PoolTimeout",
+          "kind": "class",
+          "line": 158
+        },
+        {
+          "name": "NetworkError",
+          "kind": "class",
+          "line": 167
+        },
+        {
+          "name": "ReadError",
+          "kind": "class",
+          "line": 175
+        },
+        {
+          "name": "WriteError",
+          "kind": "class",
+          "line": 181
+        },
+        {
+          "name": "ConnectError",
+          "kind": "class",
+          "line": 187
+        },
+        {
+          "name": "CloseError",
+          "kind": "class",
+          "line": 193
+        },
+        {
+          "name": "ProxyError",
+          "kind": "class",
+          "line": 202
+        },
+        {
+          "name": "UnsupportedProtocol",
+          "kind": "class",
+          "line": 208
+        },
+        {
+          "name": "ProtocolError",
+          "kind": "class",
+          "line": 216
+        },
+        {
+          "name": "LocalProtocolError",
+          "kind": "class",
+          "line": 222
+        },
+        {
+          "name": "RemoteProtocolError",
+          "kind": "class",
+          "line": 232
+        },
+        {
+          "name": "DecodingError",
+          "kind": "class",
+          "line": 243
+        },
+        {
+          "name": "TooManyRedirects",
+          "kind": "class",
+          "line": 249
+        },
+        {
+          "name": "HTTPStatusError",
+          "kind": "class",
+          "line": 258
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 265
+        },
+        {
+          "name": "InvalidURL",
+          "kind": "class",
+          "line": 271
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 276
+        },
+        {
+          "name": "CookieConflict",
+          "kind": "class",
+          "line": 280
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 287
+        },
+        {
+          "name": "StreamError",
+          "kind": "class",
+          "line": 297
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 305
+        },
+        {
+          "name": "StreamConsumed",
+          "kind": "class",
+          "line": 309
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 315
+        },
+        {
+          "name": "StreamClosed",
+          "kind": "class",
+          "line": 327
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 333
+        },
+        {
+          "name": "ResponseNotRead",
+          "kind": "class",
+          "line": 338
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 343
+        },
+        {
+          "name": "RequestNotRead",
+          "kind": "class",
+          "line": 351
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 356
+        },
+        {
+          "name": "request_context",
+          "kind": "function",
+          "line": 365
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_main.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import functools",
+        "import json",
+        "import sys",
+        "import typing",
+        "import click",
+        "import pygments.lexers",
+        "import pygments.util",
+        "import rich.console",
+        "import rich.markup",
+        "import rich.progress",
+        "import rich.syntax",
+        "import rich.table",
+        "from ._client import Client",
+        "from ._exceptions import RequestError",
+        "from ._models import Response",
+        "from ._status_codes import codes",
+        "import httpcore"
+      ],
+      "symbols": [
+        {
+          "name": "print_help",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "get_lexer_for_response",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "format_request_headers",
+          "kind": "function",
+          "line": 116
+        },
+        {
+          "name": "format_response_headers",
+          "kind": "function",
+          "line": 129
+        },
+        {
+          "name": "print_request_headers",
+          "kind": "function",
+          "line": 147
+        },
+        {
+          "name": "print_response_headers",
+          "kind": "function",
+          "line": 156
+        },
+        {
+          "name": "print_response",
+          "kind": "function",
+          "line": 170
+        },
+        {
+          "name": "format_certificate",
+          "kind": "function",
+          "line": 194
+        },
+        {
+          "name": "trace",
+          "kind": "function",
+          "line": 212
+        },
+        {
+          "name": "download_response",
+          "kind": "function",
+          "line": 251
+        },
+        {
+          "name": "validate_json",
+          "kind": "function",
+          "line": 273
+        },
+        {
+          "name": "validate_auth",
+          "kind": "function",
+          "line": 287
+        },
+        {
+          "name": "handle_help",
+          "kind": "function",
+          "line": 301
+        },
+        {
+          "name": "main",
+          "kind": "function",
+          "line": 452
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_models.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import codecs",
+        "import datetime",
+        "import email.message",
+        "import json as jsonlib",
+        "import re",
+        "import typing",
+        "import urllib.request",
+        "from collections.abc import Mapping",
+        "from http.cookiejar import Cookie, CookieJar",
+        "from ._content import ByteStream, UnattachedStream, encode_request, encode_response",
+        "from ._decoders import (\n    SUPPORTED_DECODERS,\n    ByteChunker,\n    ContentDecoder,\n    IdentityDecoder,\n    LineDecoder,\n    MultiDecoder,\n    TextChunker,\n    TextDecoder,\n)",
+        "from ._exceptions import (\n    CookieConflict,\n    HTTPStatusError,\n    RequestNotRead,\n    ResponseNotRead,\n    StreamClosed,\n    StreamConsumed,\n    request_context,\n)",
+        "from ._multipart import get_multipart_boundary_from_content_type",
+        "from ._status_codes import codes",
+        "from ._types import (\n    AsyncByteStream,\n    CookieTypes,\n    HeaderTypes,\n    QueryParamTypes,\n    RequestContent,\n    RequestData,\n    RequestExtensions,\n    RequestFiles,\n    ResponseContent,\n    ResponseExtensions,\n    SyncByteStream,\n)",
+        "from ._urls import URL",
+        "from ._utils import to_bytes_or_str, to_str"
+      ],
+      "symbols": [
+        {
+          "name": "_is_known_encoding",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "_normalize_header_key",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "_normalize_header_value",
+          "kind": "function",
+          "line": 74
+        },
+        {
+          "name": "_parse_content_type_charset",
+          "kind": "function",
+          "line": 85
+        },
+        {
+          "name": "_parse_header_links",
+          "kind": "function",
+          "line": 93
+        },
+        {
+          "name": "_obfuscate_sensitive_headers",
+          "kind": "function",
+          "line": 130
+        },
+        {
+          "name": "Headers",
+          "kind": "class",
+          "line": 139
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 144
+        },
+        {
+          "name": "encoding",
+          "kind": "function",
+          "line": 167
+        },
+        {
+          "name": "encoding",
+          "kind": "function",
+          "line": 192
+        },
+        {
+          "name": "raw",
+          "kind": "function",
+          "line": 196
+        },
+        {
+          "name": "keys",
+          "kind": "function",
+          "line": 202
+        },
+        {
+          "name": "values",
+          "kind": "function",
+          "line": 205
+        },
+        {
+          "name": "items",
+          "kind": "function",
+          "line": 216
+        },
+        {
+          "name": "multi_items",
+          "kind": "function",
+          "line": 231
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 242
+        },
+        {
+          "name": "get_list",
+          "kind": "function",
+          "line": 252
+        },
+        {
+          "name": "update",
+          "kind": "function",
+          "line": 274
+        },
+        {
+          "name": "copy",
+          "kind": "function",
+          "line": 281
+        },
+        {
+          "name": "__getitem__",
+          "kind": "function",
+          "line": 284
+        },
+        {
+          "name": "__setitem__",
+          "kind": "function",
+          "line": 304
+        },
+        {
+          "name": "__delitem__",
+          "kind": "function",
+          "line": 328
+        },
+        {
+          "name": "__contains__",
+          "kind": "function",
+          "line": 346
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 350
+        },
+        {
+          "name": "__len__",
+          "kind": "function",
+          "line": 353
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 356
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 366
+        },
+        {
+          "name": "Request",
+          "kind": "class",
+          "line": 382
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 383
+        },
+        {
+          "name": "_prepare",
+          "kind": "function",
+          "line": 441
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 463
+        },
+        {
+          "name": "read",
+          "kind": "function",
+          "line": 468
+        },
+        {
+          "name": "aread",
+          "kind": "function",
+          "line": 482
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 496
+        },
+        {
+          "name": "__getstate__",
+          "kind": "function",
+          "line": 501
+        },
+        {
+          "name": "__setstate__",
+          "kind": "function",
+          "line": 508
+        },
+        {
+          "name": "Response",
+          "kind": "class",
+          "line": 515
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 516
+        },
+        {
+          "name": "_prepare",
+          "kind": "function",
+          "line": 571
+        },
+        {
+          "name": "elapsed",
+          "kind": "function",
+          "line": 579
+        },
+        {
+          "name": "elapsed",
+          "kind": "function",
+          "line": 592
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 596
+        },
+        {
+          "name": "request",
+          "kind": "function",
+          "line": 607
+        },
+        {
+          "name": "http_version",
+          "kind": "function",
+          "line": 611
+        },
+        {
+          "name": "reason_phrase",
+          "kind": "function",
+          "line": 620
+        },
+        {
+          "name": "url",
+          "kind": "function",
+          "line": 629
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 636
+        },
+        {
+          "name": "text",
+          "kind": "function",
+          "line": 642
+        },
+        {
+          "name": "encoding",
+          "kind": "function",
+          "line": 653
+        },
+        {
+          "name": "encoding",
+          "kind": "function",
+          "line": 675
+        },
+        {
+          "name": "charset_encoding",
+          "kind": "function",
+          "line": 689
+        },
+        {
+          "name": "_get_content_decoder",
+          "kind": "function",
+          "line": 699
+        },
+        {
+          "name": "is_informational",
+          "kind": "function",
+          "line": 725
+        },
+        {
+          "name": "is_success",
+          "kind": "function",
+          "line": 732
+        },
+        {
+          "name": "is_redirect",
+          "kind": "function",
+          "line": 739
+        },
+        {
+          "name": "is_client_error",
+          "kind": "function",
+          "line": 751
+        },
+        {
+          "name": "is_server_error",
+          "kind": "function",
+          "line": 758
+        },
+        {
+          "name": "is_error",
+          "kind": "function",
+          "line": 765
+        },
+        {
+          "name": "has_redirect_location",
+          "kind": "function",
+          "line": 772
+        },
+        {
+          "name": "raise_for_status",
+          "kind": "function",
+          "line": 794
+        },
+        {
+          "name": "json",
+          "kind": "function",
+          "line": 831
+        },
+        {
+          "name": "cookies",
+          "kind": "function",
+          "line": 835
+        },
+        {
+          "name": "links",
+          "kind": "function",
+          "line": 842
+        },
+        {
+          "name": "num_bytes_downloaded",
+          "kind": "function",
+          "line": 856
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 859
+        },
+        {
+          "name": "__getstate__",
+          "kind": "function",
+          "line": 862
+        },
+        {
+          "name": "__setstate__",
+          "kind": "function",
+          "line": 869
+        },
+        {
+          "name": "read",
+          "kind": "function",
+          "line": 876
+        },
+        {
+          "name": "iter_bytes",
+          "kind": "function",
+          "line": 884
+        },
+        {
+          "name": "iter_text",
+          "kind": "function",
+          "line": 907
+        },
+        {
+          "name": "iter_lines",
+          "kind": "function",
+          "line": 926
+        },
+        {
+          "name": "iter_raw",
+          "kind": "function",
+          "line": 935
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 961
+        },
+        {
+          "name": "aread",
+          "kind": "function",
+          "line": 974
+        },
+        {
+          "name": "aiter_bytes",
+          "kind": "function",
+          "line": 982
+        },
+        {
+          "name": "aiter_text",
+          "kind": "function",
+          "line": 1007
+        },
+        {
+          "name": "aiter_lines",
+          "kind": "function",
+          "line": 1028
+        },
+        {
+          "name": "aiter_raw",
+          "kind": "function",
+          "line": 1037
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 1065
+        },
+        {
+          "name": "Cookies",
+          "kind": "class",
+          "line": 1079
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 1084
+        },
+        {
+          "name": "extract_cookies",
+          "kind": "function",
+          "line": 1101
+        },
+        {
+          "name": "set_cookie_header",
+          "kind": "function",
+          "line": 1110
+        },
+        {
+          "name": "set",
+          "kind": "function",
+          "line": 1117
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 1143
+        },
+        {
+          "name": "delete",
+          "kind": "function",
+          "line": 1168
+        },
+        {
+          "name": "clear",
+          "kind": "function",
+          "line": 1192
+        },
+        {
+          "name": "update",
+          "kind": "function",
+          "line": 1205
+        },
+        {
+          "name": "__setitem__",
+          "kind": "function",
+          "line": 1210
+        },
+        {
+          "name": "__getitem__",
+          "kind": "function",
+          "line": 1213
+        },
+        {
+          "name": "__delitem__",
+          "kind": "function",
+          "line": 1219
+        },
+        {
+          "name": "__len__",
+          "kind": "function",
+          "line": 1222
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 1225
+        },
+        {
+          "name": "__bool__",
+          "kind": "function",
+          "line": 1228
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 1233
+        },
+        {
+          "name": "_CookieCompatRequest",
+          "kind": "class",
+          "line": 1243
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 1249
+        },
+        {
+          "name": "add_unredirected_header",
+          "kind": "function",
+          "line": 1257
+        },
+        {
+          "name": "_CookieCompatResponse",
+          "kind": "class",
+          "line": 1261
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 1267
+        },
+        {
+          "name": "info",
+          "kind": "function",
+          "line": 1270
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_multipart.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import io",
+        "import mimetypes",
+        "import os",
+        "import re",
+        "import typing",
+        "from pathlib import Path",
+        "from ._types import (\n    AsyncByteStream,\n    FileContent,\n    FileTypes,\n    RequestData,\n    RequestFiles,\n    SyncByteStream,\n)",
+        "from ._utils import (\n    peek_filelike_length,\n    primitive_value_to_str,\n    to_bytes,\n)"
+      ],
+      "symbols": [
+        {
+          "name": "_format_form_param",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "replacer",
+          "kind": "function",
+          "line": 38
+        },
+        {
+          "name": "_guess_content_type",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "get_multipart_boundary_from_content_type",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "DataField",
+          "kind": "class",
+          "line": 70
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 75
+        },
+        {
+          "name": "render_headers",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "render_data",
+          "kind": "function",
+          "line": 99
+        },
+        {
+          "name": "get_length",
+          "kind": "function",
+          "line": 105
+        },
+        {
+          "name": "render",
+          "kind": "function",
+          "line": 110
+        },
+        {
+          "name": "FileField",
+          "kind": "class",
+          "line": 115
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "get_length",
+          "kind": "function",
+          "line": 171
+        },
+        {
+          "name": "render_headers",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "render_data",
+          "kind": "function",
+          "line": 203
+        },
+        {
+          "name": "render",
+          "kind": "function",
+          "line": 219
+        },
+        {
+          "name": "MultipartStream",
+          "kind": "class",
+          "line": 224
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 229
+        },
+        {
+          "name": "_iter_fields",
+          "kind": "function",
+          "line": 244
+        },
+        {
+          "name": "iter_chunks",
+          "kind": "function",
+          "line": 258
+        },
+        {
+          "name": "get_content_length",
+          "kind": "function",
+          "line": 265
+        },
+        {
+          "name": "get_headers",
+          "kind": "function",
+          "line": 287
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 294
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 298
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_status_codes.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "from enum import IntEnum"
+      ],
+      "symbols": [
+        {
+          "name": "codes",
+          "kind": "class",
+          "line": 8
+        },
+        {
+          "name": "__new__",
+          "kind": "function",
+          "line": 28
+        },
+        {
+          "name": "__str__",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "get_reason_phrase",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "is_informational",
+          "kind": "function",
+          "line": 46
+        },
+        {
+          "name": "is_success",
+          "kind": "function",
+          "line": 53
+        },
+        {
+          "name": "is_redirect",
+          "kind": "function",
+          "line": 60
+        },
+        {
+          "name": "is_client_error",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "is_server_error",
+          "kind": "function",
+          "line": 74
+        },
+        {
+          "name": "is_error",
+          "kind": "function",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_transports/__init__.py",
+      "language": "python",
+      "imports": [
+        "from .asgi import *",
+        "from .base import *",
+        "from .default import *",
+        "from .mock import *",
+        "from .wsgi import *"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/httpx/_transports/asgi.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from .._models import Request, Response",
+        "from .._types import AsyncByteStream",
+        "from .base import AsyncBaseTransport",
+        "import asyncio",
+        "import trio",
+        "import sniffio"
+      ],
+      "symbols": [
+        {
+          "name": "is_running_trio",
+          "kind": "function",
+          "line": 29
+        },
+        {
+          "name": "create_event",
+          "kind": "function",
+          "line": 44
+        },
+        {
+          "name": "ASGIResponseStream",
+          "kind": "class",
+          "line": 55
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 59
+        },
+        {
+          "name": "ASGITransport",
+          "kind": "class",
+          "line": 63
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 87
+        },
+        {
+          "name": "handle_async_request",
+          "kind": "function",
+          "line": 99
+        },
+        {
+          "name": "receive",
+          "kind": "function",
+          "line": 134
+        },
+        {
+          "name": "send",
+          "kind": "function",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_transports/base.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from types import TracebackType",
+        "from .._models import Request, Response"
+      ],
+      "symbols": [
+        {
+          "name": "BaseTransport",
+          "kind": "class",
+          "line": 14
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 15
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "handle_request",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 61
+        },
+        {
+          "name": "AsyncBaseTransport",
+          "kind": "class",
+          "line": 65
+        },
+        {
+          "name": "__aenter__",
+          "kind": "function",
+          "line": 66
+        },
+        {
+          "name": "__aexit__",
+          "kind": "function",
+          "line": 69
+        },
+        {
+          "name": "handle_async_request",
+          "kind": "function",
+          "line": 77
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_transports/default.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import contextlib",
+        "import typing",
+        "from types import TracebackType",
+        "import ssl",
+        "import httpx",
+        "from .._config import DEFAULT_LIMITS, Limits, Proxy, create_ssl_context",
+        "from .._exceptions import (\n    ConnectError,\n    ConnectTimeout,\n    LocalProtocolError,\n    NetworkError,\n    PoolTimeout,\n    ProtocolError,\n    ProxyError,\n    ReadError,\n    ReadTimeout,\n    RemoteProtocolError,\n    TimeoutException,\n    UnsupportedProtocol,\n    WriteError,\n    WriteTimeout,\n)",
+        "from .._models import Request, Response",
+        "from .._types import AsyncByteStream, CertTypes, ProxyTypes, SyncByteStream",
+        "from .._urls import URL",
+        "from .base import AsyncBaseTransport, BaseTransport",
+        "import httpcore",
+        "import socksio"
+      ],
+      "symbols": [
+        {
+          "name": "_load_httpcore_exceptions",
+          "kind": "function",
+          "line": 74
+        },
+        {
+          "name": "map_httpcore_exceptions",
+          "kind": "function",
+          "line": 96
+        },
+        {
+          "name": "ResponseStream",
+          "kind": "class",
+          "line": 121
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 130
+        },
+        {
+          "name": "HTTPTransport",
+          "kind": "class",
+          "line": 135
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 136
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 217
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 221
+        },
+        {
+          "name": "handle_request",
+          "kind": "function",
+          "line": 230
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 261
+        },
+        {
+          "name": "AsyncResponseStream",
+          "kind": "class",
+          "line": 265
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 266
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 269
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 274
+        },
+        {
+          "name": "AsyncHTTPTransport",
+          "kind": "class",
+          "line": 279
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 280
+        },
+        {
+          "name": "__aenter__",
+          "kind": "function",
+          "line": 361
+        },
+        {
+          "name": "__aexit__",
+          "kind": "function",
+          "line": 365
+        },
+        {
+          "name": "handle_async_request",
+          "kind": "function",
+          "line": 374
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 405
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_transports/mock.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from .._models import Request, Response",
+        "from .base import AsyncBaseTransport, BaseTransport"
+      ],
+      "symbols": [
+        {
+          "name": "MockTransport",
+          "kind": "class",
+          "line": 15
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "handle_request",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "handle_async_request",
+          "kind": "function",
+          "line": 29
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_transports/wsgi.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import io",
+        "import itertools",
+        "import sys",
+        "import typing",
+        "from .._models import Request, Response",
+        "from .._types import SyncByteStream",
+        "from .base import BaseTransport",
+        "from _typeshed import OptExcInfo",
+        "from _typeshed.wsgi import WSGIApplication"
+      ],
+      "symbols": [
+        {
+          "name": "_skip_leading_empty_chunks",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "WSGIByteStream",
+          "kind": "class",
+          "line": 30
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 31
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "WSGITransport",
+          "kind": "class",
+          "line": 44
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 77
+        },
+        {
+          "name": "handle_request",
+          "kind": "function",
+          "line": 91
+        },
+        {
+          "name": "start_response",
+          "kind": "function",
+          "line": 123
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_types.py",
+      "language": "python",
+      "imports": [
+        "from http.cookiejar import CookieJar",
+        "from typing import (\n    IO,\n    TYPE_CHECKING,\n    Any,\n    AsyncIterable,\n    AsyncIterator,\n    Callable,\n    Dict,\n    Iterable,\n    Iterator,\n    List,\n    Mapping,\n    Optional,\n    Sequence,\n    Tuple,\n    Union,\n)",
+        "from ._auth import Auth",
+        "from ._config import Proxy, Timeout",
+        "from ._models import Cookies, Headers, Request",
+        "from ._urls import URL, QueryParams"
+      ],
+      "symbols": [
+        {
+          "name": "SyncByteStream",
+          "kind": "class",
+          "line": 92
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 93
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 99
+        },
+        {
+          "name": "AsyncByteStream",
+          "kind": "class",
+          "line": 106
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 107
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 113
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_urlparse.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import ipaddress",
+        "import re",
+        "import typing",
+        "import idna",
+        "from ._exceptions import InvalidURL"
+      ],
+      "symbols": [
+        {
+          "name": "ParseResult",
+          "kind": "class",
+          "line": 158
+        },
+        {
+          "name": "authority",
+          "kind": "function",
+          "line": 168
+        },
+        {
+          "name": "netloc",
+          "kind": "function",
+          "line": 178
+        },
+        {
+          "name": "copy_with",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "__str__",
+          "kind": "function",
+          "line": 200
+        },
+        {
+          "name": "urlparse",
+          "kind": "function",
+          "line": 213
+        },
+        {
+          "name": "encode_host",
+          "kind": "function",
+          "line": 348
+        },
+        {
+          "name": "normalize_port",
+          "kind": "function",
+          "line": 395
+        },
+        {
+          "name": "validate_path",
+          "kind": "function",
+          "line": 422
+        },
+        {
+          "name": "normalize_path",
+          "kind": "function",
+          "line": 447
+        },
+        {
+          "name": "PERCENT",
+          "kind": "function",
+          "line": 478
+        },
+        {
+          "name": "percent_encoded",
+          "kind": "function",
+          "line": 482
+        },
+        {
+          "name": "quote",
+          "kind": "function",
+          "line": 497
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_urls.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from urllib.parse import parse_qs, unquote, urlencode",
+        "import idna",
+        "from ._types import QueryParamTypes",
+        "from ._urlparse import urlparse",
+        "from ._utils import primitive_value_to_str",
+        "from urllib.parse import urljoin",
+        "import collections",
+        "import warnings"
+      ],
+      "symbols": [
+        {
+          "name": "URL",
+          "kind": "class",
+          "line": 15
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 77
+        },
+        {
+          "name": "scheme",
+          "kind": "function",
+          "line": 127
+        },
+        {
+          "name": "raw_scheme",
+          "kind": "function",
+          "line": 135
+        },
+        {
+          "name": "userinfo",
+          "kind": "function",
+          "line": 143
+        },
+        {
+          "name": "username",
+          "kind": "function",
+          "line": 151
+        },
+        {
+          "name": "password",
+          "kind": "function",
+          "line": 160
+        },
+        {
+          "name": "host",
+          "kind": "function",
+          "line": 169
+        },
+        {
+          "name": "raw_host",
+          "kind": "function",
+          "line": 196
+        },
+        {
+          "name": "port",
+          "kind": "function",
+          "line": 218
+        },
+        {
+          "name": "netloc",
+          "kind": "function",
+          "line": 234
+        },
+        {
+          "name": "path",
+          "kind": "function",
+          "line": 245
+        },
+        {
+          "name": "query",
+          "kind": "function",
+          "line": 258
+        },
+        {
+          "name": "params",
+          "kind": "function",
+          "line": 275
+        },
+        {
+          "name": "raw_path",
+          "kind": "function",
+          "line": 283
+        },
+        {
+          "name": "fragment",
+          "kind": "function",
+          "line": 300
+        },
+        {
+          "name": "is_absolute_url",
+          "kind": "function",
+          "line": 308
+        },
+        {
+          "name": "is_relative_url",
+          "kind": "function",
+          "line": 320
+        },
+        {
+          "name": "copy_with",
+          "kind": "function",
+          "line": 327
+        },
+        {
+          "name": "copy_set_param",
+          "kind": "function",
+          "line": 342
+        },
+        {
+          "name": "copy_add_param",
+          "kind": "function",
+          "line": 345
+        },
+        {
+          "name": "copy_remove_param",
+          "kind": "function",
+          "line": 348
+        },
+        {
+          "name": "copy_merge_params",
+          "kind": "function",
+          "line": 351
+        },
+        {
+          "name": "join",
+          "kind": "function",
+          "line": 354
+        },
+        {
+          "name": "__hash__",
+          "kind": "function",
+          "line": 368
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 371
+        },
+        {
+          "name": "__str__",
+          "kind": "function",
+          "line": 374
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 377
+        },
+        {
+          "name": "raw",
+          "kind": "function",
+          "line": 404
+        },
+        {
+          "name": "QueryParams",
+          "kind": "class",
+          "line": 420
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 425
+        },
+        {
+          "name": "keys",
+          "kind": "function",
+          "line": 463
+        },
+        {
+          "name": "values",
+          "kind": "function",
+          "line": 474
+        },
+        {
+          "name": "items",
+          "kind": "function",
+          "line": 486
+        },
+        {
+          "name": "multi_items",
+          "kind": "function",
+          "line": 498
+        },
+        {
+          "name": "get",
+          "kind": "function",
+          "line": 512
+        },
+        {
+          "name": "get_list",
+          "kind": "function",
+          "line": 526
+        },
+        {
+          "name": "set",
+          "kind": "function",
+          "line": 537
+        },
+        {
+          "name": "add",
+          "kind": "function",
+          "line": 552
+        },
+        {
+          "name": "remove",
+          "kind": "function",
+          "line": 567
+        },
+        {
+          "name": "merge",
+          "kind": "function",
+          "line": 582
+        },
+        {
+          "name": "__getitem__",
+          "kind": "function",
+          "line": 600
+        },
+        {
+          "name": "__contains__",
+          "kind": "function",
+          "line": 603
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 606
+        },
+        {
+          "name": "__len__",
+          "kind": "function",
+          "line": 609
+        },
+        {
+          "name": "__bool__",
+          "kind": "function",
+          "line": 612
+        },
+        {
+          "name": "__hash__",
+          "kind": "function",
+          "line": 615
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 618
+        },
+        {
+          "name": "__str__",
+          "kind": "function",
+          "line": 623
+        },
+        {
+          "name": "__repr__",
+          "kind": "function",
+          "line": 626
+        },
+        {
+          "name": "update",
+          "kind": "function",
+          "line": 631
+        },
+        {
+          "name": "__setitem__",
+          "kind": "function",
+          "line": 637
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/httpx/_utils.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import ipaddress",
+        "import os",
+        "import re",
+        "import typing",
+        "from urllib.request import getproxies",
+        "from ._types import PrimitiveData",
+        "from ._urls import URL"
+      ],
+      "symbols": [
+        {
+          "name": "primitive_value_to_str",
+          "kind": "function",
+          "line": 15
+        },
+        {
+          "name": "get_environment_proxies",
+          "kind": "function",
+          "line": 30
+        },
+        {
+          "name": "to_bytes",
+          "kind": "function",
+          "line": 79
+        },
+        {
+          "name": "to_str",
+          "kind": "function",
+          "line": 83
+        },
+        {
+          "name": "to_bytes_or_str",
+          "kind": "function",
+          "line": 87
+        },
+        {
+          "name": "unquote",
+          "kind": "function",
+          "line": 91
+        },
+        {
+          "name": "peek_filelike_length",
+          "kind": "function",
+          "line": 95
+        },
+        {
+          "name": "URLPattern",
+          "kind": "class",
+          "line": 120
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 162
+        },
+        {
+          "name": "matches",
+          "kind": "function",
+          "line": 192
+        },
+        {
+          "name": "priority",
+          "kind": "function",
+          "line": 206
+        },
+        {
+          "name": "__hash__",
+          "kind": "function",
+          "line": 219
+        },
+        {
+          "name": "__lt__",
+          "kind": "function",
+          "line": 222
+        },
+        {
+          "name": "__eq__",
+          "kind": "function",
+          "line": 225
+        },
+        {
+          "name": "is_ipv4_hostname",
+          "kind": "function",
+          "line": 229
+        },
+        {
+          "name": "is_ipv6_hostname",
+          "kind": "function",
+          "line": 237
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/tests/client/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/tests/client/test_async_client.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from datetime import timedelta",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_get",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "test_get_invalid_url",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "test_build_request",
+          "kind": "function",
+          "line": 40
+        },
+        {
+          "name": "test_post",
+          "kind": "function",
+          "line": 55
+        },
+        {
+          "name": "test_post_json",
+          "kind": "function",
+          "line": 63
+        },
+        {
+          "name": "test_stream_response",
+          "kind": "function",
+          "line": 71
+        },
+        {
+          "name": "test_access_content_stream_response",
+          "kind": "function",
+          "line": 82
+        },
+        {
+          "name": "test_stream_request",
+          "kind": "function",
+          "line": 93
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 94
+        },
+        {
+          "name": "test_cannot_stream_sync_request",
+          "kind": "function",
+          "line": 104
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 105
+        },
+        {
+          "name": "test_raise_for_status",
+          "kind": "function",
+          "line": 115
+        },
+        {
+          "name": "test_options",
+          "kind": "function",
+          "line": 131
+        },
+        {
+          "name": "test_head",
+          "kind": "function",
+          "line": 139
+        },
+        {
+          "name": "test_put",
+          "kind": "function",
+          "line": 147
+        },
+        {
+          "name": "test_patch",
+          "kind": "function",
+          "line": 154
+        },
+        {
+          "name": "test_delete",
+          "kind": "function",
+          "line": 161
+        },
+        {
+          "name": "test_100_continue",
+          "kind": "function",
+          "line": 169
+        },
+        {
+          "name": "test_context_managed_transport",
+          "kind": "function",
+          "line": 183
+        },
+        {
+          "name": "Transport",
+          "kind": "class",
+          "line": 184
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 185
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 188
+        },
+        {
+          "name": "__aenter__",
+          "kind": "function",
+          "line": 195
+        },
+        {
+          "name": "__aexit__",
+          "kind": "function",
+          "line": 199
+        },
+        {
+          "name": "test_context_managed_transport_and_mount",
+          "kind": "function",
+          "line": 215
+        },
+        {
+          "name": "Transport",
+          "kind": "class",
+          "line": 216
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 217
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 221
+        },
+        {
+          "name": "__aenter__",
+          "kind": "function",
+          "line": 228
+        },
+        {
+          "name": "__aexit__",
+          "kind": "function",
+          "line": 232
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 255
+        },
+        {
+          "name": "test_client_closed_state_using_implicit_open",
+          "kind": "function",
+          "line": 260
+        },
+        {
+          "name": "test_client_closed_state_using_with_block",
+          "kind": "function",
+          "line": 281
+        },
+        {
+          "name": "unmounted",
+          "kind": "function",
+          "line": 291
+        },
+        {
+          "name": "mounted",
+          "kind": "function",
+          "line": 296
+        },
+        {
+          "name": "test_mounted_transport",
+          "kind": "function",
+          "line": 302
+        },
+        {
+          "name": "test_async_mock_transport",
+          "kind": "function",
+          "line": 317
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 318
+        },
+        {
+          "name": "test_cancellation_during_stream",
+          "kind": "function",
+          "line": 330
+        },
+        {
+          "name": "response_with_cancel_during_stream",
+          "kind": "function",
+          "line": 346
+        },
+        {
+          "name": "CancelledStream",
+          "kind": "class",
+          "line": 347
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 348
+        },
+        {
+          "name": "aclose",
+          "kind": "function",
+          "line": 353
+        },
+        {
+          "name": "test_server_extensions",
+          "kind": "function",
+          "line": 370
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_auth.py",
+      "language": "python",
+      "imports": [
+        "import hashlib",
+        "import netrc",
+        "import os",
+        "import sys",
+        "import threading",
+        "import typing",
+        "from urllib.request import parse_keqv_list",
+        "import anyio",
+        "import pytest",
+        "import httpx",
+        "from ..common import FIXTURES_DIR"
+      ],
+      "symbols": [
+        {
+          "name": "App",
+          "kind": "class",
+          "line": 23
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 28
+        },
+        {
+          "name": "__call__",
+          "kind": "function",
+          "line": 32
+        },
+        {
+          "name": "DigestApp",
+          "kind": "class",
+          "line": 38
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "__call__",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "challenge_send",
+          "kind": "function",
+          "line": 59
+        },
+        {
+          "name": "RepeatAuth",
+          "kind": "class",
+          "line": 87
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 97
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 100
+        },
+        {
+          "name": "ResponseBodyAuth",
+          "kind": "class",
+          "line": 115
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 124
+        },
+        {
+          "name": "auth_flow",
+          "kind": "function",
+          "line": 127
+        },
+        {
+          "name": "SyncOrAsyncAuth",
+          "kind": "class",
+          "line": 137
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 143
+        },
+        {
+          "name": "sync_auth_flow",
+          "kind": "function",
+          "line": 147
+        },
+        {
+          "name": "async_auth_flow",
+          "kind": "function",
+          "line": 154
+        },
+        {
+          "name": "test_basic_auth",
+          "kind": "function",
+          "line": 163
+        },
+        {
+          "name": "test_basic_auth_with_stream",
+          "kind": "function",
+          "line": 176
+        },
+        {
+          "name": "test_basic_auth_in_url",
+          "kind": "function",
+          "line": 195
+        },
+        {
+          "name": "test_basic_auth_on_session",
+          "kind": "function",
+          "line": 207
+        },
+        {
+          "name": "test_custom_auth",
+          "kind": "function",
+          "line": 222
+        },
+        {
+          "name": "auth",
+          "kind": "function",
+          "line": 226
+        },
+        {
+          "name": "test_netrc_auth_credentials_exist",
+          "kind": "function",
+          "line": 237
+        },
+        {
+          "name": "test_netrc_auth_credentials_do_not_exist",
+          "kind": "function",
+          "line": 256
+        },
+        {
+          "name": "test_netrc_auth_nopassword_parse_error",
+          "kind": "function",
+          "line": 277
+        },
+        {
+          "name": "test_auth_disable_per_request",
+          "kind": "function",
+          "line": 289
+        },
+        {
+          "name": "test_auth_hidden_url",
+          "kind": "function",
+          "line": 303
+        },
+        {
+          "name": "test_auth_hidden_header",
+          "kind": "function",
+          "line": 311
+        },
+        {
+          "name": "test_auth_property",
+          "kind": "function",
+          "line": 323
+        },
+        {
+          "name": "test_auth_invalid_type",
+          "kind": "function",
+          "line": 339
+        },
+        {
+          "name": "test_digest_auth_returns_no_auth_if_no_digest_header_in_response",
+          "kind": "function",
+          "line": 357
+        },
+        {
+          "name": "test_digest_auth_returns_no_auth_if_alternate_auth_scheme",
+          "kind": "function",
+          "line": 370
+        },
+        {
+          "name": "test_digest_auth_200_response_including_digest_auth_header",
+          "kind": "function",
+          "line": 385
+        },
+        {
+          "name": "test_digest_auth_401_response_without_digest_auth_header",
+          "kind": "function",
+          "line": 400
+        },
+        {
+          "name": "test_digest_auth",
+          "kind": "function",
+          "line": 427
+        },
+        {
+          "name": "test_digest_auth_no_specified_qop",
+          "kind": "function",
+          "line": 460
+        },
+        {
+          "name": "test_digest_auth_qop_including_spaces_and_auth_returns_auth",
+          "kind": "function",
+          "line": 492
+        },
+        {
+          "name": "test_digest_auth_qop_auth_int_not_implemented",
+          "kind": "function",
+          "line": 505
+        },
+        {
+          "name": "test_digest_auth_qop_must_be_auth_or_auth_int",
+          "kind": "function",
+          "line": 516
+        },
+        {
+          "name": "test_digest_auth_incorrect_credentials",
+          "kind": "function",
+          "line": 527
+        },
+        {
+          "name": "test_digest_auth_reuses_challenge",
+          "kind": "function",
+          "line": 540
+        },
+        {
+          "name": "test_digest_auth_resets_nonce_count_after_401",
+          "kind": "function",
+          "line": 557
+        },
+        {
+          "name": "test_async_digest_auth_raises_protocol_error_on_malformed_header",
+          "kind": "function",
+          "line": 604
+        },
+        {
+          "name": "test_sync_digest_auth_raises_protocol_error_on_malformed_header",
+          "kind": "function",
+          "line": 623
+        },
+        {
+          "name": "test_async_auth_history",
+          "kind": "function",
+          "line": 636
+        },
+        {
+          "name": "test_sync_auth_history",
+          "kind": "function",
+          "line": 662
+        },
+        {
+          "name": "ConsumeBodyTransport",
+          "kind": "class",
+          "line": 688
+        },
+        {
+          "name": "handle_async_request",
+          "kind": "function",
+          "line": 689
+        },
+        {
+          "name": "test_digest_auth_unavailable_streaming_body",
+          "kind": "function",
+          "line": 696
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 701
+        },
+        {
+          "name": "test_async_auth_reads_response_body",
+          "kind": "function",
+          "line": 710
+        },
+        {
+          "name": "test_sync_auth_reads_response_body",
+          "kind": "function",
+          "line": 726
+        },
+        {
+          "name": "test_async_auth",
+          "kind": "function",
+          "line": 743
+        },
+        {
+          "name": "test_sync_auth",
+          "kind": "function",
+          "line": 760
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_client.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "from datetime import timedelta",
+        "import chardet",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "autodetect",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "test_get",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "test_get_invalid_url",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "test_build_request",
+          "kind": "function",
+          "line": 47
+        },
+        {
+          "name": "test_build_post_request",
+          "kind": "function",
+          "line": 62
+        },
+        {
+          "name": "test_post",
+          "kind": "function",
+          "line": 78
+        },
+        {
+          "name": "test_post_json",
+          "kind": "function",
+          "line": 85
+        },
+        {
+          "name": "test_stream_response",
+          "kind": "function",
+          "line": 92
+        },
+        {
+          "name": "test_stream_iterator",
+          "kind": "function",
+          "line": 100
+        },
+        {
+          "name": "test_raw_iterator",
+          "kind": "function",
+          "line": 112
+        },
+        {
+          "name": "test_cannot_stream_async_request",
+          "kind": "function",
+          "line": 124
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "test_raise_for_status",
+          "kind": "function",
+          "line": 134
+        },
+        {
+          "name": "test_options",
+          "kind": "function",
+          "line": 149
+        },
+        {
+          "name": "test_head",
+          "kind": "function",
+          "line": 156
+        },
+        {
+          "name": "test_put",
+          "kind": "function",
+          "line": 163
+        },
+        {
+          "name": "test_patch",
+          "kind": "function",
+          "line": 170
+        },
+        {
+          "name": "test_delete",
+          "kind": "function",
+          "line": 177
+        },
+        {
+          "name": "test_base_url",
+          "kind": "function",
+          "line": 184
+        },
+        {
+          "name": "test_merge_absolute_url",
+          "kind": "function",
+          "line": 192
+        },
+        {
+          "name": "test_merge_relative_url",
+          "kind": "function",
+          "line": 198
+        },
+        {
+          "name": "test_merge_relative_url_with_path",
+          "kind": "function",
+          "line": 204
+        },
+        {
+          "name": "test_merge_relative_url_with_dotted_path",
+          "kind": "function",
+          "line": 210
+        },
+        {
+          "name": "test_merge_relative_url_with_path_including_colon",
+          "kind": "function",
+          "line": 216
+        },
+        {
+          "name": "test_merge_relative_url_with_encoded_slashes",
+          "kind": "function",
+          "line": 222
+        },
+        {
+          "name": "test_context_managed_transport",
+          "kind": "function",
+          "line": 232
+        },
+        {
+          "name": "Transport",
+          "kind": "class",
+          "line": 233
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 234
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 237
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 244
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 248
+        },
+        {
+          "name": "test_context_managed_transport_and_mount",
+          "kind": "function",
+          "line": 263
+        },
+        {
+          "name": "Transport",
+          "kind": "class",
+          "line": 264
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 265
+        },
+        {
+          "name": "close",
+          "kind": "function",
+          "line": 269
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 276
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 280
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 301
+        },
+        {
+          "name": "test_client_closed_state_using_implicit_open",
+          "kind": "function",
+          "line": 305
+        },
+        {
+          "name": "test_client_closed_state_using_with_block",
+          "kind": "function",
+          "line": 326
+        },
+        {
+          "name": "echo_raw_headers",
+          "kind": "function",
+          "line": 336
+        },
+        {
+          "name": "test_raw_client_header",
+          "kind": "function",
+          "line": 344
+        },
+        {
+          "name": "unmounted",
+          "kind": "function",
+          "line": 367
+        },
+        {
+          "name": "mounted",
+          "kind": "function",
+          "line": 372
+        },
+        {
+          "name": "test_mounted_transport",
+          "kind": "function",
+          "line": 377
+        },
+        {
+          "name": "test_all_mounted_transport",
+          "kind": "function",
+          "line": 392
+        },
+        {
+          "name": "test_server_extensions",
+          "kind": "function",
+          "line": 402
+        },
+        {
+          "name": "test_client_decode_text_using_autodetect",
+          "kind": "function",
+          "line": 410
+        },
+        {
+          "name": "cp1252_but_no_content_type",
+          "kind": "function",
+          "line": 424
+        },
+        {
+          "name": "test_client_decode_text_using_explicit_encoding",
+          "kind": "function",
+          "line": 438
+        },
+        {
+          "name": "cp1252_but_no_content_type",
+          "kind": "function",
+          "line": 451
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_cookies.py",
+      "language": "python",
+      "imports": [
+        "from http.cookiejar import Cookie, CookieJar",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "get_and_set_cookies",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_set_cookie",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "test_set_per_request_cookie_is_deprecated",
+          "kind": "function",
+          "line": 34
+        },
+        {
+          "name": "test_set_cookie_with_cookiejar",
+          "kind": "function",
+          "line": 49
+        },
+        {
+          "name": "test_setting_client_cookies_to_cookiejar",
+          "kind": "function",
+          "line": 86
+        },
+        {
+          "name": "test_set_cookie_with_cookies_model",
+          "kind": "function",
+          "line": 123
+        },
+        {
+          "name": "test_get_cookie",
+          "kind": "function",
+          "line": 140
+        },
+        {
+          "name": "test_cookie_persistence",
+          "kind": "function",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_event_hooks.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "app",
+          "kind": "function",
+          "line": 6
+        },
+        {
+          "name": "test_event_hooks",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "on_request",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "on_response",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "test_event_hooks_raising_exception",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "raise_on_4xx_5xx",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "test_async_event_hooks",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "on_request",
+          "kind": "function",
+          "line": 70
+        },
+        {
+          "name": "on_response",
+          "kind": "function",
+          "line": 73
+        },
+        {
+          "name": "test_async_event_hooks_raising_exception",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "raise_on_4xx_5xx",
+          "kind": "function",
+          "line": 104
+        },
+        {
+          "name": "test_event_hooks_with_redirect",
+          "kind": "function",
+          "line": 118
+        },
+        {
+          "name": "on_request",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "on_response",
+          "kind": "function",
+          "line": 128
+        },
+        {
+          "name": "test_async_event_hooks_with_redirect",
+          "kind": "function",
+          "line": 175
+        },
+        {
+          "name": "on_request",
+          "kind": "function",
+          "line": 182
+        },
+        {
+          "name": "on_response",
+          "kind": "function",
+          "line": 185
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_headers.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "echo_headers",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "echo_repeated_headers_multi_items",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "echo_repeated_headers_items",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "test_client_header",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "test_header_merge",
+          "kind": "function",
+          "line": 46
+        },
+        {
+          "name": "test_header_merge_conflicting_headers",
+          "kind": "function",
+          "line": 68
+        },
+        {
+          "name": "test_header_update",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "test_header_repeated_items",
+          "kind": "function",
+          "line": 123
+        },
+        {
+          "name": "test_header_repeated_multi_items",
+          "kind": "function",
+          "line": 138
+        },
+        {
+          "name": "test_remove_default_header",
+          "kind": "function",
+          "line": 152
+        },
+        {
+          "name": "test_header_does_not_exist",
+          "kind": "function",
+          "line": 174
+        },
+        {
+          "name": "test_header_with_incorrect_value",
+          "kind": "function",
+          "line": 180
+        },
+        {
+          "name": "test_host_with_auth_and_port_in_url",
+          "kind": "function",
+          "line": 188
+        },
+        {
+          "name": "test_host_with_non_default_port_in_url",
+          "kind": "function",
+          "line": 212
+        },
+        {
+          "name": "test_request_auto_headers",
+          "kind": "function",
+          "line": 235
+        },
+        {
+          "name": "test_same_origin",
+          "kind": "function",
+          "line": 240
+        },
+        {
+          "name": "test_not_same_origin",
+          "kind": "function",
+          "line": 250
+        },
+        {
+          "name": "test_is_https_redirect",
+          "kind": "function",
+          "line": 260
+        },
+        {
+          "name": "test_is_not_https_redirect",
+          "kind": "function",
+          "line": 272
+        },
+        {
+          "name": "test_is_not_https_redirect_if_not_default_ports",
+          "kind": "function",
+          "line": 284
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_properties.py",
+      "language": "python",
+      "imports": [
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_client_base_url",
+          "kind": "function",
+          "line": 4
+        },
+        {
+          "name": "test_client_base_url_without_trailing_slash",
+          "kind": "function",
+          "line": 11
+        },
+        {
+          "name": "test_client_base_url_with_trailing_slash",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "test_client_headers",
+          "kind": "function",
+          "line": 25
+        },
+        {
+          "name": "test_client_cookies",
+          "kind": "function",
+          "line": 32
+        },
+        {
+          "name": "test_client_timeout",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "test_client_event_hooks",
+          "kind": "function",
+          "line": 54
+        },
+        {
+          "name": "on_request",
+          "kind": "function",
+          "line": 55
+        },
+        {
+          "name": "test_client_trust_env",
+          "kind": "function",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_proxies.py",
+      "language": "python",
+      "imports": [
+        "import httpcore",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "url_to_origin",
+          "kind": "function",
+          "line": 7
+        },
+        {
+          "name": "test_socks_proxy",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "test_transport_for_request",
+          "kind": "function",
+          "line": 88
+        },
+        {
+          "name": "test_async_proxy_close",
+          "kind": "function",
+          "line": 104
+        },
+        {
+          "name": "test_sync_proxy_close",
+          "kind": "function",
+          "line": 114
+        },
+        {
+          "name": "test_unsupported_proxy_scheme",
+          "kind": "function",
+          "line": 123
+        },
+        {
+          "name": "test_proxies_environ",
+          "kind": "function",
+          "line": 226
+        },
+        {
+          "name": "test_for_deprecated_proxy_params",
+          "kind": "function",
+          "line": 250
+        },
+        {
+          "name": "test_proxy_with_mounts",
+          "kind": "function",
+          "line": 260
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_queryparams.py",
+      "language": "python",
+      "imports": [
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 4
+        },
+        {
+          "name": "test_client_queryparams",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_client_queryparams_string",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_client_queryparams_echo",
+          "kind": "function",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/client/test_redirects.py",
+      "language": "python",
+      "imports": [
+        "import typing",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "redirects",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_redirect_301",
+          "kind": "function",
+          "line": 116
+        },
+        {
+          "name": "test_redirect_302",
+          "kind": "function",
+          "line": 124
+        },
+        {
+          "name": "test_redirect_303",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "test_next_request",
+          "kind": "function",
+          "line": 140
+        },
+        {
+          "name": "test_async_next_request",
+          "kind": "function",
+          "line": 155
+        },
+        {
+          "name": "test_head_redirect",
+          "kind": "function",
+          "line": 169
+        },
+        {
+          "name": "test_relative_redirect",
+          "kind": "function",
+          "line": 182
+        },
+        {
+          "name": "test_malformed_redirect",
+          "kind": "function",
+          "line": 192
+        },
+        {
+          "name": "test_invalid_redirect",
+          "kind": "function",
+          "line": 203
+        },
+        {
+          "name": "test_no_scheme_redirect",
+          "kind": "function",
+          "line": 209
+        },
+        {
+          "name": "test_fragment_redirect",
+          "kind": "function",
+          "line": 219
+        },
+        {
+          "name": "test_multiple_redirects",
+          "kind": "function",
+          "line": 229
+        },
+        {
+          "name": "test_async_too_many_redirects",
+          "kind": "function",
+          "line": 244
+        },
+        {
+          "name": "test_sync_too_many_redirects",
+          "kind": "function",
+          "line": 252
+        },
+        {
+          "name": "test_redirect_loop",
+          "kind": "function",
+          "line": 260
+        },
+        {
+          "name": "test_cross_domain_redirect_with_auth_header",
+          "kind": "function",
+          "line": 266
+        },
+        {
+          "name": "test_cross_domain_https_redirect_with_auth_header",
+          "kind": "function",
+          "line": 275
+        },
+        {
+          "name": "test_cross_domain_redirect_with_auth",
+          "kind": "function",
+          "line": 284
+        },
+        {
+          "name": "test_same_domain_redirect",
+          "kind": "function",
+          "line": 292
+        },
+        {
+          "name": "test_same_domain_https_redirect_with_auth_header",
+          "kind": "function",
+          "line": 301
+        },
+        {
+          "name": "test_body_redirect",
+          "kind": "function",
+          "line": 310
+        },
+        {
+          "name": "test_no_body_redirect",
+          "kind": "function",
+          "line": 323
+        },
+        {
+          "name": "test_can_stream_if_no_redirect",
+          "kind": "function",
+          "line": 336
+        },
+        {
+          "name": "ConsumeBodyTransport",
+          "kind": "class",
+          "line": 345
+        },
+        {
+          "name": "handle_request",
+          "kind": "function",
+          "line": 346
+        },
+        {
+          "name": "test_cannot_redirect_streaming_body",
+          "kind": "function",
+          "line": 352
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 356
+        },
+        {
+          "name": "test_cross_subdomain_redirect",
+          "kind": "function",
+          "line": 363
+        },
+        {
+          "name": "cookie_sessions",
+          "kind": "function",
+          "line": 370
+        },
+        {
+          "name": "test_redirect_cookie_behavior",
+          "kind": "function",
+          "line": 403
+        },
+        {
+          "name": "test_redirect_custom_scheme",
+          "kind": "function",
+          "line": 434
+        },
+        {
+          "name": "test_async_invalid_redirect",
+          "kind": "function",
+          "line": 442
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/common.py",
+      "language": "python",
+      "imports": [
+        "import pathlib"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/tests/concurrency.py",
+      "language": "python",
+      "imports": [
+        "import asyncio",
+        "import sniffio",
+        "import trio"
+      ],
+      "symbols": [
+        {
+          "name": "sleep",
+          "kind": "function",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/conftest.py",
+      "language": "python",
+      "imports": [
+        "import asyncio",
+        "import json",
+        "import os",
+        "import threading",
+        "import time",
+        "import typing",
+        "import pytest",
+        "import trustme",
+        "from cryptography.hazmat.backends import default_backend",
+        "from cryptography.hazmat.primitives.serialization import (\n    BestAvailableEncryption,\n    Encoding,\n    PrivateFormat,\n    load_pem_private_key,\n)",
+        "from uvicorn.config import Config",
+        "from uvicorn.server import Server",
+        "import httpx",
+        "from tests.concurrency import sleep"
+      ],
+      "symbols": [
+        {
+          "name": "clean_environ",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "app",
+          "kind": "function",
+          "line": 59
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 79
+        },
+        {
+          "name": "hello_world_json",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "slow_response",
+          "kind": "function",
+          "line": 101
+        },
+        {
+          "name": "status_code",
+          "kind": "function",
+          "line": 113
+        },
+        {
+          "name": "echo_body",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "echo_binary",
+          "kind": "function",
+          "line": 144
+        },
+        {
+          "name": "echo_headers",
+          "kind": "function",
+          "line": 163
+        },
+        {
+          "name": "redirect_301",
+          "kind": "function",
+          "line": 178
+        },
+        {
+          "name": "cert_authority",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "localhost_cert",
+          "kind": "function",
+          "line": 191
+        },
+        {
+          "name": "cert_pem_file",
+          "kind": "function",
+          "line": 196
+        },
+        {
+          "name": "cert_private_key_file",
+          "kind": "function",
+          "line": 202
+        },
+        {
+          "name": "cert_encrypted_private_key_file",
+          "kind": "function",
+          "line": 208
+        },
+        {
+          "name": "TestServer",
+          "kind": "class",
+          "line": 224
+        },
+        {
+          "name": "url",
+          "kind": "function",
+          "line": 226
+        },
+        {
+          "name": "install_signal_handlers",
+          "kind": "function",
+          "line": 230
+        },
+        {
+          "name": "serve",
+          "kind": "function",
+          "line": 235
+        },
+        {
+          "name": "restart",
+          "kind": "function",
+          "line": 245
+        },
+        {
+          "name": "watch_restarts",
+          "kind": "function",
+          "line": 256
+        },
+        {
+          "name": "serve_in_thread",
+          "kind": "function",
+          "line": 271
+        },
+        {
+          "name": "server",
+          "kind": "function",
+          "line": 284
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "httpx-master/tests/models/test_cookies.py",
+      "language": "python",
+      "imports": [
+        "import http",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_cookies",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_cookies_update",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "test_cookies_with_domain",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "test_cookies_with_domain_and_path",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "test_multiple_set_cookie",
+          "kind": "function",
+          "line": 55
+        },
+        {
+          "name": "test_cookies_can_be_a_list_of_tuples",
+          "kind": "function",
+          "line": 80
+        },
+        {
+          "name": "test_cookies_repr",
+          "kind": "function",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_headers.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_headers",
+          "kind": "function",
+          "line": 6
+        },
+        {
+          "name": "test_header_mutations",
+          "kind": "function",
+          "line": 37
+        },
+        {
+          "name": "test_copy_headers_method",
+          "kind": "function",
+          "line": 53
+        },
+        {
+          "name": "test_copy_headers_init",
+          "kind": "function",
+          "line": 60
+        },
+        {
+          "name": "test_headers_insert_retains_ordering",
+          "kind": "function",
+          "line": 66
+        },
+        {
+          "name": "test_headers_insert_appends_if_new",
+          "kind": "function",
+          "line": 72
+        },
+        {
+          "name": "test_headers_insert_removes_all_existing",
+          "kind": "function",
+          "line": 78
+        },
+        {
+          "name": "test_headers_delete_removes_all_existing",
+          "kind": "function",
+          "line": 84
+        },
+        {
+          "name": "test_headers_dict_repr",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "test_headers_encoding_in_repr",
+          "kind": "function",
+          "line": 98
+        },
+        {
+          "name": "test_headers_list_repr",
+          "kind": "function",
+          "line": 106
+        },
+        {
+          "name": "test_headers_decode_ascii",
+          "kind": "function",
+          "line": 116
+        },
+        {
+          "name": "test_headers_decode_utf_8",
+          "kind": "function",
+          "line": 126
+        },
+        {
+          "name": "test_headers_decode_iso_8859_1",
+          "kind": "function",
+          "line": 136
+        },
+        {
+          "name": "test_headers_decode_explicit_encoding",
+          "kind": "function",
+          "line": 146
+        },
+        {
+          "name": "test_multiple_headers",
+          "kind": "function",
+          "line": 158
+        },
+        {
+          "name": "test_sensitive_headers",
+          "kind": "function",
+          "line": 170
+        },
+        {
+          "name": "test_obfuscate_sensitive_headers",
+          "kind": "function",
+          "line": 187
+        },
+        {
+          "name": "test_parse_header_links",
+          "kind": "function",
+          "line": 212
+        },
+        {
+          "name": "test_parse_header_links_no_link",
+          "kind": "function",
+          "line": 217
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_queryparams.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_queryparams",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "test_queryparam_types",
+          "kind": "function",
+          "line": 53
+        },
+        {
+          "name": "test_empty_query_params",
+          "kind": "function",
+          "line": 79
+        },
+        {
+          "name": "test_queryparam_update_is_hard_deprecated",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "test_queryparam_setter_is_hard_deprecated",
+          "kind": "function",
+          "line": 96
+        },
+        {
+          "name": "test_queryparam_set",
+          "kind": "function",
+          "line": 102
+        },
+        {
+          "name": "test_queryparam_add",
+          "kind": "function",
+          "line": 108
+        },
+        {
+          "name": "test_queryparam_remove",
+          "kind": "function",
+          "line": 114
+        },
+        {
+          "name": "test_queryparam_merge",
+          "kind": "function",
+          "line": 120
+        },
+        {
+          "name": "test_queryparams_are_hashable",
+          "kind": "function",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_requests.py",
+      "language": "python",
+      "imports": [
+        "import pickle",
+        "import typing",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_request_repr",
+          "kind": "function",
+          "line": 9
+        },
+        {
+          "name": "test_no_content",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_content_length_header",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "test_iterable_content",
+          "kind": "function",
+          "line": 24
+        },
+        {
+          "name": "Content",
+          "kind": "class",
+          "line": 25
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "test_generator_with_transfer_encoding_header",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 34
+        },
+        {
+          "name": "test_generator_with_content_length_header",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 42
+        },
+        {
+          "name": "test_url_encoded_data",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "test_json_encoded_data",
+          "kind": "function",
+          "line": 60
+        },
+        {
+          "name": "test_headers",
+          "kind": "function",
+          "line": 68
+        },
+        {
+          "name": "test_read_and_stream_data",
+          "kind": "function",
+          "line": 78
+        },
+        {
+          "name": "test_aread_and_stream_data",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "test_cannot_access_streaming_content_without_read",
+          "kind": "function",
+          "line": 101
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "test_transfer_encoding_header",
+          "kind": "function",
+          "line": 111
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 112
+        },
+        {
+          "name": "test_ignore_transfer_encoding_header_if_content_length_exists",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 128
+        },
+        {
+          "name": "test_override_host_header",
+          "kind": "function",
+          "line": 139
+        },
+        {
+          "name": "test_override_accept_encoding_header",
+          "kind": "function",
+          "line": 146
+        },
+        {
+          "name": "test_override_content_length_header",
+          "kind": "function",
+          "line": 153
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 154
+        },
+        {
+          "name": "test_url",
+          "kind": "function",
+          "line": 164
+        },
+        {
+          "name": "test_request_picklable",
+          "kind": "function",
+          "line": 180
+        },
+        {
+          "name": "test_request_async_streaming_content_picklable",
+          "kind": "function",
+          "line": 196
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 197
+        },
+        {
+          "name": "test_request_generator_content_picklable",
+          "kind": "function",
+          "line": 214
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 215
+        },
+        {
+          "name": "test_request_params",
+          "kind": "function",
+          "line": 231
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_responses.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import pickle",
+        "import typing",
+        "import chardet",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "StreamingBody",
+          "kind": "class",
+          "line": 11
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "streaming_body",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "async_streaming_body",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "autodetect",
+          "kind": "function",
+          "line": 27
+        },
+        {
+          "name": "test_response",
+          "kind": "function",
+          "line": 31
+        },
+        {
+          "name": "test_response_content",
+          "kind": "function",
+          "line": 46
+        },
+        {
+          "name": "test_response_text",
+          "kind": "function",
+          "line": 55
+        },
+        {
+          "name": "test_response_html",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "test_response_json",
+          "kind": "function",
+          "line": 79
+        },
+        {
+          "name": "test_raise_for_status",
+          "kind": "function",
+          "line": 91
+        },
+        {
+          "name": "test_response_repr",
+          "kind": "function",
+          "line": 149
+        },
+        {
+          "name": "test_response_content_type_encoding",
+          "kind": "function",
+          "line": 157
+        },
+        {
+          "name": "test_response_default_to_utf8_encoding",
+          "kind": "function",
+          "line": 172
+        },
+        {
+          "name": "test_response_fallback_to_utf8_encoding",
+          "kind": "function",
+          "line": 185
+        },
+        {
+          "name": "test_response_no_charset_with_ascii_content",
+          "kind": "function",
+          "line": 200
+        },
+        {
+          "name": "test_response_no_charset_with_utf8_content",
+          "kind": "function",
+          "line": 217
+        },
+        {
+          "name": "test_response_no_charset_with_iso_8859_1_content",
+          "kind": "function",
+          "line": 233
+        },
+        {
+          "name": "test_response_no_charset_with_cp_1252_content",
+          "kind": "function",
+          "line": 247
+        },
+        {
+          "name": "test_response_non_text_encoding",
+          "kind": "function",
+          "line": 261
+        },
+        {
+          "name": "test_response_set_explicit_encoding",
+          "kind": "function",
+          "line": 275
+        },
+        {
+          "name": "test_response_force_encoding",
+          "kind": "function",
+          "line": 289
+        },
+        {
+          "name": "test_response_force_encoding_after_text_accessed",
+          "kind": "function",
+          "line": 301
+        },
+        {
+          "name": "test_read",
+          "kind": "function",
+          "line": 318
+        },
+        {
+          "name": "test_empty_read",
+          "kind": "function",
+          "line": 336
+        },
+        {
+          "name": "test_aread",
+          "kind": "function",
+          "line": 352
+        },
+        {
+          "name": "test_empty_aread",
+          "kind": "function",
+          "line": 371
+        },
+        {
+          "name": "test_iter_raw",
+          "kind": "function",
+          "line": 386
+        },
+        {
+          "name": "test_iter_raw_with_chunksize",
+          "kind": "function",
+          "line": 398
+        },
+        {
+          "name": "test_iter_raw_doesnt_return_empty_chunks",
+          "kind": "function",
+          "line": 416
+        },
+        {
+          "name": "streaming_body_with_empty_chunks",
+          "kind": "function",
+          "line": 417
+        },
+        {
+          "name": "test_iter_raw_on_iterable",
+          "kind": "function",
+          "line": 429
+        },
+        {
+          "name": "test_iter_raw_on_async",
+          "kind": "function",
+          "line": 441
+        },
+        {
+          "name": "test_close_on_async",
+          "kind": "function",
+          "line": 451
+        },
+        {
+          "name": "test_iter_raw_increments_updates_counter",
+          "kind": "function",
+          "line": 461
+        },
+        {
+          "name": "test_aiter_raw",
+          "kind": "function",
+          "line": 471
+        },
+        {
+          "name": "test_aiter_raw_with_chunksize",
+          "kind": "function",
+          "line": 481
+        },
+        {
+          "name": "test_aiter_raw_on_sync",
+          "kind": "function",
+          "line": 499
+        },
+        {
+          "name": "test_aclose_on_sync",
+          "kind": "function",
+          "line": 510
+        },
+        {
+          "name": "test_aiter_raw_increments_updates_counter",
+          "kind": "function",
+          "line": 521
+        },
+        {
+          "name": "test_iter_bytes",
+          "kind": "function",
+          "line": 530
+        },
+        {
+          "name": "test_iter_bytes_with_chunk_size",
+          "kind": "function",
+          "line": 539
+        },
+        {
+          "name": "test_iter_bytes_with_empty_response",
+          "kind": "function",
+          "line": 553
+        },
+        {
+          "name": "test_iter_bytes_doesnt_return_empty_chunks",
+          "kind": "function",
+          "line": 559
+        },
+        {
+          "name": "streaming_body_with_empty_chunks",
+          "kind": "function",
+          "line": 560
+        },
+        {
+          "name": "test_aiter_bytes",
+          "kind": "function",
+          "line": 573
+        },
+        {
+          "name": "test_aiter_bytes_with_chunk_size",
+          "kind": "function",
+          "line": 586
+        },
+        {
+          "name": "test_iter_text",
+          "kind": "function",
+          "line": 600
+        },
+        {
+          "name": "test_iter_text_with_chunk_size",
+          "kind": "function",
+          "line": 612
+        },
+        {
+          "name": "test_aiter_text",
+          "kind": "function",
+          "line": 635
+        },
+        {
+          "name": "test_aiter_text_with_chunk_size",
+          "kind": "function",
+          "line": 648
+        },
+        {
+          "name": "test_iter_lines",
+          "kind": "function",
+          "line": 662
+        },
+        {
+          "name": "test_aiter_lines",
+          "kind": "function",
+          "line": 672
+        },
+        {
+          "name": "test_sync_streaming_response",
+          "kind": "function",
+          "line": 684
+        },
+        {
+          "name": "test_async_streaming_response",
+          "kind": "function",
+          "line": 701
+        },
+        {
+          "name": "test_cannot_read_after_stream_consumed",
+          "kind": "function",
+          "line": 717
+        },
+        {
+          "name": "test_cannot_aread_after_stream_consumed",
+          "kind": "function",
+          "line": 732
+        },
+        {
+          "name": "test_cannot_read_after_response_closed",
+          "kind": "function",
+          "line": 746
+        },
+        {
+          "name": "test_cannot_aread_after_response_closed",
+          "kind": "function",
+          "line": 758
+        },
+        {
+          "name": "test_elapsed_not_available_until_closed",
+          "kind": "function",
+          "line": 770
+        },
+        {
+          "name": "test_unknown_status_code",
+          "kind": "function",
+          "line": 780
+        },
+        {
+          "name": "test_json_with_specified_encoding",
+          "kind": "function",
+          "line": 789
+        },
+        {
+          "name": "test_json_with_options",
+          "kind": "function",
+          "line": 801
+        },
+        {
+          "name": "test_json_without_specified_charset",
+          "kind": "function",
+          "line": 826
+        },
+        {
+          "name": "test_json_with_specified_charset",
+          "kind": "function",
+          "line": 851
+        },
+        {
+          "name": "test_link_headers",
+          "kind": "function",
+          "line": 879
+        },
+        {
+          "name": "test_decode_error_with_request",
+          "kind": "function",
+          "line": 889
+        },
+        {
+          "name": "test_value_error_without_request",
+          "kind": "function",
+          "line": 909
+        },
+        {
+          "name": "test_response_with_unset_request",
+          "kind": "function",
+          "line": 916
+        },
+        {
+          "name": "test_set_request_after_init",
+          "kind": "function",
+          "line": 925
+        },
+        {
+          "name": "test_cannot_access_unset_request",
+          "kind": "function",
+          "line": 934
+        },
+        {
+          "name": "test_generator_with_transfer_encoding_header",
+          "kind": "function",
+          "line": 941
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 942
+        },
+        {
+          "name": "test_generator_with_content_length_header",
+          "kind": "function",
+          "line": 949
+        },
+        {
+          "name": "content",
+          "kind": "function",
+          "line": 950
+        },
+        {
+          "name": "test_response_picklable",
+          "kind": "function",
+          "line": 958
+        },
+        {
+          "name": "test_response_async_streaming_picklable",
+          "kind": "function",
+          "line": 977
+        },
+        {
+          "name": "test_response_decode_text_using_autodetect",
+          "kind": "function",
+          "line": 996
+        },
+        {
+          "name": "test_response_decode_text_using_explicit_encoding",
+          "kind": "function",
+          "line": 1021
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_url.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_basic_url",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_complete_url",
+          "kind": "function",
+          "line": 24
+        },
+        {
+          "name": "test_url_with_empty_query",
+          "kind": "function",
+          "line": 40
+        },
+        {
+          "name": "test_url_no_scheme",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "test_url_no_authority",
+          "kind": "function",
+          "line": 63
+        },
+        {
+          "name": "test_path_query_fragment",
+          "kind": "function",
+          "line": 135
+        },
+        {
+          "name": "test_url_query_encoding",
+          "kind": "function",
+          "line": 143
+        },
+        {
+          "name": "test_url_params",
+          "kind": "function",
+          "line": 154
+        },
+        {
+          "name": "test_url_username_and_password",
+          "kind": "function",
+          "line": 207
+        },
+        {
+          "name": "test_url_valid_host",
+          "kind": "function",
+          "line": 217
+        },
+        {
+          "name": "test_url_normalized_host",
+          "kind": "function",
+          "line": 222
+        },
+        {
+          "name": "test_url_percent_escape_host",
+          "kind": "function",
+          "line": 227
+        },
+        {
+          "name": "test_url_ipv4_like_host",
+          "kind": "function",
+          "line": 232
+        },
+        {
+          "name": "test_url_valid_port",
+          "kind": "function",
+          "line": 241
+        },
+        {
+          "name": "test_url_normalized_port",
+          "kind": "function",
+          "line": 246
+        },
+        {
+          "name": "test_url_invalid_port",
+          "kind": "function",
+          "line": 252
+        },
+        {
+          "name": "test_url_normalized_path",
+          "kind": "function",
+          "line": 261
+        },
+        {
+          "name": "test_url_escaped_path",
+          "kind": "function",
+          "line": 266
+        },
+        {
+          "name": "test_url_leading_dot_prefix_on_absolute_url",
+          "kind": "function",
+          "line": 271
+        },
+        {
+          "name": "test_url_leading_dot_prefix_on_relative_url",
+          "kind": "function",
+          "line": 276
+        },
+        {
+          "name": "test_param_with_space",
+          "kind": "function",
+          "line": 286
+        },
+        {
+          "name": "test_param_requires_encoding",
+          "kind": "function",
+          "line": 293
+        },
+        {
+          "name": "test_param_with_percent_encoded",
+          "kind": "function",
+          "line": 299
+        },
+        {
+          "name": "test_param_with_existing_escape_requires_encoding",
+          "kind": "function",
+          "line": 307
+        },
+        {
+          "name": "test_query_with_existing_percent_encoding",
+          "kind": "function",
+          "line": 320
+        },
+        {
+          "name": "test_query_requiring_percent_encoding",
+          "kind": "function",
+          "line": 326
+        },
+        {
+          "name": "test_query_with_mixed_percent_encoding",
+          "kind": "function",
+          "line": 332
+        },
+        {
+          "name": "test_url_invalid_hostname",
+          "kind": "function",
+          "line": 343
+        },
+        {
+          "name": "test_url_excessively_long_url",
+          "kind": "function",
+          "line": 351
+        },
+        {
+          "name": "test_url_excessively_long_component",
+          "kind": "function",
+          "line": 357
+        },
+        {
+          "name": "test_url_non_printing_character_in_url",
+          "kind": "function",
+          "line": 363
+        },
+        {
+          "name": "test_url_non_printing_character_in_component",
+          "kind": "function",
+          "line": 371
+        },
+        {
+          "name": "test_url_with_components",
+          "kind": "function",
+          "line": 383
+        },
+        {
+          "name": "test_urlparse_with_invalid_component",
+          "kind": "function",
+          "line": 397
+        },
+        {
+          "name": "test_urlparse_with_invalid_scheme",
+          "kind": "function",
+          "line": 403
+        },
+        {
+          "name": "test_urlparse_with_invalid_path",
+          "kind": "function",
+          "line": 409
+        },
+        {
+          "name": "test_url_with_relative_path",
+          "kind": "function",
+          "line": 423
+        },
+        {
+          "name": "test_url_eq_str",
+          "kind": "function",
+          "line": 432
+        },
+        {
+          "name": "test_url_set",
+          "kind": "function",
+          "line": 441
+        },
+        {
+          "name": "test_url_invalid_type",
+          "kind": "function",
+          "line": 458
+        },
+        {
+          "name": "ExternalURLClass",
+          "kind": "class",
+          "line": 463
+        },
+        {
+          "name": "test_url_with_invalid_component",
+          "kind": "function",
+          "line": 470
+        },
+        {
+          "name": "test_url_join",
+          "kind": "function",
+          "line": 479
+        },
+        {
+          "name": "test_relative_url_join",
+          "kind": "function",
+          "line": 494
+        },
+        {
+          "name": "test_url_join_rfc3986",
+          "kind": "function",
+          "line": 502
+        },
+        {
+          "name": "test_resolution_error_1833",
+          "kind": "function",
+          "line": 557
+        },
+        {
+          "name": "test_copy_with",
+          "kind": "function",
+          "line": 568
+        },
+        {
+          "name": "test_url_copywith_authority_subcomponents",
+          "kind": "function",
+          "line": 585
+        },
+        {
+          "name": "test_url_copywith_netloc",
+          "kind": "function",
+          "line": 597
+        },
+        {
+          "name": "test_url_copywith_userinfo_subcomponents",
+          "kind": "function",
+          "line": 606
+        },
+        {
+          "name": "test_url_copywith_invalid_component",
+          "kind": "function",
+          "line": 619
+        },
+        {
+          "name": "test_url_copywith_urlencoded_path",
+          "kind": "function",
+          "line": 627
+        },
+        {
+          "name": "test_url_copywith_query",
+          "kind": "function",
+          "line": 635
+        },
+        {
+          "name": "test_url_copywith_raw_path",
+          "kind": "function",
+          "line": 643
+        },
+        {
+          "name": "test_url_copywith_security",
+          "kind": "function",
+          "line": 663
+        },
+        {
+          "name": "test_url_set_param_manipulation",
+          "kind": "function",
+          "line": 684
+        },
+        {
+          "name": "test_url_add_param_manipulation",
+          "kind": "function",
+          "line": 692
+        },
+        {
+          "name": "test_url_remove_param_manipulation",
+          "kind": "function",
+          "line": 700
+        },
+        {
+          "name": "test_url_merge_params_manipulation",
+          "kind": "function",
+          "line": 708
+        },
+        {
+          "name": "test_idna_url",
+          "kind": "function",
+          "line": 780
+        },
+        {
+          "name": "test_url_unescaped_idna_host",
+          "kind": "function",
+          "line": 789
+        },
+        {
+          "name": "test_url_escaped_idna_host",
+          "kind": "function",
+          "line": 794
+        },
+        {
+          "name": "test_url_invalid_idna_host",
+          "kind": "function",
+          "line": 799
+        },
+        {
+          "name": "test_url_valid_ipv4",
+          "kind": "function",
+          "line": 808
+        },
+        {
+          "name": "test_url_invalid_ipv4",
+          "kind": "function",
+          "line": 813
+        },
+        {
+          "name": "test_ipv6_url",
+          "kind": "function",
+          "line": 822
+        },
+        {
+          "name": "test_url_valid_ipv6",
+          "kind": "function",
+          "line": 829
+        },
+        {
+          "name": "test_url_invalid_ipv6",
+          "kind": "function",
+          "line": 834
+        },
+        {
+          "name": "test_ipv6_url_from_raw_url",
+          "kind": "function",
+          "line": 841
+        },
+        {
+          "name": "test_ipv6_url_copy_with_host",
+          "kind": "function",
+          "line": 858
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/models/test_whatwg.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import pytest",
+        "from httpx._urlparse import urlparse"
+      ],
+      "symbols": [
+        {
+          "name": "test_urlparse",
+          "kind": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_api.py",
+      "language": "python",
+      "imports": [
+        "import typing",
+        "import pytest",
+        "import httpx",
+        "import sys"
+      ],
+      "symbols": [
+        {
+          "name": "test_get",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "test_post",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "test_post_byte_iterator",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "data",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "test_post_byte_stream",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "Data",
+          "kind": "class",
+          "line": 34
+        },
+        {
+          "name": "__iter__",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "test_options",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "test_head",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "test_put",
+          "kind": "function",
+          "line": 57
+        },
+        {
+          "name": "test_patch",
+          "kind": "function",
+          "line": 63
+        },
+        {
+          "name": "test_delete",
+          "kind": "function",
+          "line": 69
+        },
+        {
+          "name": "test_stream",
+          "kind": "function",
+          "line": 75
+        },
+        {
+          "name": "test_get_invalid_url",
+          "kind": "function",
+          "line": 85
+        },
+        {
+          "name": "test_httpcore_lazy_loading",
+          "kind": "function",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_asgi.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 8
+        },
+        {
+          "name": "echo_path",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "echo_raw_path",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "echo_body",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "echo_headers",
+          "kind": "function",
+          "line": 48
+        },
+        {
+          "name": "raise_exc",
+          "kind": "function",
+          "line": 59
+        },
+        {
+          "name": "raise_exc_after_response",
+          "kind": "function",
+          "line": 63
+        },
+        {
+          "name": "test_asgi_transport",
+          "kind": "function",
+          "line": 74
+        },
+        {
+          "name": "test_asgi_transport_no_body",
+          "kind": "function",
+          "line": 84
+        },
+        {
+          "name": "test_asgi",
+          "kind": "function",
+          "line": 94
+        },
+        {
+          "name": "test_asgi_urlencoded_path",
+          "kind": "function",
+          "line": 104
+        },
+        {
+          "name": "test_asgi_raw_path",
+          "kind": "function",
+          "line": 115
+        },
+        {
+          "name": "test_asgi_raw_path_should_not_include_querystring_portion",
+          "kind": "function",
+          "line": 126
+        },
+        {
+          "name": "test_asgi_upload",
+          "kind": "function",
+          "line": 140
+        },
+        {
+          "name": "test_asgi_headers",
+          "kind": "function",
+          "line": 150
+        },
+        {
+          "name": "test_asgi_exc",
+          "kind": "function",
+          "line": 168
+        },
+        {
+          "name": "test_asgi_exc_after_response",
+          "kind": "function",
+          "line": 176
+        },
+        {
+          "name": "test_asgi_disconnect_after_response_complete",
+          "kind": "function",
+          "line": 184
+        },
+        {
+          "name": "read_body",
+          "kind": "function",
+          "line": 187
+        },
+        {
+          "name": "test_asgi_exc_no_raise",
+          "kind": "function",
+          "line": 219
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_auth.py",
+      "language": "python",
+      "imports": [
+        "from urllib.request import parse_keqv_list",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_basic_auth",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_digest_auth_with_200",
+          "kind": "function",
+          "line": 29
+        },
+        {
+          "name": "test_digest_auth_with_401",
+          "kind": "function",
+          "line": 44
+        },
+        {
+          "name": "test_digest_auth_with_401_nonce_counting",
+          "kind": "function",
+          "line": 69
+        },
+        {
+          "name": "set_cookies",
+          "kind": "function",
+          "line": 107
+        },
+        {
+          "name": "test_digest_auth_setting_cookie_in_request",
+          "kind": "function",
+          "line": 120
+        },
+        {
+          "name": "test_digest_auth_rfc_2069",
+          "kind": "function",
+          "line": 146
+        },
+        {
+          "name": "test_digest_auth_rfc_7616_md5",
+          "kind": "function",
+          "line": 191
+        },
+        {
+          "name": "mock_get_client_nonce",
+          "kind": "function",
+          "line": 194
+        },
+        {
+          "name": "test_digest_auth_rfc_7616_sha_256",
+          "kind": "function",
+          "line": 251
+        },
+        {
+          "name": "mock_get_client_nonce",
+          "kind": "function",
+          "line": 254
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_config.py",
+      "language": "python",
+      "imports": [
+        "import ssl",
+        "import typing",
+        "from pathlib import Path",
+        "import certifi",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_load_ssl_config",
+          "kind": "function",
+          "line": 11
+        },
+        {
+          "name": "test_load_ssl_config_verify_non_existing_file",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "test_load_ssl_with_keylog",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "test_load_ssl_config_verify_existing_file",
+          "kind": "function",
+          "line": 29
+        },
+        {
+          "name": "test_load_ssl_config_verify_directory",
+          "kind": "function",
+          "line": 36
+        },
+        {
+          "name": "test_load_ssl_config_cert_and_key",
+          "kind": "function",
+          "line": 43
+        },
+        {
+          "name": "test_load_ssl_config_cert_and_encrypted_key",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "test_load_ssl_config_cert_and_key_invalid_password",
+          "kind": "function",
+          "line": 60
+        },
+        {
+          "name": "test_load_ssl_config_cert_without_key_raises",
+          "kind": "function",
+          "line": 70
+        },
+        {
+          "name": "test_load_ssl_config_no_verify",
+          "kind": "function",
+          "line": 76
+        },
+        {
+          "name": "test_SSLContext_with_get_request",
+          "kind": "function",
+          "line": 82
+        },
+        {
+          "name": "test_limits_repr",
+          "kind": "function",
+          "line": 89
+        },
+        {
+          "name": "test_limits_eq",
+          "kind": "function",
+          "line": 98
+        },
+        {
+          "name": "test_timeout_eq",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "test_timeout_all_parameters_set",
+          "kind": "function",
+          "line": 108
+        },
+        {
+          "name": "test_timeout_from_nothing",
+          "kind": "function",
+          "line": 113
+        },
+        {
+          "name": "test_timeout_from_none",
+          "kind": "function",
+          "line": 121
+        },
+        {
+          "name": "test_timeout_from_one_none_value",
+          "kind": "function",
+          "line": 126
+        },
+        {
+          "name": "test_timeout_from_one_value",
+          "kind": "function",
+          "line": 131
+        },
+        {
+          "name": "test_timeout_from_one_value_and_default",
+          "kind": "function",
+          "line": 136
+        },
+        {
+          "name": "test_timeout_missing_default",
+          "kind": "function",
+          "line": 141
+        },
+        {
+          "name": "test_timeout_from_tuple",
+          "kind": "function",
+          "line": 146
+        },
+        {
+          "name": "test_timeout_from_config_instance",
+          "kind": "function",
+          "line": 151
+        },
+        {
+          "name": "test_timeout_repr",
+          "kind": "function",
+          "line": 156
+        },
+        {
+          "name": "test_proxy_from_url",
+          "kind": "function",
+          "line": 164
+        },
+        {
+          "name": "test_proxy_with_auth_from_url",
+          "kind": "function",
+          "line": 173
+        },
+        {
+          "name": "test_invalid_proxy_scheme",
+          "kind": "function",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_content.py",
+      "language": "python",
+      "imports": [
+        "import io",
+        "import typing",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_empty_content",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "test_bytes_content",
+          "kind": "function",
+          "line": 27
+        },
+        {
+          "name": "test_bytesio_content",
+          "kind": "function",
+          "line": 54
+        },
+        {
+          "name": "test_async_bytesio_content",
+          "kind": "function",
+          "line": 66
+        },
+        {
+          "name": "AsyncBytesIO",
+          "kind": "class",
+          "line": 67
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 68
+        },
+        {
+          "name": "aread",
+          "kind": "function",
+          "line": 72
+        },
+        {
+          "name": "__aiter__",
+          "kind": "function",
+          "line": 77
+        },
+        {
+          "name": "test_iterator_content",
+          "kind": "function",
+          "line": 94
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 95
+        },
+        {
+          "name": "test_aiterator_content",
+          "kind": "function",
+          "line": 130
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 131
+        },
+        {
+          "name": "test_json_content",
+          "kind": "function",
+          "line": 166
+        },
+        {
+          "name": "test_urlencoded_content",
+          "kind": "function",
+          "line": 184
+        },
+        {
+          "name": "test_urlencoded_boolean",
+          "kind": "function",
+          "line": 202
+        },
+        {
+          "name": "test_urlencoded_none",
+          "kind": "function",
+          "line": 220
+        },
+        {
+          "name": "test_urlencoded_list",
+          "kind": "function",
+          "line": 238
+        },
+        {
+          "name": "test_multipart_files_content",
+          "kind": "function",
+          "line": 256
+        },
+        {
+          "name": "test_multipart_data_and_files_content",
+          "kind": "function",
+          "line": 299
+        },
+        {
+          "name": "test_empty_request",
+          "kind": "function",
+          "line": 346
+        },
+        {
+          "name": "test_invalid_argument",
+          "kind": "function",
+          "line": 359
+        },
+        {
+          "name": "test_multipart_multiple_files_single_input_content",
+          "kind": "function",
+          "line": 368
+        },
+        {
+          "name": "test_response_empty_content",
+          "kind": "function",
+          "line": 419
+        },
+        {
+          "name": "test_response_bytes_content",
+          "kind": "function",
+          "line": 433
+        },
+        {
+          "name": "test_response_iterator_content",
+          "kind": "function",
+          "line": 447
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 448
+        },
+        {
+          "name": "test_response_aiterator_content",
+          "kind": "function",
+          "line": 466
+        },
+        {
+          "name": "hello_world",
+          "kind": "function",
+          "line": 467
+        },
+        {
+          "name": "test_response_invalid_argument",
+          "kind": "function",
+          "line": 484
+        },
+        {
+          "name": "test_ensure_ascii_false_with_french_characters",
+          "kind": "function",
+          "line": 489
+        },
+        {
+          "name": "test_separators_for_compact_json",
+          "kind": "function",
+          "line": 498
+        },
+        {
+          "name": "test_allow_nan_false",
+          "kind": "function",
+          "line": 507
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_decoders.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import io",
+        "import typing",
+        "import zlib",
+        "import chardet",
+        "import pytest",
+        "import zstandard as zstd",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_deflate",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_zlib",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "test_gzip",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "test_brotli",
+          "kind": "function",
+          "line": 65
+        },
+        {
+          "name": "test_zstd",
+          "kind": "function",
+          "line": 78
+        },
+        {
+          "name": "test_zstd_decoding_error",
+          "kind": "function",
+          "line": 91
+        },
+        {
+          "name": "test_zstd_empty",
+          "kind": "function",
+          "line": 103
+        },
+        {
+          "name": "test_zstd_truncated",
+          "kind": "function",
+          "line": 109
+        },
+        {
+          "name": "test_zstd_multiframe",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "test_multi",
+          "kind": "function",
+          "line": 144
+        },
+        {
+          "name": "test_multi_with_identity",
+          "kind": "function",
+          "line": 164
+        },
+        {
+          "name": "test_streaming",
+          "kind": "function",
+          "line": 186
+        },
+        {
+          "name": "compress",
+          "kind": "function",
+          "line": 190
+        },
+        {
+          "name": "test_empty_content",
+          "kind": "function",
+          "line": 205
+        },
+        {
+          "name": "test_decoders_empty_cases",
+          "kind": "function",
+          "line": 216
+        },
+        {
+          "name": "test_decoding_errors",
+          "kind": "function",
+          "line": 223
+        },
+        {
+          "name": "test_text_decoder_with_autodetect",
+          "kind": "function",
+          "line": 244
+        },
+        {
+          "name": "iterator",
+          "kind": "function",
+          "line": 245
+        },
+        {
+          "name": "autodetect",
+          "kind": "function",
+          "line": 250
+        },
+        {
+          "name": "test_text_decoder_known_encoding",
+          "kind": "function",
+          "line": 267
+        },
+        {
+          "name": "iterator",
+          "kind": "function",
+          "line": 268
+        },
+        {
+          "name": "test_text_decoder_empty_cases",
+          "kind": "function",
+          "line": 283
+        },
+        {
+          "name": "test_streaming_text_decoder",
+          "kind": "function",
+          "line": 296
+        },
+        {
+          "name": "test_line_decoder_nl",
+          "kind": "function",
+          "line": 303
+        },
+        {
+          "name": "test_line_decoder_cr",
+          "kind": "function",
+          "line": 317
+        },
+        {
+          "name": "test_line_decoder_crnl",
+          "kind": "function",
+          "line": 331
+        },
+        {
+          "name": "test_invalid_content_encoding_header",
+          "kind": "function",
+          "line": 346
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_exceptions.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import typing",
+        "import httpcore",
+        "import pytest",
+        "import httpx",
+        "from conftest import TestServer"
+      ],
+      "symbols": [
+        {
+          "name": "test_httpcore_all_exceptions_mapped",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_httpcore_exception_mapping",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "test_request_attribute",
+          "kind": "function",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_exported_members.py",
+      "language": "python",
+      "imports": [
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_all_imports_are_exported",
+          "kind": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_main.py",
+      "language": "python",
+      "imports": [
+        "import os",
+        "import typing",
+        "from click.testing import CliRunner",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "splitlines",
+          "kind": "function",
+          "line": 9
+        },
+        {
+          "name": "remove_date_header",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "test_help",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "test_get",
+          "kind": "function",
+          "line": 24
+        },
+        {
+          "name": "test_json",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "test_binary",
+          "kind": "function",
+          "line": 56
+        },
+        {
+          "name": "test_redirects",
+          "kind": "function",
+          "line": 72
+        },
+        {
+          "name": "test_follow_redirects",
+          "kind": "function",
+          "line": 86
+        },
+        {
+          "name": "test_post",
+          "kind": "function",
+          "line": 106
+        },
+        {
+          "name": "test_verbose",
+          "kind": "function",
+          "line": 121
+        },
+        {
+          "name": "test_auth",
+          "kind": "function",
+          "line": 145
+        },
+        {
+          "name": "test_download",
+          "kind": "function",
+          "line": 171
+        },
+        {
+          "name": "test_errors",
+          "kind": "function",
+          "line": 181
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_multipart.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import io",
+        "import tempfile",
+        "import typing",
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "echo_request_content",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "test_multipart",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "test_multipart_explicit_boundary",
+          "kind": "function",
+          "line": 57
+        },
+        {
+          "name": "test_multipart_header_without_boundary",
+          "kind": "function",
+          "line": 86
+        },
+        {
+          "name": "test_multipart_invalid_key",
+          "kind": "function",
+          "line": 98
+        },
+        {
+          "name": "test_multipart_invalid_value",
+          "kind": "function",
+          "line": 114
+        },
+        {
+          "name": "test_multipart_file_tuple",
+          "kind": "function",
+          "line": 124
+        },
+        {
+          "name": "test_multipart_file_tuple_headers",
+          "kind": "function",
+          "line": 153
+        },
+        {
+          "name": "test_multipart_headers_include_content_type",
+          "kind": "function",
+          "line": 178
+        },
+        {
+          "name": "test_multipart_encode",
+          "kind": "function",
+          "line": 208
+        },
+        {
+          "name": "test_multipart_encode_unicode_file_contents",
+          "kind": "function",
+          "line": 251
+        },
+        {
+          "name": "test_multipart_encode_files_allows_filenames_as_none",
+          "kind": "function",
+          "line": 272
+        },
+        {
+          "name": "test_multipart_encode_files_guesses_correct_content_type",
+          "kind": "function",
+          "line": 300
+        },
+        {
+          "name": "test_multipart_encode_files_allows_bytes_content",
+          "kind": "function",
+          "line": 323
+        },
+        {
+          "name": "test_multipart_encode_files_allows_str_content",
+          "kind": "function",
+          "line": 345
+        },
+        {
+          "name": "test_multipart_encode_files_raises_exception_with_StringIO_content",
+          "kind": "function",
+          "line": 367
+        },
+        {
+          "name": "test_multipart_encode_files_raises_exception_with_text_mode_file",
+          "kind": "function",
+          "line": 374
+        },
+        {
+          "name": "test_multipart_encode_non_seekable_filelike",
+          "kind": "function",
+          "line": 382
+        },
+        {
+          "name": "IteratorIO",
+          "kind": "class",
+          "line": 389
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 390
+        },
+        {
+          "name": "read",
+          "kind": "function",
+          "line": 393
+        },
+        {
+          "name": "data",
+          "kind": "function",
+          "line": 396
+        },
+        {
+          "name": "test_multipart_rewinds_files",
+          "kind": "function",
+          "line": 423
+        },
+        {
+          "name": "TestHeaderParamHTML5Formatting",
+          "kind": "class",
+          "line": 442
+        },
+        {
+          "name": "test_unicode",
+          "kind": "function",
+          "line": 443
+        },
+        {
+          "name": "test_ascii",
+          "kind": "function",
+          "line": 450
+        },
+        {
+          "name": "test_unicode_escape",
+          "kind": "function",
+          "line": 457
+        },
+        {
+          "name": "test_unicode_with_control_character",
+          "kind": "function",
+          "line": 464
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_status_codes.py",
+      "language": "python",
+      "imports": [
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_status_code_as_int",
+          "kind": "function",
+          "line": 4
+        },
+        {
+          "name": "test_status_code_value_lookup",
+          "kind": "function",
+          "line": 10
+        },
+        {
+          "name": "test_status_code_phrase_lookup",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "test_lowercase_status_code",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "test_reason_phrase_for_status_code",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "test_reason_phrase_for_unknown_status_code",
+          "kind": "function",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_timeouts.py",
+      "language": "python",
+      "imports": [
+        "import pytest",
+        "import httpx"
+      ],
+      "symbols": [
+        {
+          "name": "test_read_timeout",
+          "kind": "function",
+          "line": 7
+        },
+        {
+          "name": "test_write_timeout",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "test_connect_timeout",
+          "kind": "function",
+          "line": 27
+        },
+        {
+          "name": "test_pool_timeout",
+          "kind": "function",
+          "line": 37
+        },
+        {
+          "name": "test_async_client_new_request_send_timeout",
+          "kind": "function",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_utils.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import logging",
+        "import os",
+        "import random",
+        "import pytest",
+        "import httpx",
+        "from httpx._utils import URLPattern, get_environment_proxies"
+      ],
+      "symbols": [
+        {
+          "name": "test_encoded",
+          "kind": "function",
+          "line": 25
+        },
+        {
+          "name": "test_bad_utf_like_encoding",
+          "kind": "function",
+          "line": 31
+        },
+        {
+          "name": "test_guess_by_bom",
+          "kind": "function",
+          "line": 47
+        },
+        {
+          "name": "test_logging_request",
+          "kind": "function",
+          "line": 53
+        },
+        {
+          "name": "test_logging_redirect_chain",
+          "kind": "function",
+          "line": 68
+        },
+        {
+          "name": "test_get_environment_proxies",
+          "kind": "function",
+          "line": 109
+        },
+        {
+          "name": "test_url_matches",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "test_pattern_priority",
+          "kind": "function",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "httpx-master/tests/test_wsgi.py",
+      "language": "python",
+      "imports": [
+        "from __future__ import annotations",
+        "import sys",
+        "import typing",
+        "import wsgiref.validate",
+        "from functools import partial",
+        "from io import StringIO",
+        "import pytest",
+        "import httpx",
+        "from _typeshed.wsgi import StartResponse, WSGIApplication, WSGIEnvironment"
+      ],
+      "symbols": [
+        {
+          "name": "application_factory",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "application",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "echo_body",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "echo_body_with_response_stream",
+          "kind": "function",
+          "line": 48
+        },
+        {
+          "name": "output_generator",
+          "kind": "function",
+          "line": 57
+        },
+        {
+          "name": "raise_exc",
+          "kind": "function",
+          "line": 67
+        },
+        {
+          "name": "log_to_wsgi_log_buffer",
+          "kind": "function",
+          "line": 88
+        },
+        {
+          "name": "test_wsgi",
+          "kind": "function",
+          "line": 94
+        },
+        {
+          "name": "test_wsgi_upload",
+          "kind": "function",
+          "line": 102
+        },
+        {
+          "name": "test_wsgi_upload_with_response_stream",
+          "kind": "function",
+          "line": 110
+        },
+        {
+          "name": "test_wsgi_exc",
+          "kind": "function",
+          "line": 118
+        },
+        {
+          "name": "test_wsgi_http_error",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "test_wsgi_generator",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "test_wsgi_generator_empty",
+          "kind": "function",
+          "line": 141
+        },
+        {
+          "name": "test_logging",
+          "kind": "function",
+          "line": 150
+        },
+        {
+          "name": "test_wsgi_server_port",
+          "kind": "function",
+          "line": 168
+        },
+        {
+          "name": "app",
+          "kind": "function",
+          "line": 175
+        },
+        {
+          "name": "test_wsgi_server_protocol",
+          "kind": "function",
+          "line": 188
+        },
+        {
+          "name": "app",
+          "kind": "function",
+          "line": 191
+        }
+      ]
+    }
+  ],
+  "mermaid": "flowchart LR\n  project[\"httpx\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"httpx-master/httpx\"]\n    group_0_hub[\"httpx-master/httpx\"]\n    group_0_hub --> file_0[\"__init__.py\"]\n    file_0 --> file_0_symbol_0([\"main()\"])\n    group_0_hub --> file_1[\"__version__.py\"]\n    group_0_hub --> file_2[\"_api.py\"]\n    file_2 --> file_2_symbol_0([\"request()\"])\n    file_2 --> file_2_symbol_1([\"stream()\"])\n    file_2 --> file_2_symbol_2([\"get()\"])\n    group_0_hub --> file_3[\"_auth.py\"]\n    file_3 --> file_3_symbol_0([\"Auth\"])\n    file_3 --> file_3_symbol_1([\"auth_flow()\"])\n    file_3 --> file_3_symbol_2([\"sync_auth_flow()\"])\n    group_0_hub --> file_4[\"_client.py\"]\n    file_4 --> file_4_symbol_0([\"_is_https_redirect()\"])\n    file_4 --> file_4_symbol_1([\"_port_or_default()\"])\n    file_4 --> file_4_symbol_2([\"_same_origin()\"])\n    group_0_hub --> file_5[\"_config.py\"]\n    file_5 --> file_5_symbol_0([\"UnsetType\"])\n    file_5 --> file_5_symbol_1([\"create_ssl_context()\"])\n    file_5 --> file_5_symbol_2([\"Timeout\"])\n    group_0_hub --> file_6[\"_content.py\"]\n    file_6 --> file_6_symbol_0([\"ByteStream\"])\n    file_6 --> file_6_symbol_1([\"__init__()\"])\n    file_6 --> file_6_symbol_2([\"__iter__()\"])\n    group_0_hub --> file_7[\"_decoders.py\"]\n    file_7 --> file_7_symbol_0([\"ContentDecoder\"])\n    file_7 --> file_7_symbol_1([\"decode()\"])\n    file_7 --> file_7_symbol_2([\"flush()\"])\n    group_0_hub --> group_0_more[\"+9 more files\"]\n  end\n  source --> group_1_hub\n  subgraph group_1[\"httpx/_transports\"]\n    group_1_hub[\"httpx/_transports\"]\n    group_1_hub --> file_8[\"__init__.py\"]\n    group_1_hub --> file_9[\"asgi.py\"]\n    file_9 --> file_9_symbol_0([\"is_running_trio()\"])\n    file_9 --> file_9_symbol_1([\"create_event()\"])\n    file_9 --> file_9_symbol_2([\"ASGIResponseStream\"])\n    group_1_hub --> file_10[\"base.py\"]\n    file_10 --> file_10_symbol_0([\"BaseTransport\"])\n    file_10 --> file_10_symbol_1([\"__enter__()\"])\n    file_10 --> file_10_symbol_2([\"__exit__()\"])\n    group_1_hub --> file_11[\"default.py\"]\n    file_11 --> file_11_symbol_0([\"_load_httpcore_exceptions()\"])\n    file_11 --> file_11_symbol_1([\"map_httpcore_exceptions()\"])\n    file_11 --> file_11_symbol_2([\"ResponseStream\"])\n    group_1_hub --> file_12[\"mock.py\"]\n    file_12 --> file_12_symbol_0([\"MockTransport\"])\n    file_12 --> file_12_symbol_1([\"__init__()\"])\n    file_12 --> file_12_symbol_2([\"handle_request()\"])\n    group_1_hub --> file_13[\"wsgi.py\"]\n    file_13 --> file_13_symbol_0([\"_skip_leading_empty_chunks()\"])\n    file_13 --> file_13_symbol_1([\"WSGIByteStream\"])\n    file_13 --> file_13_symbol_2([\"__init__()\"])\n  end\n  source --> group_2_hub\n  subgraph group_2[\"httpx-master/tests\"]\n    group_2_hub[\"httpx-master/tests\"]\n    group_2_hub --> file_14[\"__init__.py\"]\n  end\n  source --> group_3_hub\n  subgraph group_3[\"tests/client\"]\n    group_3_hub[\"tests/client\"]\n    group_3_hub --> file_15[\"__init__.py\"]\n    group_3_hub --> file_16[\"test_async_client.py\"]\n    file_16 --> file_16_symbol_0([\"test_get()\"])\n    file_16 --> file_16_symbol_1([\"test_get_invalid_url()\"])\n    file_16 --> file_16_symbol_2([\"test_build_request()\"])\n    group_3_hub --> file_17[\"test_auth.py\"]\n    file_17 --> file_17_symbol_0([\"App\"])\n    file_17 --> file_17_symbol_1([\"__init__()\"])\n    file_17 --> file_17_symbol_2([\"__call__()\"])\n    group_3_hub --> file_18[\"test_client.py\"]\n    file_18 --> file_18_symbol_0([\"autodetect()\"])\n    file_18 --> file_18_symbol_1([\"test_get()\"])\n    file_18 --> file_18_symbol_2([\"test_get_invalid_url()\"])\n  end\n  file_0 -.-> file_1\n  file_0 -.-> file_2\n  file_0 -.-> file_3\n  file_0 -.-> file_4\n  file_2 -.-> file_4\n  file_2 -.-> file_5\n  file_4 -.-> file_1\n  file_4 -.-> file_3\n  file_4 -.-> file_5\n  file_4 -.-> file_7\n  file_8 -.-> file_9\n  file_8 -.-> file_10\n  file_8 -.-> file_11\n  file_8 -.-> file_12\n  file_9 -.-> file_10\n  file_11 -.-> file_5\n  file_11 -.-> file_10\n  file_12 -.-> file_10\n  file_13 -.-> file_10\n  source --> more_files[\"+32 more files\"]\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class group_1_hub layer;\n  class group_2_hub layer;\n  class group_3_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_2 file;\n  class file_3 file;\n  class file_4 file;\n  class file_5 file;\n  class file_6 file;\n  class file_7 file;\n  class file_8 file;\n  class file_9 file;\n  class file_10 file;\n  class file_11 file;\n  class file_12 file;\n  class file_13 file;\n  class file_14 file;\n  class file_15 file;\n  class file_16 file;\n  class file_17 file;\n  class file_18 file;\n  class file_0_symbol_0 symbol;\n  class file_2_symbol_0 symbol;\n  class file_2_symbol_1 symbol;\n  class file_2_symbol_2 symbol;\n  class file_3_symbol_0 symbol;\n  class file_3_symbol_1 symbol;\n  class file_3_symbol_2 symbol;\n  class file_4_symbol_0 symbol;\n  class file_4_symbol_1 symbol;\n  class file_4_symbol_2 symbol;\n  class file_5_symbol_0 symbol;\n  class file_5_symbol_1 symbol;\n  class file_5_symbol_2 symbol;\n  class file_6_symbol_0 symbol;\n  class file_6_symbol_1 symbol;\n  class file_6_symbol_2 symbol;\n  class file_7_symbol_0 symbol;\n  class file_7_symbol_1 symbol;\n  class file_7_symbol_2 symbol;\n  class file_9_symbol_0 symbol;\n  class file_9_symbol_1 symbol;\n  class file_9_symbol_2 symbol;\n  class file_10_symbol_0 symbol;\n  class file_10_symbol_1 symbol;\n  class file_10_symbol_2 symbol;\n  class file_11_symbol_0 symbol;\n  class file_11_symbol_1 symbol;\n  class file_11_symbol_2 symbol;\n  class file_12_symbol_0 symbol;\n  class file_12_symbol_1 symbol;\n  class file_12_symbol_2 symbol;\n  class file_13_symbol_0 symbol;\n  class file_13_symbol_1 symbol;\n  class file_13_symbol_2 symbol;\n  class file_16_symbol_0 symbol;\n  class file_16_symbol_1 symbol;\n  class file_16_symbol_2 symbol;\n  class file_17_symbol_0 symbol;\n  class file_17_symbol_1 symbol;\n  class file_17_symbol_2 symbol;\n  class file_18_symbol_0 symbol;\n  class file_18_symbol_1 symbol;\n  class file_18_symbol_2 symbol;",
+  "llm_provider": null,
+  "warnings": [
+    "Gemini rate limit is cooling down; returned local analysis. Try again in about 35 second(s)."
+  ]
+}

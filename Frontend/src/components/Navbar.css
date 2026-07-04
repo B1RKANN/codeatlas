@@ -64,6 +64,43 @@
   box-shadow: 0 4px 16px rgba(233, 30, 99, 0.4);
 }
 
+/* Language Toggle */
+.navbar-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  font-family: inherit;
+}
+
+.navbar-lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 90, 138, 0.5);
+  box-shadow: 0 0 12px rgba(255, 90, 138, 0.2);
+}
+
+.lang-option {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color var(--transition-fast);
+}
+
+.lang-active {
+  color: #ff5a8a;
+}
+
+.lang-divider {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
 @media (max-width: 640px) {
   .navbar-inner {
     padding: var(--space-md);

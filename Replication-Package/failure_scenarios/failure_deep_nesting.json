@@ -1,0 +1,50 @@
+{
+  "scenario": "deep_nesting",
+  "actual": "200 OK | 2 dosya | 2 sembol | Mermaid GEÇERLİ (10 node)",
+  "raw": {
+    "project_name": "deep_nesting",
+    "file_tree": "level0\n  level1\n    level2\n      level3\n        level4\n          level5\n            level6\n              level7\n                level8\n                  level9\n                    deep.py\ntop.py",
+    "summary": "deep_nesting projesinde 2 desteklenen kaynak dosya, 2 fonksiyon/class sembolü bulundu. Analiz edilen diller: python.",
+    "components": [
+      {
+        "file": "level0/level1/level2/level3/level4/level5/level6/level7/level8/level9/deep.py",
+        "description": "python dosyası. Öne çıkan semboller: deeply_nested."
+      },
+      {
+        "file": "top.py",
+        "description": "python dosyası. Öne çıkan semboller: top_level."
+      }
+    ],
+    "files": [
+      {
+        "path": "level0/level1/level2/level3/level4/level5/level6/level7/level8/level9/deep.py",
+        "language": "python",
+        "imports": [],
+        "symbols": [
+          {
+            "name": "deeply_nested",
+            "kind": "function",
+            "line": 1
+          }
+        ]
+      },
+      {
+        "path": "top.py",
+        "language": "python",
+        "imports": [],
+        "symbols": [
+          {
+            "name": "top_level",
+            "kind": "function",
+            "line": 1
+          }
+        ]
+      }
+    ],
+    "mermaid": "flowchart LR\n  project[\"deep_nesting\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"level8/level9\"]\n    group_0_hub[\"level8/level9\"]\n    group_0_hub --> file_0[\"deep.py\"]\n    file_0 --> file_0_symbol_0([\"deeply_nested()\"])\n  end\n  source --> group_1_hub\n  subgraph group_1[\"Root\"]\n    group_1_hub[\"Root\"]\n    group_1_hub --> file_1[\"top.py\"]\n    file_1 --> file_1_symbol_0([\"top_level()\"])\n  end\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class group_1_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_0_symbol_0 symbol;\n  class file_1_symbol_0 symbol;",
+    "llm_provider": null,
+    "warnings": [
+      "Gemini rate limit is cooling down; returned local analysis. Try again in about 29 second(s)."
+    ]
+  }
+}

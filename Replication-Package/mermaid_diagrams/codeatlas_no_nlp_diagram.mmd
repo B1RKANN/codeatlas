@@ -1,0 +1,205 @@
+flowchart LR
+  project["codeatlas"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["Backend/alembic"]
+    group_0_hub["Backend/alembic"]
+    group_0_hub --> file_0["env.py"]
+    file_0 --> file_0_symbol_0(["run_migrations_offline()"])
+    file_0 --> file_0_symbol_1(["run_migrations_online()"])
+  end
+  source --> group_1_hub
+  subgraph group_1["alembic/versions"]
+    group_1_hub["alembic/versions"]
+    group_1_hub --> file_1["20260408_000001_create_users_table.py"]
+    file_1 --> file_1_symbol_0(["upgrade()"])
+    file_1 --> file_1_symbol_1(["downgrade()"])
+  end
+  source --> group_2_hub
+  subgraph group_2["Backend/app"]
+    group_2_hub["Backend/app"]
+    group_2_hub --> file_2["__init__.py"]
+    group_2_hub --> file_3["main.py"]
+    file_3 --> file_3_symbol_0(["lifespan()"])
+    file_3 --> file_3_symbol_1(["healthcheck()"])
+  end
+  source --> group_3_hub
+  subgraph group_3["app/api"]
+    group_3_hub["app/api"]
+    group_3_hub --> file_4["__init__.py"]
+    group_3_hub --> file_5["deps.py"]
+    file_5 --> file_5_symbol_0(["get_db()"])
+    file_5 --> file_5_symbol_1(["get_current_user()"])
+  end
+  source --> group_4_hub
+  subgraph group_4["api/routes"]
+    group_4_hub["api/routes"]
+    group_4_hub --> file_6["__init__.py"]
+    group_4_hub --> file_7["analysis.py"]
+    file_7 --> file_7_symbol_0(["upload_project()"])
+    group_4_hub --> file_8["auth.py"]
+    file_8 --> file_8_symbol_0(["register()"])
+    file_8 --> file_8_symbol_1(["login()"])
+    file_8 --> file_8_symbol_2(["me()"])
+  end
+  source --> group_5_hub
+  subgraph group_5["app/core"]
+    group_5_hub["app/core"]
+    group_5_hub --> file_9["__init__.py"]
+    group_5_hub --> file_10["config.py"]
+    file_10 --> file_10_symbol_0(["Settings"])
+    file_10 --> file_10_symbol_1(["cors_origin_list()"])
+    group_5_hub --> file_11["security.py"]
+    file_11 --> file_11_symbol_0(["_normalize_password_error()"])
+    file_11 --> file_11_symbol_1(["hash_password()"])
+    file_11 --> file_11_symbol_2(["verify_password()"])
+    group_5_hub --> file_12["validation.py"]
+    file_12 --> file_12_symbol_0(["validate_password()"])
+  end
+  source --> group_6_hub
+  subgraph group_6["app/db"]
+    group_6_hub["app/db"]
+    group_6_hub --> file_13["__init__.py"]
+    group_6_hub --> file_14["base.py"]
+    file_14 --> file_14_symbol_0(["Base"])
+    group_6_hub --> file_15["migrations.py"]
+    file_15 --> file_15_symbol_0(["run_migrations()"])
+    group_6_hub --> file_16["session.py"]
+  end
+  source --> group_7_hub
+  subgraph group_7["app/models"]
+    group_7_hub["app/models"]
+    group_7_hub --> file_17["__init__.py"]
+    group_7_hub --> file_18["user.py"]
+    file_18 --> file_18_symbol_0(["User"])
+  end
+  source --> group_8_hub
+  subgraph group_8["app/schemas"]
+    group_8_hub["app/schemas"]
+    group_8_hub --> file_19["__init__.py"]
+    group_8_hub --> file_20["analysis.py"]
+    file_20 --> file_20_symbol_0(["SymbolInfo"])
+    file_20 --> file_20_symbol_1(["FileAnalysis"])
+    file_20 --> file_20_symbol_2(["ComponentSummary"])
+    group_8_hub --> file_21["auth.py"]
+    file_21 --> file_21_symbol_0(["LoginRequest"])
+    file_21 --> file_21_symbol_1(["validate_password_length()"])
+    file_21 --> file_21_symbol_2(["TokenResponse"])
+    group_8_hub --> file_22["user.py"]
+    file_22 --> file_22_symbol_0(["UserCreate"])
+    file_22 --> file_22_symbol_1(["validate_password_length()"])
+    file_22 --> file_22_symbol_2(["UserResponse"])
+  end
+  source --> group_9_hub
+  subgraph group_9["app/services"]
+    group_9_hub["app/services"]
+    group_9_hub --> file_23["__init__.py"]
+  end
+  source --> group_10_hub
+  subgraph group_10["services/analysis"]
+    group_10_hub["services/analysis"]
+    group_10_hub --> file_24["extractor.py"]
+    file_24 --> file_24_symbol_0(["read_project_zip()"])
+    file_24 --> file_24_symbol_1(["_safe_zip_path()"])
+    file_24 --> file_24_symbol_2(["_is_ignored()"])
+    group_10_hub --> file_25["gemini_client.py"]
+    file_25 --> file_25_symbol_0(["summarize_with_gemini()"])
+    file_25 --> file_25_symbol_1(["_build_prompt()"])
+    file_25 --> file_25_symbol_2(["_extract_text()"])
+    group_10_hub --> file_26["mermaid.py"]
+    file_26 --> file_26_symbol_0(["build_fallback_mermaid()"])
+    file_26 --> file_26_symbol_1(["select_mermaid()"])
+    file_26 --> file_26_symbol_2(["build_fallback_summary()"])
+    group_10_hub --> file_27["models.py"]
+    file_27 --> file_27_symbol_0(["SourceFile"])
+    file_27 --> file_27_symbol_1(["Symbol"])
+    file_27 --> file_27_symbol_2(["AnalyzedFile"])
+  end
+  source --> more_files["+20 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class group_8_hub layer;
+  class group_9_hub layer;
+  class group_10_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_25 file;
+  class file_26 file;
+  class file_27 file;
+  class file_0_symbol_0 symbol;
+  class file_0_symbol_1 symbol;
+  class file_1_symbol_0 symbol;
+  class file_1_symbol_1 symbol;
+  class file_3_symbol_0 symbol;
+  class file_3_symbol_1 symbol;
+  class file_5_symbol_0 symbol;
+  class file_5_symbol_1 symbol;
+  class file_7_symbol_0 symbol;
+  class file_8_symbol_0 symbol;
+  class file_8_symbol_1 symbol;
+  class file_8_symbol_2 symbol;
+  class file_10_symbol_0 symbol;
+  class file_10_symbol_1 symbol;
+  class file_11_symbol_0 symbol;
+  class file_11_symbol_1 symbol;
+  class file_11_symbol_2 symbol;
+  class file_12_symbol_0 symbol;
+  class file_14_symbol_0 symbol;
+  class file_15_symbol_0 symbol;
+  class file_18_symbol_0 symbol;
+  class file_20_symbol_0 symbol;
+  class file_20_symbol_1 symbol;
+  class file_20_symbol_2 symbol;
+  class file_21_symbol_0 symbol;
+  class file_21_symbol_1 symbol;
+  class file_21_symbol_2 symbol;
+  class file_22_symbol_0 symbol;
+  class file_22_symbol_1 symbol;
+  class file_22_symbol_2 symbol;
+  class file_24_symbol_0 symbol;
+  class file_24_symbol_1 symbol;
+  class file_24_symbol_2 symbol;
+  class file_25_symbol_0 symbol;
+  class file_25_symbol_1 symbol;
+  class file_25_symbol_2 symbol;
+  class file_26_symbol_0 symbol;
+  class file_26_symbol_1 symbol;
+  class file_26_symbol_2 symbol;
+  class file_27_symbol_0 symbol;
+  class file_27_symbol_1 symbol;
+  class file_27_symbol_2 symbol;

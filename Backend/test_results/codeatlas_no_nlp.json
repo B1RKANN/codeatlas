@@ -1,0 +1,1486 @@
+{
+  "project_name": "codeatlas",
+  "file_tree": "codeatlas-main\n  Backend\n    .dockerignore\n    .env.example\n    .gitignore\n    Dockerfile\n    README.md\n    alembic\n      env.py\n      script.py.mako\n      versions\n        20260408_000001_create_users_table.py\n    alembic.ini\n    app\n      __init__.py\n      api\n        __init__.py\n        deps.py\n        routes\n          __init__.py\n          analysis.py\n          auth.py\n      core\n        __init__.py\n        config.py\n        security.py\n        validation.py\n      db\n        __init__.py\n        base.py\n        migrations.py\n        session.py\n      main.py\n      models\n        __init__.py\n        user.py\n      schemas\n        __init__.py\n        analysis.py\n        auth.py\n        user.py\n      services\n        __init__.py\n        analysis\n          extractor.py\n          gemini_client.py\n          mermaid.py\n          models.py\n          openai_client.py\n          semantic.py\n          service.py\n          tree_sitter_analyzer.py\n        auth.py\n    requirements.txt\n    tests\n      test_gemini_client.py\n      test_mermaid.py\n      test_openai_client.py\n      test_semantic.py\n  Frontend\n    .dockerignore\n    .gitignore\n    Dockerfile\n    eslint.config.js\n    index.html\n    package-lock.json\n    package.json\n    public\n      favicon.svg\n      icons.svg\n    src\n      App.css\n      App.jsx\n      assets\n        architecture-bg.png\n        hero.png\n        react.svg\n        vite.svg\n      components\n        Navbar.css\n        Navbar.jsx\n      index.css\n      layouts\n        AuthLayout.css\n        AuthLayout.jsx\n        MainLayout.jsx\n      main.jsx\n      pages\n        AnalysisPage.css\n        AnalysisPage.jsx\n        HomePage.css\n        HomePage.jsx\n        LoginPage.jsx\n        RegisterPage.jsx\n    vite.config.js\n  docker-compose.yml",
+  "summary": "codeatlas projesinde 48 desteklenen kaynak dosya, 150 fonksiyon/class sembolü bulundu. Analiz edilen diller: javascript, python.",
+  "components": [
+    {
+      "file": "codeatlas-main/Backend/alembic/env.py",
+      "description": "python dosyası. Öne çıkan semboller: run_migrations_offline, run_migrations_online."
+    },
+    {
+      "file": "codeatlas-main/Backend/alembic/versions/20260408_000001_create_users_table.py",
+      "description": "python dosyası. Öne çıkan semboller: upgrade, downgrade."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/api/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/api/deps.py",
+      "description": "python dosyası. Öne çıkan semboller: get_db, get_current_user."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/api/routes/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/api/routes/analysis.py",
+      "description": "python dosyası. Öne çıkan semboller: upload_project."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/api/routes/auth.py",
+      "description": "python dosyası. Öne çıkan semboller: register, login, me."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/core/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/core/config.py",
+      "description": "python dosyası. Öne çıkan semboller: Settings, cors_origin_list."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/core/security.py",
+      "description": "python dosyası. Öne çıkan semboller: _normalize_password_error, hash_password, verify_password, create_access_token, decode_access_token."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/core/validation.py",
+      "description": "python dosyası. Öne çıkan semboller: validate_password."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/db/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/db/base.py",
+      "description": "python dosyası. Öne çıkan semboller: Base."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/db/migrations.py",
+      "description": "python dosyası. Öne çıkan semboller: run_migrations."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/db/session.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/main.py",
+      "description": "python dosyası. Öne çıkan semboller: lifespan, healthcheck."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/models/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/models/user.py",
+      "description": "python dosyası. Öne çıkan semboller: User."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/schemas/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/schemas/analysis.py",
+      "description": "python dosyası. Öne çıkan semboller: SymbolInfo, FileAnalysis, ComponentSummary, ProjectAnalysisResponse."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/schemas/auth.py",
+      "description": "python dosyası. Öne çıkan semboller: LoginRequest, validate_password_length, TokenResponse, create_for_user."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/schemas/user.py",
+      "description": "python dosyası. Öne çıkan semboller: UserCreate, validate_password_length, UserResponse."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/__init__.py",
+      "description": "python dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/extractor.py",
+      "description": "python dosyası. Öne çıkan semboller: read_project_zip, _safe_zip_path, _is_ignored."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/gemini_client.py",
+      "description": "python dosyası. Öne çıkan semboller: summarize_with_gemini, _build_prompt, _extract_text, _is_retryable_error, _is_rate_limit_error, _sleep_before_retry, _cooldown_seconds, _retry_after_seconds."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/mermaid.py",
+      "description": "python dosyası. Öne çıkan semboller: build_fallback_mermaid, select_mermaid, build_fallback_summary, _escape, _group_files_by_directory, _directory_name, _group_label, _basename."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/models.py",
+      "description": "python dosyası. Öne çıkan semboller: SourceFile, Symbol, AnalyzedFile, ProjectSnapshot, ProjectAnalysis."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/openai_client.py",
+      "description": "python dosyası. Öne çıkan semboller: summarize_with_gpt, _extract_text, _is_retryable_error, _sleep_before_retry, _retry_after_seconds."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/semantic.py",
+      "description": "python dosyası. Öne çıkan semboller: select_prompt_files, _get_model, _query_text, _file_to_embedding_text, _dot_product."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/service.py",
+      "description": "python dosyası. Öne çıkan semboller: analyze_zip_project."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/analysis/tree_sitter_analyzer.py",
+      "description": "python dosyası. Öne çıkan semboller: analyze_project, _analyze_source_file, walk, _get_parser, _get_language, _node_name, _contains_function_value, _node_text."
+    },
+    {
+      "file": "codeatlas-main/Backend/app/services/auth.py",
+      "description": "python dosyası. Öne çıkan semboller: create_user, authenticate_user."
+    },
+    {
+      "file": "codeatlas-main/Backend/tests/test_gemini_client.py",
+      "description": "python dosyası. Öne çıkan semboller: FakeResponse, __init__, __enter__, __exit__, read, make_analysis, make_http_error, GeminiClientTests."
+    },
+    {
+      "file": "codeatlas-main/Backend/tests/test_mermaid.py",
+      "description": "python dosyası. Öne çıkan semboller: make_analysis, MermaidTests, test_fallback_mermaid_includes_modules_symbols_and_imports, test_select_mermaid_replaces_oversimplified_generated_diagram, test_select_mermaid_replaces_diagram_without_file_references."
+    },
+    {
+      "file": "codeatlas-main/Backend/tests/test_openai_client.py",
+      "description": "python dosyası. Öne çıkan semboller: FakeResponse, __init__, __enter__, __exit__, read, make_analysis, make_http_error, OpenAIClientTests."
+    },
+    {
+      "file": "codeatlas-main/Backend/tests/test_semantic.py",
+      "description": "python dosyası. Öne çıkan semboller: FakeEmbeddingModel, encode, SemanticSelectionTests, test_selects_most_relevant_files_with_embedding_model, test_does_not_load_model_when_project_fits_prompt_limit."
+    },
+    {
+      "file": "codeatlas-main/Frontend/eslint.config.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/App.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: App."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/components/Navbar.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: Navbar."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/layouts/AuthLayout.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: AuthLayout, createParticle."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/layouts/MainLayout.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: MainLayout."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/main.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/pages/AnalysisPage.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: clamp, getPointerDistance, getPointerCenter, normalizeMermaid, AnalysisPage, handleFileChange, handleSubmit."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/pages/HomePage.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: HomePage, createParticle."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/pages/LoginPage.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: LoginPage, handleChange, handleSubmit, handleGitHubLogin."
+    },
+    {
+      "file": "codeatlas-main/Frontend/src/pages/RegisterPage.jsx",
+      "description": "javascript dosyası. Öne çıkan semboller: RegisterPage, handleChange, handleSubmit, handleGitHubRegister."
+    },
+    {
+      "file": "codeatlas-main/Frontend/vite.config.js",
+      "description": "javascript dosyası. Öne çıkan semboller: sembol bulunamadı."
+    }
+  ],
+  "files": [
+    {
+      "path": "codeatlas-main/Backend/alembic/env.py",
+      "language": "python",
+      "imports": [
+        "from logging.config import fileConfig",
+        "from alembic import context",
+        "from sqlalchemy import engine_from_config, pool",
+        "from app.core.config import settings",
+        "from app.db.base import Base",
+        "from app.models import User"
+      ],
+      "symbols": [
+        {
+          "name": "run_migrations_offline",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "run_migrations_online",
+          "kind": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/alembic/versions/20260408_000001_create_users_table.py",
+      "language": "python",
+      "imports": [
+        "from collections.abc import Sequence",
+        "from alembic import op",
+        "import sqlalchemy as sa"
+      ],
+      "symbols": [
+        {
+          "name": "upgrade",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "downgrade",
+          "kind": "function",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/api/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/api/deps.py",
+      "language": "python",
+      "imports": [
+        "from collections.abc import Generator",
+        "from fastapi import Depends, HTTPException, status",
+        "from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer",
+        "from jwt import InvalidTokenError",
+        "from sqlalchemy.orm import Session",
+        "from app.core.security import decode_access_token",
+        "from app.db.session import SessionLocal",
+        "from app.models.user import User"
+      ],
+      "symbols": [
+        {
+          "name": "get_db",
+          "kind": "function",
+          "line": 15
+        },
+        {
+          "name": "get_current_user",
+          "kind": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/api/routes/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/api/routes/analysis.py",
+      "language": "python",
+      "imports": [
+        "from typing import Literal",
+        "from fastapi import APIRouter, File, Form, HTTPException, UploadFile, status",
+        "from app.schemas.analysis import ProjectAnalysisResponse",
+        "from app.services.analysis.service import analyze_zip_project"
+      ],
+      "symbols": [
+        {
+          "name": "upload_project",
+          "kind": "function",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/api/routes/auth.py",
+      "language": "python",
+      "imports": [
+        "from fastapi import APIRouter, Depends, HTTPException, status",
+        "from sqlalchemy.orm import Session",
+        "from app.api.deps import get_current_user, get_db",
+        "from app.models.user import User",
+        "from app.schemas.auth import LoginRequest, TokenResponse",
+        "from app.schemas.user import UserCreate, UserResponse",
+        "from app.services.auth import authenticate_user, create_user"
+      ],
+      "symbols": [
+        {
+          "name": "register",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "login",
+          "kind": "function",
+          "line": 33
+        },
+        {
+          "name": "me",
+          "kind": "function",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/core/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/core/config.py",
+      "language": "python",
+      "imports": [
+        "from pydantic_settings import BaseSettings, SettingsConfigDict"
+      ],
+      "symbols": [
+        {
+          "name": "Settings",
+          "kind": "class",
+          "line": 4
+        },
+        {
+          "name": "cors_origin_list",
+          "kind": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/core/security.py",
+      "language": "python",
+      "imports": [
+        "from datetime import UTC, datetime, timedelta",
+        "import jwt",
+        "from passlib.context import CryptContext",
+        "from app.core.config import settings",
+        "from app.core.validation import validate_password"
+      ],
+      "symbols": [
+        {
+          "name": "_normalize_password_error",
+          "kind": "function",
+          "line": 15
+        },
+        {
+          "name": "hash_password",
+          "kind": "function",
+          "line": 23
+        },
+        {
+          "name": "verify_password",
+          "kind": "function",
+          "line": 31
+        },
+        {
+          "name": "create_access_token",
+          "kind": "function",
+          "line": 39
+        },
+        {
+          "name": "decode_access_token",
+          "kind": "function",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/core/validation.py",
+      "language": "python",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "validate_password",
+          "kind": "function",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/db/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/db/base.py",
+      "language": "python",
+      "imports": [
+        "from sqlalchemy.orm import DeclarativeBase"
+      ],
+      "symbols": [
+        {
+          "name": "Base",
+          "kind": "class",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/db/migrations.py",
+      "language": "python",
+      "imports": [
+        "from pathlib import Path",
+        "from alembic import command",
+        "from alembic.config import Config",
+        "from app.core.config import settings"
+      ],
+      "symbols": [
+        {
+          "name": "run_migrations",
+          "kind": "function",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/db/session.py",
+      "language": "python",
+      "imports": [
+        "from sqlalchemy import create_engine",
+        "from sqlalchemy.orm import sessionmaker",
+        "from app.core.config import settings"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/main.py",
+      "language": "python",
+      "imports": [
+        "from contextlib import asynccontextmanager",
+        "from fastapi import FastAPI",
+        "from fastapi.middleware.cors import CORSMiddleware",
+        "from app.api.routes.analysis import router as analysis_router",
+        "from app.api.routes.auth import router as auth_router",
+        "from app.core.config import settings",
+        "from app.db.migrations import run_migrations"
+      ],
+      "symbols": [
+        {
+          "name": "lifespan",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "healthcheck",
+          "kind": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/models/__init__.py",
+      "language": "python",
+      "imports": [
+        "from app.models.user import User"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/models/user.py",
+      "language": "python",
+      "imports": [
+        "from datetime import datetime",
+        "from sqlalchemy import DateTime, String, func",
+        "from sqlalchemy.orm import Mapped, mapped_column",
+        "from app.db.base import Base"
+      ],
+      "symbols": [
+        {
+          "name": "User",
+          "kind": "class",
+          "line": 9
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/schemas/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/schemas/analysis.py",
+      "language": "python",
+      "imports": [
+        "from pydantic import BaseModel, Field"
+      ],
+      "symbols": [
+        {
+          "name": "SymbolInfo",
+          "kind": "class",
+          "line": 4
+        },
+        {
+          "name": "FileAnalysis",
+          "kind": "class",
+          "line": 10
+        },
+        {
+          "name": "ComponentSummary",
+          "kind": "class",
+          "line": 17
+        },
+        {
+          "name": "ProjectAnalysisResponse",
+          "kind": "class",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/schemas/auth.py",
+      "language": "python",
+      "imports": [
+        "from pydantic import BaseModel, EmailStr, field_validator",
+        "from app.core.security import create_access_token",
+        "from app.core.validation import validate_password"
+      ],
+      "symbols": [
+        {
+          "name": "LoginRequest",
+          "kind": "class",
+          "line": 7
+        },
+        {
+          "name": "validate_password_length",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "TokenResponse",
+          "kind": "class",
+          "line": 17
+        },
+        {
+          "name": "create_for_user",
+          "kind": "function",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/schemas/user.py",
+      "language": "python",
+      "imports": [
+        "from datetime import datetime",
+        "from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator",
+        "from app.core.validation import validate_password"
+      ],
+      "symbols": [
+        {
+          "name": "UserCreate",
+          "kind": "class",
+          "line": 7
+        },
+        {
+          "name": "validate_password_length",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "UserResponse",
+          "kind": "class",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/__init__.py",
+      "language": "python",
+      "imports": [],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/extractor.py",
+      "language": "python",
+      "imports": [
+        "from pathlib import PurePosixPath",
+        "from zipfile import BadZipFile, ZipFile",
+        "from io import BytesIO",
+        "from app.core.config import settings",
+        "from app.services.analysis.models import ProjectSnapshot, SourceFile"
+      ],
+      "symbols": [
+        {
+          "name": "read_project_zip",
+          "kind": "function",
+          "line": 28
+        },
+        {
+          "name": "_safe_zip_path",
+          "kind": "function",
+          "line": 92
+        },
+        {
+          "name": "_is_ignored",
+          "kind": "function",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/gemini_client.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import random",
+        "import time",
+        "from email.utils import parsedate_to_datetime",
+        "from urllib import error, request",
+        "from app.core.config import settings",
+        "from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary, select_mermaid",
+        "from app.services.analysis.models import ProjectAnalysis",
+        "from app.services.analysis.semantic import select_prompt_files"
+      ],
+      "symbols": [
+        {
+          "name": "summarize_with_gemini",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "_build_prompt",
+          "kind": "function",
+          "line": 127
+        },
+        {
+          "name": "_extract_text",
+          "kind": "function",
+          "line": 176
+        },
+        {
+          "name": "_is_retryable_error",
+          "kind": "function",
+          "line": 184
+        },
+        {
+          "name": "_is_rate_limit_error",
+          "kind": "function",
+          "line": 190
+        },
+        {
+          "name": "_sleep_before_retry",
+          "kind": "function",
+          "line": 194
+        },
+        {
+          "name": "_cooldown_seconds",
+          "kind": "function",
+          "line": 208
+        },
+        {
+          "name": "_retry_after_seconds",
+          "kind": "function",
+          "line": 216
+        },
+        {
+          "name": "_extract_json_object",
+          "kind": "function",
+          "line": 238
+        },
+        {
+          "name": "_fallback_components",
+          "kind": "function",
+          "line": 249
+        },
+        {
+          "name": "_normalize_components",
+          "kind": "function",
+          "line": 262
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/mermaid.py",
+      "language": "python",
+      "imports": [
+        "import re",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis"
+      ],
+      "symbols": [
+        {
+          "name": "build_fallback_mermaid",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "select_mermaid",
+          "kind": "function",
+          "line": 81
+        },
+        {
+          "name": "build_fallback_summary",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "_escape",
+          "kind": "function",
+          "line": 101
+        },
+        {
+          "name": "_group_files_by_directory",
+          "kind": "function",
+          "line": 105
+        },
+        {
+          "name": "_directory_name",
+          "kind": "function",
+          "line": 112
+        },
+        {
+          "name": "_group_label",
+          "kind": "function",
+          "line": 119
+        },
+        {
+          "name": "_basename",
+          "kind": "function",
+          "line": 128
+        },
+        {
+          "name": "_symbol_label",
+          "kind": "function",
+          "line": 132
+        },
+        {
+          "name": "_build_dependency_edges",
+          "kind": "function",
+          "line": 140
+        },
+        {
+          "name": "_resolve_import_targets",
+          "kind": "function",
+          "line": 159
+        },
+        {
+          "name": "_import_tokens",
+          "kind": "function",
+          "line": 174
+        },
+        {
+          "name": "_path_stem",
+          "kind": "function",
+          "line": 185
+        },
+        {
+          "name": "_is_too_simple",
+          "kind": "function",
+          "line": 189
+        },
+        {
+          "name": "_has_enough_file_references",
+          "kind": "function",
+          "line": 201
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/models.py",
+      "language": "python",
+      "imports": [
+        "from dataclasses import dataclass, field"
+      ],
+      "symbols": [
+        {
+          "name": "SourceFile",
+          "kind": "class",
+          "line": 5
+        },
+        {
+          "name": "Symbol",
+          "kind": "class",
+          "line": 12
+        },
+        {
+          "name": "AnalyzedFile",
+          "kind": "class",
+          "line": 19
+        },
+        {
+          "name": "ProjectSnapshot",
+          "kind": "class",
+          "line": 27
+        },
+        {
+          "name": "ProjectAnalysis",
+          "kind": "class",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/openai_client.py",
+      "language": "python",
+      "imports": [
+        "import json",
+        "import random",
+        "import time",
+        "from email.utils import parsedate_to_datetime",
+        "from urllib import error, request",
+        "from app.core.config import settings",
+        "from app.services.analysis.gemini_client import (\n    _build_prompt,\n    _fallback_components,\n    _normalize_components,\n)",
+        "from app.services.analysis.mermaid import build_fallback_mermaid, build_fallback_summary, select_mermaid",
+        "from app.services.analysis.models import ProjectAnalysis",
+        "from app.services.analysis.semantic import select_prompt_files"
+      ],
+      "symbols": [
+        {
+          "name": "summarize_with_gpt",
+          "kind": "function",
+          "line": 21
+        },
+        {
+          "name": "_extract_text",
+          "kind": "function",
+          "line": 114
+        },
+        {
+          "name": "_is_retryable_error",
+          "kind": "function",
+          "line": 122
+        },
+        {
+          "name": "_sleep_before_retry",
+          "kind": "function",
+          "line": 128
+        },
+        {
+          "name": "_retry_after_seconds",
+          "kind": "function",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/semantic.py",
+      "language": "python",
+      "imports": [
+        "from app.core.config import settings",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis",
+        "from sentence_transformers import SentenceTransformer"
+      ],
+      "symbols": [
+        {
+          "name": "select_prompt_files",
+          "kind": "function",
+          "line": 9
+        },
+        {
+          "name": "_get_model",
+          "kind": "function",
+          "line": 38
+        },
+        {
+          "name": "_query_text",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "_file_to_embedding_text",
+          "kind": "function",
+          "line": 62
+        },
+        {
+          "name": "_dot_product",
+          "kind": "function",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/service.py",
+      "language": "python",
+      "imports": [
+        "from app.schemas.analysis import ComponentSummary, FileAnalysis, ProjectAnalysisResponse, SymbolInfo",
+        "from app.services.analysis.extractor import read_project_zip",
+        "from app.services.analysis.gemini_client import summarize_with_gemini",
+        "from app.services.analysis.openai_client import summarize_with_gpt",
+        "from app.services.analysis.tree_sitter_analyzer import analyze_project"
+      ],
+      "symbols": [
+        {
+          "name": "analyze_zip_project",
+          "kind": "function",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/analysis/tree_sitter_analyzer.py",
+      "language": "python",
+      "imports": [
+        "from tree_sitter import Language, Parser",
+        "import tree_sitter_javascript",
+        "import tree_sitter_python",
+        "import tree_sitter_typescript",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis, ProjectSnapshot, Symbol"
+      ],
+      "symbols": [
+        {
+          "name": "analyze_project",
+          "kind": "function",
+          "line": 29
+        },
+        {
+          "name": "_analyze_source_file",
+          "kind": "function",
+          "line": 38
+        },
+        {
+          "name": "walk",
+          "kind": "function",
+          "line": 44
+        },
+        {
+          "name": "_get_parser",
+          "kind": "function",
+          "line": 75
+        },
+        {
+          "name": "_get_language",
+          "kind": "function",
+          "line": 81
+        },
+        {
+          "name": "_node_name",
+          "kind": "function",
+          "line": 93
+        },
+        {
+          "name": "_contains_function_value",
+          "kind": "function",
+          "line": 104
+        },
+        {
+          "name": "_node_text",
+          "kind": "function",
+          "line": 111
+        },
+        {
+          "name": "_dedupe",
+          "kind": "function",
+          "line": 115
+        },
+        {
+          "name": "_dedupe_symbols",
+          "kind": "function",
+          "line": 119
+        },
+        {
+          "name": "_build_file_tree",
+          "kind": "function",
+          "line": 131
+        },
+        {
+          "name": "render",
+          "kind": "function",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/app/services/auth.py",
+      "language": "python",
+      "imports": [
+        "from sqlalchemy import select",
+        "from sqlalchemy.orm import Session",
+        "from app.core.security import hash_password, verify_password",
+        "from app.models.user import User",
+        "from app.schemas.user import UserCreate"
+      ],
+      "symbols": [
+        {
+          "name": "create_user",
+          "kind": "function",
+          "line": 9
+        },
+        {
+          "name": "authenticate_user",
+          "kind": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/tests/test_gemini_client.py",
+      "language": "python",
+      "imports": [
+        "import io",
+        "import json",
+        "import unittest",
+        "from contextlib import ExitStack",
+        "from unittest import mock",
+        "from urllib import error",
+        "from app.services.analysis import gemini_client",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis, Symbol"
+      ],
+      "symbols": [
+        {
+          "name": "FakeResponse",
+          "kind": "class",
+          "line": 12
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "read",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "make_analysis",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "make_http_error",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "GeminiClientTests",
+          "kind": "class",
+          "line": 51
+        },
+        {
+          "name": "run_with_settings",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "test_retries_503_then_returns_gemini_result",
+          "kind": "function",
+          "line": 70
+        },
+        {
+          "name": "test_returns_fallback_after_retryable_errors_are_exhausted",
+          "kind": "function",
+          "line": 106
+        },
+        {
+          "name": "test_uses_retry_after_header_before_retry",
+          "kind": "function",
+          "line": 125
+        },
+        {
+          "name": "test_skips_gemini_during_rate_limit_cooldown",
+          "kind": "function",
+          "line": 156
+        },
+        {
+          "name": "test_normalize_components_fills_missing_files_from_fallback",
+          "kind": "function",
+          "line": 186
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/tests/test_mermaid.py",
+      "language": "python",
+      "imports": [
+        "import unittest",
+        "from app.services.analysis.mermaid import build_fallback_mermaid, select_mermaid",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis, Symbol"
+      ],
+      "symbols": [
+        {
+          "name": "make_analysis",
+          "kind": "function",
+          "line": 7
+        },
+        {
+          "name": "MermaidTests",
+          "kind": "class",
+          "line": 34
+        },
+        {
+          "name": "test_fallback_mermaid_includes_modules_symbols_and_imports",
+          "kind": "function",
+          "line": 35
+        },
+        {
+          "name": "test_select_mermaid_replaces_oversimplified_generated_diagram",
+          "kind": "function",
+          "line": 48
+        },
+        {
+          "name": "test_select_mermaid_replaces_diagram_without_file_references",
+          "kind": "function",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/tests/test_openai_client.py",
+      "language": "python",
+      "imports": [
+        "import io",
+        "import json",
+        "import unittest",
+        "from contextlib import ExitStack",
+        "from unittest import mock",
+        "from urllib import error",
+        "from app.services.analysis import openai_client",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis, Symbol"
+      ],
+      "symbols": [
+        {
+          "name": "FakeResponse",
+          "kind": "class",
+          "line": 12
+        },
+        {
+          "name": "__init__",
+          "kind": "function",
+          "line": 13
+        },
+        {
+          "name": "__enter__",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "__exit__",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "read",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "make_analysis",
+          "kind": "function",
+          "line": 26
+        },
+        {
+          "name": "make_http_error",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "OpenAIClientTests",
+          "kind": "class",
+          "line": 51
+        },
+        {
+          "name": "run_with_settings",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "test_returns_gpt_result",
+          "kind": "function",
+          "line": 68
+        },
+        {
+          "name": "test_returns_fallback_after_retryable_errors_are_exhausted",
+          "kind": "function",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Backend/tests/test_semantic.py",
+      "language": "python",
+      "imports": [
+        "import unittest",
+        "from contextlib import ExitStack",
+        "from unittest import mock",
+        "from app.services.analysis import semantic",
+        "from app.services.analysis.models import AnalyzedFile, ProjectAnalysis, Symbol"
+      ],
+      "symbols": [
+        {
+          "name": "FakeEmbeddingModel",
+          "kind": "class",
+          "line": 9
+        },
+        {
+          "name": "encode",
+          "kind": "function",
+          "line": 10
+        },
+        {
+          "name": "SemanticSelectionTests",
+          "kind": "class",
+          "line": 16
+        },
+        {
+          "name": "test_selects_most_relevant_files_with_embedding_model",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "test_does_not_load_model_when_project_fits_prompt_limit",
+          "kind": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/eslint.config.js",
+      "language": "javascript",
+      "imports": [
+        "import js from '@eslint/js'",
+        "import globals from 'globals'",
+        "import reactHooks from 'eslint-plugin-react-hooks'",
+        "import reactRefresh from 'eslint-plugin-react-refresh'",
+        "import { defineConfig, globalIgnores } from 'eslint/config'"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/App.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { Routes, Route, Navigate } from 'react-router-dom'",
+        "import AnalysisPage from './pages/AnalysisPage'",
+        "import HomePage from './pages/HomePage'",
+        "import LoginPage from './pages/LoginPage'",
+        "import RegisterPage from './pages/RegisterPage'"
+      ],
+      "symbols": [
+        {
+          "name": "App",
+          "kind": "function",
+          "line": 7
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/components/Navbar.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { Link } from 'react-router-dom'",
+        "import './Navbar.css'"
+      ],
+      "symbols": [
+        {
+          "name": "Navbar",
+          "kind": "function",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/layouts/AuthLayout.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { useEffect, useRef } from 'react'",
+        "import architectureBg from '../assets/architecture-bg.png'",
+        "import './AuthLayout.css'"
+      ],
+      "symbols": [
+        {
+          "name": "AuthLayout",
+          "kind": "function",
+          "line": 5
+        },
+        {
+          "name": "createParticle",
+          "kind": "function",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/layouts/MainLayout.jsx",
+      "language": "javascript",
+      "imports": [],
+      "symbols": [
+        {
+          "name": "MainLayout",
+          "kind": "function",
+          "line": 1
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/main.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { StrictMode } from 'react'",
+        "import { createRoot } from 'react-dom/client'",
+        "import { BrowserRouter } from 'react-router-dom'",
+        "import './index.css'",
+        "import App from './App.jsx'"
+      ],
+      "symbols": []
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/pages/AnalysisPage.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { useCallback, useEffect, useId, useRef, useState } from 'react'",
+        "import mermaid from 'mermaid'",
+        "import Navbar from '../components/Navbar'",
+        "import './AnalysisPage.css'"
+      ],
+      "symbols": [
+        {
+          "name": "clamp",
+          "kind": "function",
+          "line": 37
+        },
+        {
+          "name": "getPointerDistance",
+          "kind": "function",
+          "line": 41
+        },
+        {
+          "name": "getPointerCenter",
+          "kind": "function",
+          "line": 45
+        },
+        {
+          "name": "normalizeMermaid",
+          "kind": "function",
+          "line": 52
+        },
+        {
+          "name": "AnalysisPage",
+          "kind": "function",
+          "line": 90
+        },
+        {
+          "name": "handleFileChange",
+          "kind": "function",
+          "line": 315
+        },
+        {
+          "name": "handleSubmit",
+          "kind": "function",
+          "line": 321
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/pages/HomePage.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { useEffect, useRef } from 'react'",
+        "import { Link } from 'react-router-dom'",
+        "import Navbar from '../components/Navbar'",
+        "import './HomePage.css'"
+      ],
+      "symbols": [
+        {
+          "name": "HomePage",
+          "kind": "function",
+          "line": 72
+        },
+        {
+          "name": "createParticle",
+          "kind": "function",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/pages/LoginPage.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { useState } from 'react'",
+        "import { Link } from 'react-router-dom'",
+        "import AuthLayout from '../layouts/AuthLayout'"
+      ],
+      "symbols": [
+        {
+          "name": "LoginPage",
+          "kind": "function",
+          "line": 5
+        },
+        {
+          "name": "handleChange",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "handleSubmit",
+          "kind": "function",
+          "line": 16
+        },
+        {
+          "name": "handleGitHubLogin",
+          "kind": "function",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/src/pages/RegisterPage.jsx",
+      "language": "javascript",
+      "imports": [
+        "import { useState } from 'react'",
+        "import { Link } from 'react-router-dom'",
+        "import AuthLayout from '../layouts/AuthLayout'"
+      ],
+      "symbols": [
+        {
+          "name": "RegisterPage",
+          "kind": "function",
+          "line": 5
+        },
+        {
+          "name": "handleChange",
+          "kind": "function",
+          "line": 14
+        },
+        {
+          "name": "handleSubmit",
+          "kind": "function",
+          "line": 18
+        },
+        {
+          "name": "handleGitHubRegister",
+          "kind": "function",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "codeatlas-main/Frontend/vite.config.js",
+      "language": "javascript",
+      "imports": [
+        "import { defineConfig } from 'vite'",
+        "import react from '@vitejs/plugin-react'",
+        "import process from 'node:process'"
+      ],
+      "symbols": []
+    }
+  ],
+  "mermaid": "flowchart LR\n  project[\"codeatlas\"]\n  source[\"High-Level Architecture\"]\n  project --> source\n  source --> group_0_hub\n  subgraph group_0[\"Backend/alembic\"]\n    group_0_hub[\"Backend/alembic\"]\n    group_0_hub --> file_0[\"env.py\"]\n    file_0 --> file_0_symbol_0([\"run_migrations_offline()\"])\n    file_0 --> file_0_symbol_1([\"run_migrations_online()\"])\n  end\n  source --> group_1_hub\n  subgraph group_1[\"alembic/versions\"]\n    group_1_hub[\"alembic/versions\"]\n    group_1_hub --> file_1[\"20260408_000001_create_users_table.py\"]\n    file_1 --> file_1_symbol_0([\"upgrade()\"])\n    file_1 --> file_1_symbol_1([\"downgrade()\"])\n  end\n  source --> group_2_hub\n  subgraph group_2[\"Backend/app\"]\n    group_2_hub[\"Backend/app\"]\n    group_2_hub --> file_2[\"__init__.py\"]\n    group_2_hub --> file_3[\"main.py\"]\n    file_3 --> file_3_symbol_0([\"lifespan()\"])\n    file_3 --> file_3_symbol_1([\"healthcheck()\"])\n  end\n  source --> group_3_hub\n  subgraph group_3[\"app/api\"]\n    group_3_hub[\"app/api\"]\n    group_3_hub --> file_4[\"__init__.py\"]\n    group_3_hub --> file_5[\"deps.py\"]\n    file_5 --> file_5_symbol_0([\"get_db()\"])\n    file_5 --> file_5_symbol_1([\"get_current_user()\"])\n  end\n  source --> group_4_hub\n  subgraph group_4[\"api/routes\"]\n    group_4_hub[\"api/routes\"]\n    group_4_hub --> file_6[\"__init__.py\"]\n    group_4_hub --> file_7[\"analysis.py\"]\n    file_7 --> file_7_symbol_0([\"upload_project()\"])\n    group_4_hub --> file_8[\"auth.py\"]\n    file_8 --> file_8_symbol_0([\"register()\"])\n    file_8 --> file_8_symbol_1([\"login()\"])\n    file_8 --> file_8_symbol_2([\"me()\"])\n  end\n  source --> group_5_hub\n  subgraph group_5[\"app/core\"]\n    group_5_hub[\"app/core\"]\n    group_5_hub --> file_9[\"__init__.py\"]\n    group_5_hub --> file_10[\"config.py\"]\n    file_10 --> file_10_symbol_0([\"Settings\"])\n    file_10 --> file_10_symbol_1([\"cors_origin_list()\"])\n    group_5_hub --> file_11[\"security.py\"]\n    file_11 --> file_11_symbol_0([\"_normalize_password_error()\"])\n    file_11 --> file_11_symbol_1([\"hash_password()\"])\n    file_11 --> file_11_symbol_2([\"verify_password()\"])\n    group_5_hub --> file_12[\"validation.py\"]\n    file_12 --> file_12_symbol_0([\"validate_password()\"])\n  end\n  source --> group_6_hub\n  subgraph group_6[\"app/db\"]\n    group_6_hub[\"app/db\"]\n    group_6_hub --> file_13[\"__init__.py\"]\n    group_6_hub --> file_14[\"base.py\"]\n    file_14 --> file_14_symbol_0([\"Base\"])\n    group_6_hub --> file_15[\"migrations.py\"]\n    file_15 --> file_15_symbol_0([\"run_migrations()\"])\n    group_6_hub --> file_16[\"session.py\"]\n  end\n  source --> group_7_hub\n  subgraph group_7[\"app/models\"]\n    group_7_hub[\"app/models\"]\n    group_7_hub --> file_17[\"__init__.py\"]\n    group_7_hub --> file_18[\"user.py\"]\n    file_18 --> file_18_symbol_0([\"User\"])\n  end\n  source --> group_8_hub\n  subgraph group_8[\"app/schemas\"]\n    group_8_hub[\"app/schemas\"]\n    group_8_hub --> file_19[\"__init__.py\"]\n    group_8_hub --> file_20[\"analysis.py\"]\n    file_20 --> file_20_symbol_0([\"SymbolInfo\"])\n    file_20 --> file_20_symbol_1([\"FileAnalysis\"])\n    file_20 --> file_20_symbol_2([\"ComponentSummary\"])\n    group_8_hub --> file_21[\"auth.py\"]\n    file_21 --> file_21_symbol_0([\"LoginRequest\"])\n    file_21 --> file_21_symbol_1([\"validate_password_length()\"])\n    file_21 --> file_21_symbol_2([\"TokenResponse\"])\n    group_8_hub --> file_22[\"user.py\"]\n    file_22 --> file_22_symbol_0([\"UserCreate\"])\n    file_22 --> file_22_symbol_1([\"validate_password_length()\"])\n    file_22 --> file_22_symbol_2([\"UserResponse\"])\n  end\n  source --> group_9_hub\n  subgraph group_9[\"app/services\"]\n    group_9_hub[\"app/services\"]\n    group_9_hub --> file_23[\"__init__.py\"]\n  end\n  source --> group_10_hub\n  subgraph group_10[\"services/analysis\"]\n    group_10_hub[\"services/analysis\"]\n    group_10_hub --> file_24[\"extractor.py\"]\n    file_24 --> file_24_symbol_0([\"read_project_zip()\"])\n    file_24 --> file_24_symbol_1([\"_safe_zip_path()\"])\n    file_24 --> file_24_symbol_2([\"_is_ignored()\"])\n    group_10_hub --> file_25[\"gemini_client.py\"]\n    file_25 --> file_25_symbol_0([\"summarize_with_gemini()\"])\n    file_25 --> file_25_symbol_1([\"_build_prompt()\"])\n    file_25 --> file_25_symbol_2([\"_extract_text()\"])\n    group_10_hub --> file_26[\"mermaid.py\"]\n    file_26 --> file_26_symbol_0([\"build_fallback_mermaid()\"])\n    file_26 --> file_26_symbol_1([\"select_mermaid()\"])\n    file_26 --> file_26_symbol_2([\"build_fallback_summary()\"])\n    group_10_hub --> file_27[\"models.py\"]\n    file_27 --> file_27_symbol_0([\"SourceFile\"])\n    file_27 --> file_27_symbol_1([\"Symbol\"])\n    file_27 --> file_27_symbol_2([\"AnalyzedFile\"])\n  end\n  source --> more_files[\"+20 more files\"]\n  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;\n  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;\n  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;\n  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;\n  class project,source project;\n  class group_0_hub layer;\n  class group_1_hub layer;\n  class group_2_hub layer;\n  class group_3_hub layer;\n  class group_4_hub layer;\n  class group_5_hub layer;\n  class group_6_hub layer;\n  class group_7_hub layer;\n  class group_8_hub layer;\n  class group_9_hub layer;\n  class group_10_hub layer;\n  class file_0 file;\n  class file_1 file;\n  class file_2 file;\n  class file_3 file;\n  class file_4 file;\n  class file_5 file;\n  class file_6 file;\n  class file_7 file;\n  class file_8 file;\n  class file_9 file;\n  class file_10 file;\n  class file_11 file;\n  class file_12 file;\n  class file_13 file;\n  class file_14 file;\n  class file_15 file;\n  class file_16 file;\n  class file_17 file;\n  class file_18 file;\n  class file_19 file;\n  class file_20 file;\n  class file_21 file;\n  class file_22 file;\n  class file_23 file;\n  class file_24 file;\n  class file_25 file;\n  class file_26 file;\n  class file_27 file;\n  class file_0_symbol_0 symbol;\n  class file_0_symbol_1 symbol;\n  class file_1_symbol_0 symbol;\n  class file_1_symbol_1 symbol;\n  class file_3_symbol_0 symbol;\n  class file_3_symbol_1 symbol;\n  class file_5_symbol_0 symbol;\n  class file_5_symbol_1 symbol;\n  class file_7_symbol_0 symbol;\n  class file_8_symbol_0 symbol;\n  class file_8_symbol_1 symbol;\n  class file_8_symbol_2 symbol;\n  class file_10_symbol_0 symbol;\n  class file_10_symbol_1 symbol;\n  class file_11_symbol_0 symbol;\n  class file_11_symbol_1 symbol;\n  class file_11_symbol_2 symbol;\n  class file_12_symbol_0 symbol;\n  class file_14_symbol_0 symbol;\n  class file_15_symbol_0 symbol;\n  class file_18_symbol_0 symbol;\n  class file_20_symbol_0 symbol;\n  class file_20_symbol_1 symbol;\n  class file_20_symbol_2 symbol;\n  class file_21_symbol_0 symbol;\n  class file_21_symbol_1 symbol;\n  class file_21_symbol_2 symbol;\n  class file_22_symbol_0 symbol;\n  class file_22_symbol_1 symbol;\n  class file_22_symbol_2 symbol;\n  class file_24_symbol_0 symbol;\n  class file_24_symbol_1 symbol;\n  class file_24_symbol_2 symbol;\n  class file_25_symbol_0 symbol;\n  class file_25_symbol_1 symbol;\n  class file_25_symbol_2 symbol;\n  class file_26_symbol_0 symbol;\n  class file_26_symbol_1 symbol;\n  class file_26_symbol_2 symbol;\n  class file_27_symbol_0 symbol;\n  class file_27_symbol_1 symbol;\n  class file_27_symbol_2 symbol;",
+  "llm_provider": null,
+  "warnings": [
+    "Gemini rate limit is cooling down; returned local analysis. Try again in about 36 second(s)."
+  ]
+}

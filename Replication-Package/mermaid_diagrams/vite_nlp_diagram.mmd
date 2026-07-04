@@ -1,0 +1,228 @@
+flowchart LR
+  project["vite"]
+  source["High-Level Architecture"]
+  project --> source
+  source --> group_0_hub
+  subgraph group_0["docs/.vitepress"]
+    group_0_hub["docs/.vitepress"]
+    group_0_hub --> file_0["buildEnd.config.ts"]
+    file_0 --> file_0_symbol_0(["buildEnd()"])
+    group_0_hub --> file_1["config.ts"]
+    file_1 --> file_1_symbol_0(["boostDocument()"])
+    file_1 --> file_1_symbol_1(["transformHead()"])
+    file_1 --> file_1_symbol_2(["root()"])
+  end
+  source --> group_1_hub
+  subgraph group_1[".vitepress/inlined-scripts"]
+    group_1_hub[".vitepress/inlined-scripts"]
+    group_1_hub --> file_2["banner.d.ts"]
+    group_1_hub --> file_3["banner.js"]
+    file_3 --> file_3_symbol_0(["restore()"])
+  end
+  source --> group_2_hub
+  subgraph group_2["theme/composables"]
+    group_2_hub["theme/composables"]
+    group_2_hub --> file_4["sponsor.ts"]
+    file_4 --> file_4_symbol_0(["useSponsor()"])
+  end
+  source --> group_3_hub
+  subgraph group_3[".vitepress/theme"]
+    group_3_hub[".vitepress/theme"]
+    group_3_hub --> file_5["index.ts"]
+    file_5 --> file_5_symbol_0(["Layout()"])
+    file_5 --> file_5_symbol_1(["enhanceApp()"])
+  end
+  source --> group_4_hub
+  subgraph group_4["theme/live"]
+    group_4_hub["theme/live"]
+    group_4_hub --> file_6["useYoutubePlayer.ts"]
+    file_6 --> file_6_symbol_0(["useYoutubePlayer()"])
+    file_6 --> file_6_symbol_1(["postPlayerCommand()"])
+    file_6 --> file_6_symbol_2(["setStateByCode()"])
+  end
+  source --> group_5_hub
+  subgraph group_5["docs/_data"]
+    group_5_hub["docs/_data"]
+    group_5_hub --> file_7["acknowledgements.data.ts"]
+    file_7 --> file_7_symbol_0(["parseBundledDependenciesFromLicense()"])
+    file_7 --> file_7_symbol_1(["normalizeRepository()"])
+    file_7 --> file_7_symbol_2(["normalizeFunding()"])
+    group_5_hub --> file_8["blog.data.ts"]
+    file_8 --> file_8_symbol_0(["transform()"])
+    file_8 --> file_8_symbol_1(["formatDate()"])
+    group_5_hub --> file_9["team.js"]
+  end
+  source --> group_6_hub
+  subgraph group_6["vite-main"]
+    group_6_hub["vite-main"]
+    group_6_hub --> file_10["eslint.config.js"]
+  end
+  source --> group_7_hub
+  subgraph group_7["create-vite/__tests__"]
+    group_7_hub["create-vite/__tests__"]
+    group_7_hub --> file_11["cli.spec.ts"]
+    file_11 --> file_11_symbol_0(["run()"])
+    file_11 --> file_11_symbol_1(["createNonEmptyDir()"])
+    file_11 --> file_11_symbol_2(["clearAnyPreviousFolders()"])
+  end
+  source --> group_8_hub
+  subgraph group_8["packages/create-vite"]
+    group_8_hub["packages/create-vite"]
+    group_8_hub --> file_12["index.js"]
+  end
+  source --> group_9_hub
+  subgraph group_9["create-vite/src"]
+    group_9_hub["create-vite/src"]
+    group_9_hub --> file_13["index.ts"]
+    file_13 --> file_13_symbol_0(["run()"])
+    file_13 --> file_13_symbol_1(["install()"])
+    file_13 --> file_13_symbol_2(["start()"])
+  end
+  source --> group_10_hub
+  subgraph group_10["template-lit-ts/src"]
+    group_10_hub["template-lit-ts/src"]
+    group_10_hub --> file_14["my-element.ts"]
+    file_14 --> file_14_symbol_0(["MyElement"])
+    file_14 --> file_14_symbol_1(["render()"])
+    file_14 --> file_14_symbol_2(["_onClick()"])
+  end
+  source --> group_11_hub
+  subgraph group_11["template-lit/src"]
+    group_11_hub["template-lit/src"]
+    group_11_hub --> file_15["my-element.js"]
+    file_15 --> file_15_symbol_0(["MyElement"])
+    file_15 --> file_15_symbol_1(["properties()"])
+    file_15 --> file_15_symbol_2(["constructor()"])
+  end
+  source --> group_12_hub
+  subgraph group_12["template-preact-ts/src"]
+    group_12_hub["template-preact-ts/src"]
+    group_12_hub --> file_16["app.tsx"]
+    file_16 --> file_16_symbol_0(["App()"])
+    group_12_hub --> file_17["main.tsx"]
+  end
+  source --> group_13_hub
+  subgraph group_13["create-vite/template-preact-ts"]
+    group_13_hub["create-vite/template-preact-ts"]
+    group_13_hub --> file_18["vite.config.ts"]
+  end
+  source --> group_14_hub
+  subgraph group_14["template-preact/src"]
+    group_14_hub["template-preact/src"]
+    group_14_hub --> file_19["app.jsx"]
+    file_19 --> file_19_symbol_0(["App()"])
+    group_14_hub --> file_20["main.jsx"]
+  end
+  source --> group_15_hub
+  subgraph group_15["create-vite/template-preact"]
+    group_15_hub["create-vite/template-preact"]
+    group_15_hub --> file_21["vite.config.js"]
+  end
+  source --> group_16_hub
+  subgraph group_16["template-qwik-ts/src"]
+    group_16_hub["template-qwik-ts/src"]
+    group_16_hub --> file_22["app.tsx"]
+    group_16_hub --> file_23["main.tsx"]
+  end
+  source --> group_17_hub
+  subgraph group_17["create-vite/template-qwik-ts"]
+    group_17_hub["create-vite/template-qwik-ts"]
+    group_17_hub --> file_24["vite.config.ts"]
+  end
+  source --> group_18_hub
+  subgraph group_18["template-qwik/src"]
+    group_18_hub["template-qwik/src"]
+    group_18_hub --> file_25["app.jsx"]
+    group_18_hub --> file_26["main.jsx"]
+  end
+  source --> group_19_hub
+  subgraph group_19["create-vite/template-qwik"]
+    group_19_hub["create-vite/template-qwik"]
+    group_19_hub --> file_27["vite.config.js"]
+  end
+  file_1 -.-> file_0
+  file_10 -.-> file_1
+  source --> more_files["+1430 more files"]
+  classDef project fill:#ff4d8d,stroke:#ffd6e7,stroke-width:2px,color:#ffffff;
+  classDef layer fill:#6d2f5f,stroke:#c77db0,stroke-width:2px,color:#ffffff;
+  classDef file fill:#2f1a3a,stroke:#9f6b91,color:#ffffff;
+  classDef symbol fill:#172033,stroke:#7aa2ff,color:#ffffff,font-size:12px;
+  class project,source project;
+  class group_0_hub layer;
+  class group_1_hub layer;
+  class group_2_hub layer;
+  class group_3_hub layer;
+  class group_4_hub layer;
+  class group_5_hub layer;
+  class group_6_hub layer;
+  class group_7_hub layer;
+  class group_8_hub layer;
+  class group_9_hub layer;
+  class group_10_hub layer;
+  class group_11_hub layer;
+  class group_12_hub layer;
+  class group_13_hub layer;
+  class group_14_hub layer;
+  class group_15_hub layer;
+  class group_16_hub layer;
+  class group_17_hub layer;
+  class group_18_hub layer;
+  class group_19_hub layer;
+  class file_0 file;
+  class file_1 file;
+  class file_2 file;
+  class file_3 file;
+  class file_4 file;
+  class file_5 file;
+  class file_6 file;
+  class file_7 file;
+  class file_8 file;
+  class file_9 file;
+  class file_10 file;
+  class file_11 file;
+  class file_12 file;
+  class file_13 file;
+  class file_14 file;
+  class file_15 file;
+  class file_16 file;
+  class file_17 file;
+  class file_18 file;
+  class file_19 file;
+  class file_20 file;
+  class file_21 file;
+  class file_22 file;
+  class file_23 file;
+  class file_24 file;
+  class file_25 file;
+  class file_26 file;
+  class file_27 file;
+  class file_0_symbol_0 symbol;
+  class file_1_symbol_0 symbol;
+  class file_1_symbol_1 symbol;
+  class file_1_symbol_2 symbol;
+  class file_3_symbol_0 symbol;
+  class file_4_symbol_0 symbol;
+  class file_5_symbol_0 symbol;
+  class file_5_symbol_1 symbol;
+  class file_6_symbol_0 symbol;
+  class file_6_symbol_1 symbol;
+  class file_6_symbol_2 symbol;
+  class file_7_symbol_0 symbol;
+  class file_7_symbol_1 symbol;
+  class file_7_symbol_2 symbol;
+  class file_8_symbol_0 symbol;
+  class file_8_symbol_1 symbol;
+  class file_11_symbol_0 symbol;
+  class file_11_symbol_1 symbol;
+  class file_11_symbol_2 symbol;
+  class file_13_symbol_0 symbol;
+  class file_13_symbol_1 symbol;
+  class file_13_symbol_2 symbol;
+  class file_14_symbol_0 symbol;
+  class file_14_symbol_1 symbol;
+  class file_14_symbol_2 symbol;
+  class file_15_symbol_0 symbol;
+  class file_15_symbol_1 symbol;
+  class file_15_symbol_2 symbol;
+  class file_16_symbol_0 symbol;
+  class file_19_symbol_0 symbol;

@@ -1,0 +1,13 @@
+repo,label,language_profile,size_category,total_files_in_zip,source_files_analyzed,ts_symbols_found,ts_functions_found,ts_classes_found,ts_imports_found,gt_symbols,gt_functions,gt_classes,ts_precision,ts_recall,ts_f1,mermaid_valid,mermaid_node_count,mermaid_edge_count,mermaid_subgraph_count,mermaid_file_reference_rate,llm_provider,llm_summary_word_count,component_count,has_warnings,processing_time_sec,zip_size_bytes,nlp_mode_tested,nlp_processing_time_sec,nlp_mermaid_node_count,nlp_token_reduction_pct,success,error_message
+pallets/flask,Flask,python,small,236,83,1620,1460,160,668,1604,1445,159,0.99,1.0,0.995,True,107,121,8,0.506,,14,83,True,8.4,835031,True,2.47,107,0.0,True,
+tiangolo/fastapi,FastAPI,python,small,3008,1133,5616,4905,711,3527,2277,1809,468,0.405,1.0,0.577,True,90,84,8,0.359,,15,1133,True,4.86,19387492,True,4.77,90,0.0,True,
+encode/httpx,HTTPX,python,small,125,60,1241,1134,107,354,1240,1133,107,0.999,1.0,1.0,True,74,88,4,0.35,,14,60,True,2.48,2339789,True,2.64,74,0.0,True,
+tiangolo/sqlmodel,SQLModel,python,small,507,319,1109,835,274,986,1089,816,273,0.982,1.0,0.991,True,94,87,13,0.48,,15,319,True,2.71,11193426,True,2.74,94,0.0,True,
+expressjs/express,Express.js,javascript,small,213,141,127,127,0,0,0,0,0,0.0,0.0,0.0,True,87,62,24,0.255,,14,141,True,2.54,213918,True,2.57,87,0.0,True,
+vitejs/vite,Vite,typescript,medium,2708,1458,2669,2608,61,3265,0,0,0,0.0,0.0,0.0,True,101,82,20,0.263,,16,1458,True,4.6,13773990,True,4.35,101,0.0,True,
+vuejs/vue,Vue.js,typescript,medium,508,425,1989,1966,23,1108,0,0,0,0.0,0.0,0.0,True,89,88,12,0.136,,16,425,True,3.77,782860,True,3.7,89,0.0,True,
+facebook/react,React,javascript,large,7261,0,0,0,0,0,0,0,0,0.0,0.0,0.0,False,0,0,0,0.0,,0,0,False,2.43,14465121,False,0.0,0,0.0,False,"{""detail"":""Zip contains too many analyzable files.""}"
+nestjs/nest,NestJS,typescript,large,2125,1683,5166,3647,1519,5750,0,0,0,0.0,0.0,0.0,True,101,102,18,0.105,,15,1683,True,12.79,2120617,True,4.57,101,0.0,True,
+django/django,Django,python,large,7071,0,0,0,0,0,5348,4339,1009,0.0,0.0,0.0,False,0,0,0,0.0,,0,0,False,2.55,15923792,False,0.0,0,0.0,False,"{""detail"":""Zip contains too many analyzable files.""}"
+encode/starlette,Starlette,python,small,129,67,1686,1498,188,668,1680,1494,186,0.996,1.0,0.998,True,70,67,2,0.284,,14,67,True,2.67,2759675,True,2.62,70,0.0,True,
+B1RKANN/codeatlas,CodeAtlas,mixed,small,75,48,150,127,23,167,0,0,0,0.0,0.0,0.0,True,95,83,11,0.604,,15,48,True,2.17,1069618,False,0.0,0,0.0,True,

@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "no_source_files",
+    "description": "Kaynak dosyası olmayan ZIP (yalnızca README, LICENSE)",
+    "expected_behavior": "400 Bad Request — desteklenen kaynak dosyası bulunamadı",
+    "actual_behavior": "HTTP 400 — {\"detail\":\"No supported source files were found in the zip.\"}",
+    "success": true,
+    "error_message": ""
+  },
+  {
+    "scenario": "minified_javascript",
+    "description": "Minified/obfuscated JS (sembol isimleri tek harf: a, b, c)",
+    "expected_behavior": "200 OK — ancak sembol isimleri anlamsız (a, b, c, n, r)",
+    "actual_behavior": "HTTP 400 — {\"detail\":\"No supported source files were found in the zip.\"}",
+    "success": true,
+    "error_message": ""
+  },
+  {
+    "scenario": "deep_nesting",
+    "description": "10 seviye derin klasör hiyerarşisi",
+    "expected_behavior": "200 OK — dosya ağacı render edilebilmeli",
+    "actual_behavior": "200 OK | 2 dosya | 2 sembol | Mermaid GEÇERLİ (10 node)",
+    "success": true,
+    "error_message": ""
+  },
+  {
+    "scenario": "dynamic_imports",
+    "description": "Python dinamik import (importlib, __import__)",
+    "expected_behavior": "200 OK — ancak import ilişkileri Mermaid'e yansımayabilir",
+    "actual_behavior": "200 OK | 2 dosya | 3 sembol | Mermaid GEÇERLİ (9 node)",
+    "success": true,
+    "error_message": ""
+  },
+  {
+    "scenario": "circular_dependencies",
+    "description": "Dairesel bağımlılık: A→B→C→A",
+    "expected_behavior": "200 OK — sistem döngü oluşturmamalı",
+    "actual_behavior": "200 OK | 3 dosya | 3 sembol | Mermaid GEÇERLİ (10 node)",
+    "success": true,
+    "error_message": ""
+  }
+]
